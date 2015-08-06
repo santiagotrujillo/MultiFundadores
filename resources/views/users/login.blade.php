@@ -7,7 +7,7 @@
     <head>
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-        <title>Login and Registration Form with HTML5 and CSS3</title>
+        <title>Ingreso Multifundadores</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
@@ -28,26 +28,23 @@
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <form  action="mysuperscript.php" autocomplete="on"> 
-                                <h1>Log in</h1> 
+                                <h1>Ingreso</h1> 
                                 <p> 
-                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                                    <label for="username" class="uname" data-icon="u" > Ingrese su cedula </label>
+                                    <input id="username" name="username" required="required" type="text" placeholder="cedula"/>
                                 </p>
                                 <p> 
-                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                    <label for="password" class="youpasswd" data-icon="p"> Ingrese su contraseña </label>
+                                    <input id="password" name="password" required="required" type="password" placeholder="contraseña" /> 
                                 </p>
                                 <p class="keeplogin"> 
                                     <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-                                    <label for="loginkeeping">Keep me logged in</label>
+                                    <label for="loginkeeping">Recordar contraseña</label>
                                 </p>
                                 <p class="login button"> 
-                                    <input type="submit" value="Login" /> 
+                                    <input type="submit" value="Ingresar" /> 
                                 </p>
-                                <p class="change_link">
-                                    Not a member yet ?
-                                    <a href="#toregister" class="to_register">Join us</a>
-                                </p>
+                                
                             </form>
                         </div>
 
