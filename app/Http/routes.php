@@ -20,3 +20,6 @@ Route::get('phpinfo', function()
 {
 	phpinfo();
 });
+
+
+Route::get('/user/login', 'UserController@showLogin');
