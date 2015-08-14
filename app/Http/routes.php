@@ -18,6 +18,13 @@ Route::get('/', function () {
 
 // Rutas para usuarios
 
+// Ruta para obtner la info de un usuario
 Route::get('/usuarios/{id}','UsuarioController@show');
 
-Route::get('/user/login', 'UserController@showLogin');
+// ruta para login
+Route::post('/usuarios/login', 'UsuarioController@login');
+
+Route::get('test', function ()
+{
+   return Hash::make('12345');
+});
