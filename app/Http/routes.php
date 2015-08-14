@@ -16,10 +16,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('phpinfo', function()
-{
-	phpinfo();
-});
+// Rutas para usuarios
 
+Route::get('/usuarios/{id}','UsuarioController@show');
 
 Route::get('/user/login', 'UserController@showLogin');
