@@ -23,9 +23,14 @@ class UsuarioController extends Controller
         $usuario = (new Usuario)->where('id',$this->data['id'])->first();
         if( Hash::check($this->data['clave'], $usuario->clave) )
         {
-            return Response::json($usuario);
+            return redirect('/usuarios/home');
         }
         return view('users.login')->withErrors(['clave' => 'clave incorrecta']);
+    }
+
+    public function viewHome()
+    {
+        return view('users.home');
     }
 
     /**

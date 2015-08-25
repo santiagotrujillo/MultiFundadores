@@ -26,6 +26,8 @@ Route::post('/usuarios/login', 'UsuarioController@login');
 
 Route::get('/usuarios/login', 'UsuarioController@viewLogin');
 
+Route::get('/usuarios/home', 'UsuarioController@viewHome');
+
 //Rutas para Propietarios
 
 
