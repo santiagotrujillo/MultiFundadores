@@ -25,7 +25,7 @@ class UsuarioController extends Controller
         {
             return Response::json($usuario);
         }
-        return Response::json(['clave' => 'clave incorrecta']);
+        return view('users.login')->withErrors(['clave' => 'clave incorrecta']);
     }
 
     /**
@@ -37,6 +37,11 @@ class UsuarioController extends Controller
     public function show($id)
     {
         return Response::json((new Usuario)->with(['rol'])->findOrFail($id));
+    }
+
+    public function viewLogin()
+    {
+        return view('users.login');
     }
 
 }

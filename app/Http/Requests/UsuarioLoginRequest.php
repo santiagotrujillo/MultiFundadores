@@ -6,6 +6,8 @@ use App\Http\Requests\Request;
 
 class UsuarioLoginRequest extends Request
 {
+    public $autenticable = true;
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -27,5 +29,14 @@ class UsuarioLoginRequest extends Request
             'id' => 'required|numeric|exists:usuarios,id',
             'clave' => 'required'
         ];
+    }
+
+    public function response(array $errors)
+    {
+        if($this->autenticable)
+        {
+            return redirect(null,400)->back()->withErrors($errors);
+        }
+        return \Response::json($errors, 400);
     }
 }

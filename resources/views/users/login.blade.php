@@ -1,85 +1,70 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="UTF-8" />
-        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-        <title>Ingreso Multifundadores</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
-        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="/css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="/css/animate-custom.css" />
-    </head>
-    <body>
-        <div class="container">
-            <header></header>
-            <section>				
-                <div id="container_demo" >
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
-                    <div id="wrapper">
-                        <div id="login" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
-                                <h1>Ingreso</h1> 
-                                <p> 
-                                    <label for="username" class="uname" data-icon="u" > Ingrese su cedula </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="cedula"/>
-                                </p>
-                                <p> 
-                                    <label for="password" class="youpasswd" data-icon="p"> Ingrese su contraseña </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="contraseña" /> 
-                                </p>
-                                <p class="keeplogin"> 
-                                    <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-                                    <label for="loginkeeping">Recordar contraseña</label>
-                                </p>
-                                <p class="login button"> 
-                                    <input type="submit" value="Ingresar" /> 
-                                </p>
-                                
-                            </form>
-                        </div>
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <title>Login Multifamiliar Fundadores</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/templatemo_main.css">
 
-                        <div id="register" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
-                                <h1> Sign up </h1> 
-                                <p> 
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
-                                </p>
-                                <p> 
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p> 
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
-                                <p class="signin button"> 
-                                    <input type="submit" value="Sign up"/> 
-                                </p>
-                                <p class="change_link">  
-                                    Already a member ?
-                                    <a href="#tologin" class="to_register"> Go and log in </a>
-                                </p>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>  
-            </section>
+</head>
+<body>
+<div id="main-wrapper">
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <div class="logo"><h1>Login Usuarios</h1></div>
         </div>
-    </body>
+    </div>
+    <div class="template-page-wrapper">
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> Error.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form class="form-horizontal templatemo-signin-form" role="form" action="/usuarios/login" method="POST">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label for="username" class="col-sm-2 control-label">Cédula</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="id" class="form-control" id="username" placeholder="Ingrese su cédula">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label for="password" class="col-sm-2 control-label">Contraseña</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="clave" class="form-control" id="password" placeholder="Ingrese su contraseña">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" value="Sign in" class="btn btn-primary">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
 </html>

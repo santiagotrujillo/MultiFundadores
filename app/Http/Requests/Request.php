@@ -10,4 +10,6 @@ abstract class Request extends FormRequest
     {
         return true;
     }
+
+    public $autenticable = false;
 }
