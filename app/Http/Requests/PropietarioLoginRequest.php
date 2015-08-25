@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class UsuarioLoginRequest extends Request
+class PropietarioLoginRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class UsuarioLoginRequest extends Request
     public function rules()
     {
         return [
-            'id' => 'required|numeric|exists:usuarios,id',
+            'id' => 'required|numeric|exists:propietarios,id',
             'clave' => 'required'
         ];
     }

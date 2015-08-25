@@ -20,7 +20,7 @@ class UsuarioController extends Controller
     }
     public function login(UsuarioLoginRequest $request)
     {
-        $usuario = (new Usuario)->where('email',$this->data['email'])->first();
+        $usuario = (new Usuario)->where('id',$this->data['id'])->first();
         if( Hash::check($this->data['clave'], $usuario->clave) )
         {
             return Response::json($usuario);
