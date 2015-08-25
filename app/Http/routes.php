@@ -43,5 +43,5 @@ Route::get('/propietarios/{id}/pagos','PropietarioController@show');
 
 Route::get('test', function ()
 {
-   return Hash::make('henao123');
+   return Hash::make('ramirez123');
 });
