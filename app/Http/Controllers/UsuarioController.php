@@ -34,6 +34,15 @@ class UsuarioController extends Controller
         return view('users.home');
     }
 
+    public function salir()
+    {
+        if(Auth::user()!= null)
+        {
+            Auth::logout();
+            return redirect('/usuarios/login');
+        }
+    }
+
     /**
      * Display the specified resource.
      *

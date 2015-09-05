@@ -31,6 +31,12 @@ Route::get('/usuarios/home', [
     'middleware' =>'auth',
     'uses'=>'UsuarioController@viewHome'
 ]);
+Route::get('/usuarios/salir', [
+    'middleware' =>'auth',
+    'uses'=>'UsuarioController@salir'
+]);
+
+
 
 //Rutas para Propietarios
 
