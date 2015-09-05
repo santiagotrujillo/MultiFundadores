@@ -2,15 +2,12 @@
 <head>
     <meta charset="iso-8859-1" lang="en">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-    <title>Dashboard, Free HTML5 Admin Template</title>
+    <title>Dashboard</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/css/templatemo_main.css">
-    <!--
-    Dashboard Template
-    http://www.templatemo.com/preview/templatemo_415_dashboard
-    -->
+
 </head>
 <body>
 <div class="navbar navbar-inverse" role="navigation">
@@ -29,8 +26,7 @@
         <ul class="templatemo-sidebar-menu">
             <li>
                 <form class="navbar-form">
-                    <input type="text" class="form-control" id="templatemo_search_box" placeholder="Search...">
-                    <span class="btn btn-default">Go</span>
+                    <label><h1 style="font-size: medium">Bienvenido, {{ $nombre }} </h1></label>
                 </form>
             </li>
             <li class="active"><a href="#"><i class="fa fa-home"></i>Men&uacute; principal</a></li>

@@ -31,7 +31,11 @@ class UsuarioController extends Controller
 
     public function viewHome()
     {
-        return view('users.home');
+        if(Auth::user()!= null)
+        {
+            return view('users.home')->with(Auth::user()->toArray());
+        }
+
     }
 
     public function salir()
