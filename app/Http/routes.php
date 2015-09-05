@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 
+
 // Rutas para usuarios
 
 // Ruta para obtner la info de un usuario
@@ -26,7 +27,10 @@ Route::post('/usuarios/login', 'UsuarioController@login');
 
 Route::get('/usuarios/login', 'UsuarioController@viewLogin');
 
-Route::get('/usuarios/home', 'UsuarioController@viewHome');
+Route::get('/usuarios/home', [
+    'middleware' =>'auth',
+    'uses'=>'UsuarioController@viewHome'
+]);
 
 //Rutas para Propietarios
 
@@ -35,7 +39,9 @@ Route::get('/usuarios/home', 'UsuarioController@viewHome');
 Route::get('/propietarios/show/{id}','PropietarioController@show');
 
 // ruta para login propietario
-Route::post('/propietarios/login', 'PropietarioController@login');
+Route::get('/propietarios/login', 'PropietarioController@viewlogin');
+
+Route::get('/propietarios/home', 'PropietarioController@viewHome');
 
 
 //Ruta para consultar pagos

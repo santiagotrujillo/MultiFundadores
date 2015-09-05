@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Usuario;
 use Illuminate\Http\Request;
-use \Response, \Input, \Hash;
+use \Response, \Input, \Hash, \Auth;
 use App\Http\Requests\UsuarioLoginRequest;
 
 use App\Http\Requests;
@@ -23,6 +23,7 @@ class UsuarioController extends Controller
         $usuario = (new Usuario)->where('id',$this->data['id'])->first();
         if( Hash::check($this->data['clave'], $usuario->clave) )
         {
+            Auth::login($usuario);
             return redirect('/usuarios/home');
         }
         return view('users.login')->withErrors(['clave' => 'clave incorrecta']);
@@ -46,6 +47,10 @@ class UsuarioController extends Controller
 
     public function viewLogin()
     {
+        if(Auth::user()!= null)
+        {
+            return redirect('/usuarios/home');
+        }
         return view('users.login');
     }
 

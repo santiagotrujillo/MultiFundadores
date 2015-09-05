@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
-        <div class="logo"><h1>Multifamiliar Fundadores - Administrador</h1></div>
+        <div class="logo"><h1>Multifamiliar Fundadores - Propietario</h1></div>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -35,44 +35,18 @@
             </li>
             <li class="active"><a href="#"><i class="fa fa-home"></i>Inicio</a></li>
             <li class="sub open">
-                <a href="javascript:;">
-                    <i class="fa fa-database"></i> Deudas <div class="pull-right"></div>
-                </a>
-                <ul class="templatemo-submenu">
-                    <li><a href="#">Administración</a></li>
-                    <li><a href="#">Mantenimiento</a></li>
-                    <li><a href="#">Seguro</a></li>
-                    <li><a href="#">Papeleria</a></li>
-                    <li><a href="#">Agua</a></li>
-                    <li><a href="#">Energía</a></li>
-                    <li><a href="#">Citofonía</a></li>
-                    <li><a href="#">Aseo</a></li>
-                    <li><a href="#">Vigilancia</a></li>
-                    <li><a href="#">Bienestar Social</a></li>
-                    <li><a href="#">Dian</a></li>
-                    <li><a href="#">Otros</a></li>
-                </ul>
             </li>
             <li class="sub open">
                 <a href="javascript:;">
-                    <i class="fa fa-database"></i> Pagos <div class="pull-right"></div>
+                    <i class="fa fa-database"></i> Items <div class="pull-right"></div>
                 </a>
                 <ul class="templatemo-submenu">
                     <li><a href="#">Administración</a></li>
                     <li><a href="#">Seguro</a></li>
-                    <li><a href="#">Salón</a></li>
-                    <li><a href="#">Extraordinaria</a></li>
-                    <li><a href="#">Multa incumplimiento</a></li>
-                    <li><a href="#">Parqueadero</a></li>
                     <li><a href="#">Otros</a></li>
                 </ul>
             </li>
-            <li class="sub open">
-                <a href="javascript:;">
-                    <i class="fa fa-database"></i> Reportes <div class="pull-right"></div>
-                </a>
 
-            </li>
             <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Sign Out</a></li>
         </ul>
     </div><!--/.navbar-collapse -->
@@ -80,34 +54,30 @@
     <div class="templatemo-content-wrapper">
         <div class="templatemo-content">
 
-            <h1>Pagina Inicial</h1>
-            <p>Bienvenido *bname*.</p>
+            <h1>Página principal</h1>
+            <p>Bienvenido *name*.</p>
 
             <div class="margin-bottom-30">
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="nav nav-pills">
-                            <li class="active"><a href="#">Home </a></li>
-                            <li class="active"><a href="#">Profile</a></li>
-                            <li class="active"><a href="#">Messages</a></li>
+                            <li class="active"><a href="#">Administración <span class="badge"></span></a></li>
+                            <li class="active"><a href="#">Seguro <span class="badge"></span></a></li>
+                            <li class="active"><a href="#">Otros <span class="badge"></span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-
                 <div class="col-md-6">
                     <div class="templatemo-progress">
                         <div class="list-group">
                             <a href="#" class="list-group-item active">
-                                <h4 class="list-group-item-heading">Latest Data</h4>
+                                <h4 class="list-group-item-heading">Próximos Eventos</h4>
                             </a>
                             <a href="#" class="list-group-item">
-                                <p class="list-group-item-text">Las tablas podrian aparecer en la interfaz que va a administracion y el manejo de propietarios, y en la pagina inicio deberia salir el nombre del usuario activo .</p>
+                                <p class="list-group-item-text">e placerat.</p>
                             </a>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -121,55 +91,39 @@
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
-                                        <th>Bloque</th>
-                                        <th>Apartamento</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>101</td>
-                                        <td>Uriel</td>
-                                        <td>Henao</td>
+                                        <td>John</td>
+                                        <td>Smith</td>
+                                        <td>@js</td>
                                     </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>102</td>
-                                        <td>Mabel</td>
-                                        <td>Pineda</td>
+                                        <td>2</td>
+                                        <td>Bill</td>
+                                        <td>Jones</td>
+                                        <td>@bj</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Marry</td>
+                                        <td>James</td>
+                                        <td>@mj</td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <span class="btn btn-primary"><a href="tables.html">Ver Tablas</a></span>
+                        <span class="btn btn-primary"><a href="tables.html">See Tables</a></span>
                     </div>
                 </div>
-                <div class="row">
 
-
-                    <div class="col-md-6 col-sm-6">
-                        <div class="panel-group" id="accordion">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                            Accordion Item 1
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse in">
-                                    <div class="panel-body">
-                                        ore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

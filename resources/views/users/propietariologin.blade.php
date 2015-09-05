@@ -13,7 +13,7 @@
 <div id="main-wrapper">
     <div class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
-            <div class="logo"><h1>Iniciar sesiÃ³n de usuario</h1></div>
+            <div class="logo"><h1>Iniciar sesión de propietario</h1></div>
         </div>
     </div>
     <div class="template-page-wrapper">
@@ -31,17 +31,17 @@
         <form class="form-horizontal templatemo-signin-form" role="form" action="/usuarios/login" method="POST">
             <div class="form-group">
                 <div class="col-md-12">
-                    <label for="username" class="col-sm-2 control-label">CÃ©dula</label>
+                    <label for="username" class="col-sm-2 control-label">Identificación</label>
                     <div class="col-sm-10">
-                        <input type="text" name="id" class="form-control" id="username" placeholder="Ingrese su cÃ©dula">
+                        <input type="text" name="id" class="form-control" id="username" placeholder="Ingrese su Identificación">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <label for="password" class="col-sm-2 control-label">ContraseÃ±a</label>
+                    <label for="password" class="col-sm-2 control-label">Contraseña</label>
                     <div class="col-sm-10">
-                        <input type="password" name="clave" class="form-control" id="password" placeholder="Ingrese su contraseÃ±a">
+                        <input type="password" name="clave" class="form-control" id="password" placeholder="Ingrese su contraseña">
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> Recordar ContraseÃ±a
+                                <input type="checkbox"> Recordar Contraseña
                             </label>
                         </div>
                     </div>

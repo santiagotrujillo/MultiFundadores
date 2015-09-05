@@ -37,4 +37,13 @@ class PropietarioController extends Controller
         return Response::json((new Propietario)->findOrFail($id));
     }
 
+    public function viewLogin()
+    {
+        return view('users.propietariologin');
+    }
+
+    public function viewHome()
+    {
+        return view('users.homePropietario');
+    }
 }
