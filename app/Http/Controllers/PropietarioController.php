@@ -6,6 +6,7 @@ use \Response, \Input, \Hash;
 use App\Http\Requests\PropietarioLoginRequest;
 
 use App\Http\Requests;
+use App\Http\Requests\PropietarioRequest\PropietarioRequestCreate;
 
 class PropietarioController extends Controller
 {
@@ -45,5 +46,16 @@ class PropietarioController extends Controller
     public function viewHome()
     {
         return view('users.homePropietario');
+    }
+
+    public function viewCreate()
+    {
+        return view('propietarios.create');
+    }
+
+    public function create(PropietarioRequestCreate $request)
+    {
+        Propietario::create($request->all());
+        return \Redirect::back()->with('propietario.create', 'Propietario Registrado!');
     }
 }

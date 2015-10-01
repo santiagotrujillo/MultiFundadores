@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="iso-8859-1" lang="en">
+    <meta charset="utf-8">
     <title>Multifamiliar Fundadores</title>
     <meta charset="utf-8">
     <meta name="author" content="pixelhint.com">
@@ -22,13 +24,13 @@
             <a href="#" class="hamburger"></a>
             <nav>
                 <ul>
-                    <li><a href="#">Login</a></li>
                     <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Salón comunal</a></li>
+                    <li><a href="#">Sal&oacute;n comunal</a></li>
                     <li><a href="#">Reglamento</a></li>
                     <li><a href="#">Actas</a></li>
                     <li><a href="#">Manual de Convivencia</a></li>
                 </ul>
+                <a href="#" class="login_btn">Login</a>
             </nav>
         </div>
     </header><!--  end header section  -->
