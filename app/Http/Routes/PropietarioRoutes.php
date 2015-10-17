@@ -18,3 +18,5 @@ Route::get('/propietarios/create','PropietarioController@viewCreate');
 Route::post('/propietarios/create','PropietarioController@create');
 
 Route::get('/propietarios/listar','PropietarioController@listar');
+
+Route::get('/propietarios/borrar/{id}','PropietarioController@borrar');

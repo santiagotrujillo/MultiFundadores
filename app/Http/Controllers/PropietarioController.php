@@ -66,4 +66,11 @@ class PropietarioController extends Controller
     {
         return $this->model->all();
     }
+
+    public function borrar($id)
+    {
+        $propietario = (new Propietario)->find($id);
+        $propietario->delete();
+        return $propietario;
+    }
 }

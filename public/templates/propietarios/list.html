@@ -13,9 +13,32 @@
                     <td align="center" data-title="'Email'" sortable="'email'">{{propietario.email}}</td>
                     <td align="center" data-title="'Creación'" sortable="'created_at'">{{propietario.created_at}}</td>
                     <td align="center" data-title="'Actualización'" sortable="'updated_at'">{{propietario.updated_at}}</td>
+                    <td align="center" data-title=""><button class="btn btn-danger" data-toggle="modal" ng-click= "showDelete(propietario)" data-target="#borrarPropietario"><i class="fa fa-eraser"></i></button></td>
+                    <td align="center" data-title=""><button class="btn btn-primary"><i class="fa fa-pencil"></i></button></td>
+
                 </tr>
             </table>
             <p>Total:{{total}}</p>
+        </div>
+    </div>
+
+    <!-- init modal -->
+
+    <div class="modal fade" id="borrarPropietario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Borrar Propietario</h4>
+                    <aside>Desea eliminar el propietario {{propietarioBorrar.nombre}} {{propietarioBorrar.apellido}} ?</aside>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-success" ng-click="eliminar()">Confirmar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -57,7 +57,7 @@ app.config(["$routeProvider", function($router)
 app.controller("PropietarioController", [
     '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
 {
-    $scope.propietarios = [], $scope.total=0;
+    $scope.propietarios = [], $scope.total=0, $scope.propietarioEditar= {}, $scope.propietarioBorrar ={};
 
     $scope.listar = function(page)
     {
@@ -81,15 +81,30 @@ app.controller("PropietarioController", [
     };
     $scope.listar();
 
-    $scope.eliminar= function(id)
+    $scope.eliminar= function()
     {
-
+        $http.get('/propietarios/borrar/'+$scope.propietarioBorrar.id)
+        .success(function(data, status, headers, config)
+        {
+            alert('Se eliminó el Propietario');
+            window.location.reload();
+        });
     };
 
     $scope.editar= function(id)
     {
 
     };
+
+    $scope.showEdit = function(propietario)
+    {
+        $scope.propietarioEditar = propietario;
+    };
+
+    $scope.showDelete = function(propietario)
+    {
+        $scope.propietarioBorrar = propietario;
+    }
 }]);
 
 
