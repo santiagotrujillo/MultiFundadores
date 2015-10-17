@@ -12,14 +12,17 @@ class PropietarioController extends Controller
 {
     protected $data =[];
 
-    public function __construct()
+    protected $model;
+
+    public function __construct(Propietario $model)
     {
         $this->data = Input::all();
+        $this->model = $model;
     }
 
     public function login(PropietarioLoginRequest $request)
     {
-        $propietario = (new Propietario)->where('id',$this->data['id'])->first();
+        $propietario = $this->model->where('id',$this->data['id'])->first();
         if( Hash::check($this->data['clave'], $propietario->clave) )
         {
             return Response::json($propietario);
@@ -35,7 +38,7 @@ class PropietarioController extends Controller
      */
     public function show($id)
     {
-        return Response::json((new Propietario)->findOrFail($id));
+        return Response::json($this->model->findOrFail($id));
     }
 
     public function viewLogin()
@@ -57,5 +60,10 @@ class PropietarioController extends Controller
     {
         Propietario::create($request->all());
         return \Redirect::back()->with('propietario.create', 'Propietario Registrado!');
+    }
+
+    public function listar()
+    {
+        return $this->model->all();
     }
 }

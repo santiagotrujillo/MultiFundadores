@@ -1,5 +1,7 @@
 @extends('users.home')
 @section('content')
+
+    <a href="/templates/propietarios/list.html">testing</a>
     <div class="row">
         <br/>
         <div class="col-md-offset-2">
@@ -15,7 +17,7 @@
             @endif
 
             @if(Session::has('propietario.create'))
-                <div class="alert alert-info">
+                <div class="alert alert-success">
                     {{Session::get('propietario.create')}}
                 </div>
             @endif
@@ -48,5 +50,6 @@
             </form>
         </div>
     </div>
+
 @endsection
 
