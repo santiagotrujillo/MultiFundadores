@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Propietario;
@@ -7,6 +8,7 @@ use App\Http\Requests\PropietarioLoginRequest;
 
 use App\Http\Requests;
 use App\Http\Requests\PropietarioRequest\PropietarioRequestCreate;
+use App\Http\Requests\PropietarioRequestUpdate;
 
 class PropietarioController extends Controller
 {
@@ -56,10 +58,25 @@ class PropietarioController extends Controller
         return view('propietarios.create');
     }
 
+    /**
+     * @param PropietarioRequestCreate $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function create(PropietarioRequestCreate $request)
     {
         Propietario::create($request->all());
         return \Redirect::back()->with('propietario.create', 'Propietario Registrado!');
+    }
+
+    /**
+     * @param PropietarioRequestUpdate $request
+     * @return mixed
+     */
+    public function update(PropietarioRequestUpdate $request)
+    {
+        $propietario = Propietario::find($this->data['id']);
+        $propietario->fill($this->data);
+        return $propietario->update();
     }
 
     public function listar()

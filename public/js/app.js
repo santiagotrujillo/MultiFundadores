@@ -93,17 +93,41 @@ app.controller("PropietarioController", [
 
     $scope.editar= function(id)
     {
-
+        $http.get('/propietarios/editar/'+$scope.propietarioEditar.id)
+            .success(function(data, status, headers, config)
+        {
+            alert('Se editó el Propietario');
+            window.location.reload();
+        });
     };
 
     $scope.showEdit = function(propietario)
     {
         $scope.propietarioEditar = propietario;
+        $scope.propietario = {};
+
+        $http.get('/propietarios/show/'+$scope.propietarioEditar.id)
+            .success(function(data, status, headers, config)
+            {
+                $scope.propietario = data;
+            });
     };
 
     $scope.showDelete = function(propietario)
     {
         $scope.propietarioBorrar = propietario;
+    };
+    $scope.actualizar = function()
+    {
+        $http.post('/propietarios/update')
+            .success(function(data, status, headers, config)
+            {
+                console.log('success', data);
+            })
+            .error(function(error, status, headers, config)
+            {
+                console.log('error', error);
+            });
     }
 }]);
 
