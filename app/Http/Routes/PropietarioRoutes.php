@@ -26,6 +26,11 @@ Route::get('/propietarios/listar','PropietarioController@listar');
  */
 Route::get('/propietarios/borrar/{id}','PropietarioController@borrar');
 
+/**
+ * Ruta paraa cargar los propietarios pendientes de pago
+ */
+Route::get('/propietarios/pendientes','PropietarioController@pendientes');
+
 // @----------------------@
 
 // ruta para login propietario

@@ -90,4 +90,9 @@ class PropietarioController extends Controller
         $propietario->delete();
         return $propietario;
     }
+
+    public function pendientes()
+    {
+
+    }
 }

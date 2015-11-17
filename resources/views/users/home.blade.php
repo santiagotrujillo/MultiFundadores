@@ -33,10 +33,8 @@
             </li>
             <li class="active"><a href="/usuarios/home"><i class="fa fa-home"></i>Men&uacute; principal</a></li>
 
-            <li>
-                <a href="#"><i class="fa fa-money"></i> Ingresos <div class="pull-right"></div></a>
-            </li>
-            <li><a href="#"><i class="fa fa-credit-card"></i><span class="badge pull-right">9</span>Egresos</a></li>
+            <li><a href="#recaudos"><i class="fa fa-money"></i> Recaudos</a></li>
+            <li><a href="#egresos"><i class="fa fa-credit-card"></i> Egresos</a></li>
             <li><a href="#propietario"><i class="fa fa-users"></i><span class="badge pull-right">42</span>Propietarios</a></li>
             <li><a href="#"><i class="fa fa-building"></i><span class="badge pull-right">NEW</span>Apartamentos</a></li>
             <li><a href="#" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Salir</a></li>

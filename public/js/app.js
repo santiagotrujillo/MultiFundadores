@@ -44,11 +44,13 @@ app.service('TableService', function ($http, $filter) {
 
 app.config(["$routeProvider", function($router)
 {
-    $router.when("/propietario", {
-        templateUrl: "/templates/propietarios/list.html",
+    $router
+      .when("/propietario", {
+        templateUrl: "/templates/propietarios/list.html"
+    }).when("/recaudos", {
+        templateUrl: "./templates/propietarios/index.html"
     }).when("/list", {
-        templateUrl: "./templates/list.html",
-        controller: "ListController"
+        templateUrl: "./templates/list.html"
     }).otherwise({
         redirectTo: '/'
     });
@@ -86,7 +88,7 @@ app.controller("PropietarioController", [
         $http.get('/propietarios/borrar/'+$scope.propietarioBorrar.id)
         .success(function(data, status, headers, config)
         {
-            alert('Se eliminó el Propietario');
+            alert('Se eliminï¿½ el Propietario');
             window.location.reload();
         });
     };
@@ -96,7 +98,7 @@ app.controller("PropietarioController", [
         $http.get('/propietarios/editar/'+$scope.propietarioEditar.id)
             .success(function(data, status, headers, config)
         {
-            alert('Se editó el Propietario');
+            alert('Se editï¿½ el Propietario');
             window.location.reload();
         });
     };
@@ -130,5 +132,82 @@ app.controller("PropietarioController", [
             });
     }
 }]);
+
+app.controller("RecaudoController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.propietarios = [], $scope.total=0, $scope.propietarioEditar= {}, $scope.propietarioBorrar ={};
+
+        $scope.listar = function(page)
+        {
+            $http.get('/propietarios/listar')
+                .success(function(data, status, headers, config)
+                {
+                    $scope.propietarios = $scope.propietarios.concat(data);
+                    $scope.total=$scope.propietarios.length;
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                        total: $scope.propietarios.length,
+                        getData: function($defer, params)
+                        {
+                            TableService.getTable($defer,params,$scope.filter, $scope.propietarios);
+                        }
+                    });
+                    $scope.tableParams.reload();
+                    $scope.$watch("filter.$", function () {
+                        $scope.tableParams.reload();
+                    });
+                });
+        };
+        $scope.listar();
+
+        $scope.eliminar= function()
+        {
+            $http.get('/propietarios/borrar/'+$scope.propietarioBorrar.id)
+                .success(function(data, status, headers, config)
+                {
+                    alert('Se eliminï¿½ el Propietario');
+                    window.location.reload();
+                });
+        };
+
+        $scope.editar= function(id)
+        {
+            $http.get('/propietarios/editar/'+$scope.propietarioEditar.id)
+                .success(function(data, status, headers, config)
+                {
+                    alert('Se editï¿½ el Propietario');
+                    window.location.reload();
+                });
+        };
+
+        $scope.showEdit = function(propietario)
+        {
+            $scope.propietarioEditar = propietario;
+            $scope.propietario = {};
+
+            $http.get('/propietarios/show/'+$scope.propietarioEditar.id)
+                .success(function(data, status, headers, config)
+                {
+                    $scope.propietario = data;
+                });
+        };
+
+        $scope.showDelete = function(propietario)
+        {
+            $scope.propietarioBorrar = propietario;
+        };
+        $scope.actualizar = function()
+        {
+            $http.post('/propietarios/update')
+                .success(function(data, status, headers, config)
+                {
+                    console.log('success', data);
+                })
+                .error(function(error, status, headers, config)
+                {
+                    console.log('error', error);
+                });
+        }
+    }]);
 
 
