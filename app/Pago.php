@@ -2,13 +2,18 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Pago extends Model
 {
-    protected $fillable = ['id' ,'tipo_pago_id','propiedad_id'];
+    protected $fillable = ['id' , 'tipo_pago_id', 'propiedad_id', 'valor', 'descripcion', 'fecha_inicial', 'fecha_final', 'fecha_pago'];
 
     protected $table = 'pagos';
+
+    public $incrementing = true;
+
+    public $primaryKey = 'id';
 
 
     // relaciones

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Pago;
 use App\Propietario;
+use App\Propiedad;
 use \Response, \Input, \Hash;
 use App\Http\Requests\PropietarioLoginRequest;
 
@@ -91,8 +93,51 @@ class PropietarioController extends Controller
         return $propietario;
     }
 
-    public function pendientes()
+    public function cobroAdminPendientes()
     {
+        return (new Pago)->where('fecha_pago', null)->orderby('fecha_inicial', 'asc')->get();
+    }
 
+
+    /** Actual month last day **/
+    private function last_month_day() {
+        $month = date('m');
+        $year = date('Y');
+        $day = date("d", mktime(0,0,0, $month+1, 0, $year));
+
+        return date('Y-m-d', mktime(0,0,0, $month, $day, $year));
+    }
+
+    /** Actual month first day **/
+    private function first_month_day() {
+        $month = date('m');
+        $year = date('Y');
+        return date('Y-m-d', mktime(0,0,0, $month, 1, $year));
+    }
+    public function cobroAdmin()
+    {
+        $mes_actual = \DB::select('select month(NOW()) as mes');
+        $mes_actual = $mes_actual[0]->mes;
+
+        $year_actual = \DB::select('select year(NOW()) as year');
+        $year_actual = $year_actual[0]->year;
+
+        $cobro = [
+            'valor' => 50000,
+            'descripcion' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
+            'fecha_inicial' =>  $this->first_month_day(),
+            'fecha_final' =>  $this->last_month_day(),
+            'tipo_pago_id' =>  1
+        ];
+
+        $propiedades = (new Propiedad)->all();
+        foreach($propiedades as $propiedad)
+        {
+            $pago = (new Pago);
+            $pago->fill($cobro);
+            $pago->propiedad_id = $propiedad->id;
+            $pago->save();
+        }
+        return Response::json(['status => true']);
     }
 }

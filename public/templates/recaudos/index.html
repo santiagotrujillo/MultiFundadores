@@ -6,15 +6,15 @@
             <p>B&uacute;squeda: <input class="form-control" type="text" ng-model="filter.$" /></p>
             <table ng-table="tableParams" class="table table-striped">
                 <tr ng-repeat="propietario in $data">
-                    <td align="center" data-title="'Id'" sortable="'id'">{{propietario.id}}</td>
-                    <td align="center" data-title="'Nombre'" sortable="'nombre'">{{propietario.nombre}}</td>
-                    <td align="center" data-title="'Apellido'" sortable="'apellido'">{{propietario.apellido}}</td>
-                    <td align="center" data-title="'Telefono'" sortable="'telefono'">{{propietario.telefono}}</td>
-                    <td align="center" data-title="'Email'" sortable="'email'">{{propietario.email}}</td>
-                    <td align="center" data-title="'Creaci&oacute;n'" sortable="'created_at'">{{propietario.created_at}}</td>
-                    <td align="center" data-title="'Actualizaci&oacute;n'" sortable="'updated_at'">{{propietario.updated_at}}</td>
-                    <td align="center" data-title=""><button class="btn btn-danger" data-toggle="modal" ng-click= "showDelete(propietario)" data-target="#borrarPropietario"><i class="fa fa-eraser"></i></button></td>
-                    <td align="center" data-title=""><button class="btn btn-primary" data-toggle="modal" ng-click= "showEdit(propietario)" data-target="#editarPropietario" ><i class="fa fa-pencil"></i></button></td>
+                    <td align="center" data-title="'Codigo de Cobro'" sortable="'id'">{{propietario.id}}</td>
+                    <td align="center" data-title="'Tipo de Pago'" sortable="'tipo_pago_id'">{{propietario.tipo_pago_id}}</td>
+                    <td align="center" data-title="'Valor'" sortable="'valor'">{{propietario.valor}}</td>
+                    <td align="center" data-title="'Descripcion'" sortable="'descripcion'">{{propietario.descripcion}}</td>
+                    <td align="center" data-title="'Fecha inicial'" sortable="'fecha_inicial'">{{propietario.fecha_inicial}}</td>
+                    <td align="center" data-title="'Fecha final'" sortable="'fecha_final'">{{propietario.fecha_final}}</td>
+                    <td align="center" data-title="'Propiedad'" sortable="'propiedad_id'">{{propietario.propiedad_id}}</td>
+                    <td align="center" data-title=""><button class="btn btn-success" data-toggle="modal"
+                                                             ng-click= "cargarPago(propietario)" data-target="#pagoPropietario"><i class="fa fa-eraser"></i></button></td>
 
                 </tr>
             </table>
@@ -22,33 +22,14 @@
         </div>
     </div>
 
-    <!-- init modal soft delete owner -->
-    <div class="modal fade" id="borrarPropietario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Borrar Propietario</h4>
-                    <aside>Desea eliminar el propietario {{propietarioBorrar.nombre}} {{propietarioBorrar.apellido}} ?</aside>
-                </div>
-                <div class="modal-body">
-                    <button type="button" class="btn btn-success" ng-click="eliminar()">Confirmar</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end modal soft delete owner -->
 
-    <!-- init modal soft update owner -->
-    <div class="modal fade" id="editarPropietario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <!-- init modal soft pago propietario -->
+    <div class="modal fade" id="pagoPropietario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel2">Editar Propietario</h4>
+                    <h4 class="modal-title" id="myModalLabel2">Pago Propietario</h4>
                     <aside>Informaci&oacute;n del propietario {{propietarioEditar.nombre}} {{propietarioEditar.apellido}} ?</aside>
                 </div>
                 <div class="modal-body">
@@ -70,7 +51,7 @@
                             <input type="password" name="clave" class="form-control" ng-model="propietario.email" placeholder="Digite el correo electronico">
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success" ng-click="actualizar()">Confirmar</button>
+                    <button type="button" class="btn btn-success" ng-click="realizarPago()">Confirmar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
                 </div>
                 <div class="modal-footer">

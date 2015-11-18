@@ -31,7 +31,7 @@
                     <label><h1 style="font-size: medium">Bienvenido, {{ Auth::user()->nombre }} </h1></label>
                 </form>
             </li>
-            <li class="active"><a href="/usuarios/home"><i class="fa fa-home"></i>Men&uacute; principal</a></li>
+            <li class="active"><a href="#operaciones"><i class="fa fa-home"></i>Men&uacute; principal</a></li>
 
             <li><a href="#recaudos"><i class="fa fa-money"></i> Recaudos</a></li>
             <li><a href="#egresos"><i class="fa fa-credit-card"></i> Egresos</a></li>

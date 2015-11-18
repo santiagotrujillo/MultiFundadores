@@ -1,0 +1,65 @@
+<div ng-controller = "OperacionesController">
+
+    <div> <br/> <br/> <br/></div>
+    <div class="row">
+        <div class="col-md-4">
+            <button class="btn btn-success" data-toggle="modal" data-target="#cobrosAdmin"style="button:30px;">Generar cobros de Admisnitracion</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-success"style="button:30px;">Generar cobros de Seguro</button><br/>
+        </div>
+
+        <div class="col-md-4">
+            <button class="btn btn-success"style="button:30px;">Generar cobros de Cerramiento</button><br/>
+        </div>
+        <br/>
+        <div class="col-md-4">
+            <button class="btn btn-primary"style="button:30px;">Generar cobros de Salón</button><br/>
+        </div>
+
+        <div class="col-md-4">
+            <button class="btn btn-primary"style="button:30px;">Generar cobros de Multa incumplimiento</button><br/>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary"style="button:30px;">Generar cobros de Parqueadero</button><br/>
+        </div>               <br/>
+
+        <div class="col-md-4">
+            <button class="btn btn-primary"style="button:30px;">Generar cobros de Multa Otro</button><br/>
+        </div>              <br/>
+    </div>
+
+
+    <!-- init modal soft cobro admin -->
+    <div class="modal fade" id="cobrosAdmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">Cobro Pago Adminsitración</h4>
+                    <aside>Cobro mensual del pago de administracion</aside>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            Recuerde que este cobro se debe generar mensualmente.
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="realizarCobroAdmin()">Confirmar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal soft cobro admin -->
+</div>
+
+<script type="text/javascript">
+    closeModal = function(id)
+    {
+        console.log('entro', '.'+id);
+        $('#'+id).modal('hide');
+    }
+</script>

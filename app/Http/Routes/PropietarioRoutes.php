@@ -15,7 +15,6 @@ Route::post('/propietarios/create','PropietarioController@create');
  */
 Route::post('/propietarios/update','PropietarioController@update');
 
-
 /**
  * Ruta para listar los propietarios
  */
@@ -29,7 +28,12 @@ Route::get('/propietarios/borrar/{id}','PropietarioController@borrar');
 /**
  * Ruta paraa cargar los propietarios pendientes de pago
  */
-Route::get('/propietarios/pendientes','PropietarioController@pendientes');
+Route::get('/propietarios/cobro/admin/pendientes','PropietarioController@cobroAdminPendientes');
+
+/**
+ * Ruta paraa cargar los propietarios pendientes de pago
+ */
+Route::post('/propietarios/cobro/admin','PropietarioController@cobroAdmin');
 
 // @----------------------@
 

@@ -19,5 +19,7 @@ require __DIR__.'/Routes/BaseRoutes.php';
 
 Route::get('test', function ()
 {
-   return Hash::make('carvajal123');
+    $month = date('m');
+    $year = date('Y');
+    return date('Y-m-d', mktime(0,0,0, $month, 1, $year));
 });

@@ -45,14 +45,16 @@ app.service('TableService', function ($http, $filter) {
 app.config(["$routeProvider", function($router)
 {
     $router
-      .when("/propietario", {
+    .when("/propietario", {
         templateUrl: "/templates/propietarios/list.html"
-    }).when("/recaudos", {
-        templateUrl: "./templates/propietarios/index.html"
-    }).when("/list", {
-        templateUrl: "./templates/list.html"
+    })
+    .when("/recaudos", {
+        templateUrl: "/templates/recaudos/index.html"
+    })
+    .when("/operaciones", {
+        templateUrl: "/templates/operaciones/index.html"
     }).otherwise({
-        redirectTo: '/'
+            redirectTo: '/operaciones'
     });
 }]);
 
@@ -140,7 +142,7 @@ app.controller("RecaudoController", [
 
         $scope.listar = function(page)
         {
-            $http.get('/propietarios/listar')
+            $http.get('/propietarios/cobro/admin/pendientes')
                 .success(function(data, status, headers, config)
                 {
                     $scope.propietarios = $scope.propietarios.concat(data);
@@ -160,27 +162,7 @@ app.controller("RecaudoController", [
         };
         $scope.listar();
 
-        $scope.eliminar= function()
-        {
-            $http.get('/propietarios/borrar/'+$scope.propietarioBorrar.id)
-                .success(function(data, status, headers, config)
-                {
-                    alert('Se eliminï¿½ el Propietario');
-                    window.location.reload();
-                });
-        };
-
-        $scope.editar= function(id)
-        {
-            $http.get('/propietarios/editar/'+$scope.propietarioEditar.id)
-                .success(function(data, status, headers, config)
-                {
-                    alert('Se editï¿½ el Propietario');
-                    window.location.reload();
-                });
-        };
-
-        $scope.showEdit = function(propietario)
+        $scope.cargarPago = function(propietario)
         {
             $scope.propietarioEditar = propietario;
             $scope.propietario = {};
@@ -192,13 +174,9 @@ app.controller("RecaudoController", [
                 });
         };
 
-        $scope.showDelete = function(propietario)
+        $scope.realizarPago = function()
         {
-            $scope.propietarioBorrar = propietario;
-        };
-        $scope.actualizar = function()
-        {
-            $http.post('/propietarios/update')
+            $http.post('/propietarios/pagar')
                 .success(function(data, status, headers, config)
                 {
                     console.log('success', data);
@@ -210,4 +188,21 @@ app.controller("RecaudoController", [
         }
     }]);
 
+app.controller("OperacionesController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.realizarCobroAdmin = function ()
+        {
+            closeModal('cobrosAdmin');
+            $http.post('/propietarios/cobro/admin')
+                .success(function(data, status, headers, config)
+                {
+                    alert('Se cargaron los cobros de adminsitración correctamente')
+                })
+                .error(function(error, status, headers, config)
+                {
+                    alert('Hubo un error')
+                });
+        };
 
+    }]);
