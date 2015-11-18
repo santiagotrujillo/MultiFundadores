@@ -53,8 +53,12 @@ app.config(["$routeProvider", function($router)
     })
     .when("/operaciones", {
         templateUrl: "/templates/operaciones/index.html"
-    }).otherwise({
-            redirectTo: '/operaciones'
+    })
+    .when("/egresos", {
+        templateUrl: "/templates/egresos/index.html"
+    })
+    .otherwise({
+        redirectTo: '/operaciones'
     });
 }]);
 
@@ -188,21 +192,36 @@ app.controller("RecaudoController", [
         }
     }]);
 
-app.controller("OperacionesController", [
-    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+app.controller("OperacionesController", ['$scope', '$http', function($scope, $http)
+{
+    $scope.realizarCobroAdmin = function ()
     {
-        $scope.realizarCobroAdmin = function ()
-        {
-            closeModal('cobrosAdmin');
-            $http.post('/propietarios/cobro/admin')
-                .success(function(data, status, headers, config)
-                {
-                    alert('Se cargaron los cobros de adminsitración correctamente')
-                })
-                .error(function(error, status, headers, config)
-                {
-                    alert('Hubo un error')
-                });
-        };
+        closeModal('cobrosAdmin');
+        $http.post('/propietarios/cobro/admin')
+            .success(function(data, status, headers, config)
+            {
+                alert('Se cargaron los cobros de adminsitración correctamente')
+            })
+            .error(function(error, status, headers, config)
+            {
+                alert('Hubo un error')
+            });
+    }
+}]);
 
-    }]);
+app.controller("EgresosController", ['$scope', '$http', function($scope, $http)
+{
+    $scope.realizarCobroAdmin = function ()
+    {
+        closeModal('cobrosAdmin');
+        $http.post('/propietarios/cobro/admin')
+            .success(function(data, status, headers, config)
+            {
+                alert('Se cargaron los cobros de adminsitración correctamente')
+            })
+            .error(function(error, status, headers, config)
+            {
+                alert('Hubo un error')
+            });
+    };
+}]);
