@@ -35,6 +35,11 @@ Route::get('/propietarios/cobro/admin/pendientes','PropietarioController@cobroAd
  */
 Route::post('/propietarios/cobro/admin','PropietarioController@cobroAdmin');
 
+/**
+ * Ruta para realizar el pago d euna deuda
+ */
+Route::post('/propietarios/abonar','PropietarioController@abonar');
+
 // @----------------------@
 
 // ruta para login propietario

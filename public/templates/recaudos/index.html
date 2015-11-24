@@ -6,10 +6,10 @@
             <p>B&uacute;squeda: <input class="form-control" type="text" ng-model="filter.$" /></p>
             <table ng-table="tableParams" class="table table-striped">
                 <tr ng-repeat="propietario in $data">
-                    <td align="center" data-title="'Codigo de Cobro'" sortable="'id'">{{propietario.id}}</td>
-                    <td align="center" data-title="'Tipo de Pago'" sortable="'tipo_pago_id'">{{propietario.tipo_pago_id}}</td>
-                    <td align="center" data-title="'Valor'" sortable="'valor'">{{propietario.valor}}</td>
-                    <td align="center" data-title="'Descripcion'" sortable="'descripcion'">{{propietario.descripcion}}</td>
+                    <td align="center" data-title="'C&oacute;digo de Cobro'" sortable="'id'">{{propietario.id}}</td>
+                    <td align="center" data-title="'Tipo de Pago'" sortable="'tipo_pago.concepto'">{{propietario.tipo_pago.concepto}}</td>
+                    <td align="center" data-title="'Valor'" sortable="'deuda'">{{propietario.deuda}}</td>
+                    <td align="center" data-title="'Descripci&oacute;n'" sortable="'descripcion'">{{propietario.descripcion}}</td>
                     <td align="center" data-title="'Fecha inicial'" sortable="'fecha_inicial'">{{propietario.fecha_inicial}}</td>
                     <td align="center" data-title="'Fecha final'" sortable="'fecha_final'">{{propietario.fecha_final}}</td>
                     <td align="center" data-title="'Propiedad'" sortable="'propiedad_id'">{{propietario.propiedad_id}}</td>
@@ -30,25 +30,13 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel2">Pago Propietario</h4>
-                    <aside>Informaci&oacute;n del propietario {{propietarioEditar.nombre}} {{propietarioEditar.apellido}} ?</aside>
+                    <aside>Pago del propietario</aside>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Nombre*</label>
-                            <input type="text" name="nombre" class="form-control" ng-model="propietario.nombre" placeholder="Digite el Nombre">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Apellido*</label>
-                            <input type="text"  name="apellido" class="form-control" ng-model="propietario.apellido" placeholder="Digite el apellido">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Telefono</label>
-                            <input type="numeric" name="telefono" class="form-control"  ng-model="propietario.telefono" placeholder="Digite el telefono">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Email*</label>
-                            <input type="password" name="clave" class="form-control" ng-model="propietario.email" placeholder="Digite el correo electronico">
+                            <label>Valor</label>
+                            <input type="number" required name="nombre" class="form-control" ng-model="propietarioPago.valor_abono" placeholder="Ingrese el valor">
                         </div>
                     </div>
                     <button type="button" class="btn btn-success" ng-click="realizarPago()">Confirmar</button>

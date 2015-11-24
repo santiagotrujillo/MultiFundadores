@@ -1,20 +1,29 @@
 <div ng-controller="EgresosController">
-    <div class="row">
+    <div class="table-responsive">
         <br/>
         <br/>
         <div class="col-md-6">
             <label>Descripción*</label>
-            <input type="text" name="nombre" class="form-control" ng-model="propietario.nombre" placeholder="Digite el Nombre">
+            <input type="text" name="nombre" class="form-control" ng-model="propietario.nombre" placeholder="Digite el concepto">
         </div>
         <div class="col-md-6">
             <label>Valor*</label>
-            <input type="text"  name="apellido" class="form-control" ng-model="propietario.apellido" placeholder="Digite el apellido">
+            <input type="text"  name="apellido" class="form-control" ng-model="propietario.apellido" placeholder="Digite el valor">
         </div>
         <div class="col-md-6">
-            <label>Categoria</label>
-            <input type="numeric" name="telefono" class="form-control"  ng-model="propietario.telefono" placeholder="Digite el telefono">
+            <label>Categoría</label>
+            <input type="numeric" name="telefono" class="form-control"  ng-model="propietario.telefono" placeholder="Digite el teléfono">
+            <br>
+            <br>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-success" ng-click="realizarPago()">Confirmar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
+            </div>
         </div>
+
+
+
     </div>
-    <button type="button" class="btn btn-success" ng-click="realizarPago()">Confirmar</button>
-    <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
+
+
 </div>

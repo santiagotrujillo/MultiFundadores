@@ -142,7 +142,7 @@ app.controller("PropietarioController", [
 app.controller("RecaudoController", [
     '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
     {
-        $scope.propietarios = [], $scope.total=0, $scope.propietarioEditar= {}, $scope.propietarioBorrar ={};
+        $scope.propietarios = [], $scope.total=0, $scope.propietarioPago= {};
 
         $scope.listar = function(page)
         {
@@ -168,27 +168,27 @@ app.controller("RecaudoController", [
 
         $scope.cargarPago = function(propietario)
         {
-            $scope.propietarioEditar = propietario;
+            $scope.propietarioPago = propietario;
             $scope.propietario = {};
-
-            $http.get('/propietarios/show/'+$scope.propietarioEditar.id)
-                .success(function(data, status, headers, config)
-                {
-                    $scope.propietario = data;
-                });
         };
 
         $scope.realizarPago = function()
         {
-            $http.post('/propietarios/pagar')
-                .success(function(data, status, headers, config)
-                {
-                    console.log('success', data);
-                })
-                .error(function(error, status, headers, config)
-                {
-                    console.log('error', error);
-                });
+            $http({
+                method: 'POST',
+                url: '/propietarios/abonar',
+                data: $scope.propietarioPago,
+            })
+            .success(function(data, status, headers, config)
+            {
+                alert("SE realizo el pago satisfactoriamente")
+                window.location.reload();
+            })
+            .error(function(error, status, headers, config)
+            {
+                alert(error["message"])
+                window.location.reload();
+            });
         }
     }]);
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pago extends Model
 {
-    protected $fillable = ['id' , 'tipo_pago_id', 'propiedad_id', 'valor', 'descripcion', 'fecha_inicial', 'fecha_final', 'fecha_pago'];
+    protected $fillable = ['id' , 'tipo_pago_id', 'propiedad_id', 'valor', 'descripcion', 'fecha_inicial', 'fecha_final', 'valor_pagado'];
 
     protected $table = 'pagos';
 
@@ -15,7 +15,13 @@ class Pago extends Model
 
     public $primaryKey = 'id';
 
+    protected $appends = ['deuda'];
 
+
+    public function getDeudaAttribute()
+    {
+        return $this->attributes['valor']- $this->attributes['valor_pagado'];
+    }
     // relaciones
 
     public function tipo_pago()
@@ -26,6 +32,11 @@ class Pago extends Model
     public function propiedad()
     {
         return $this->belongsTo(__NAMESPACE__.'\Propiedad','propiedad_id');
+
+    }
+    public function abonos()
+    {
+        return $this->belongsTo(__NAMESPACE__.'\Abono');
     }
 
 }

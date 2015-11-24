@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Abono;
 use App\Pago;
 use App\Propietario;
 use App\Propiedad;
@@ -95,7 +96,30 @@ class PropietarioController extends Controller
 
     public function cobroAdminPendientes()
     {
-        return (new Pago)->where('fecha_pago', null)->orderby('fecha_inicial', 'asc')->get();
+        return (new Pago)->with(['tipo_pago'])
+            ->whereRaw('valor_pagado < valor')->orWhere('valor_pagado',null)->orderby('fecha_inicial', 'asc')->get();
+    }
+
+
+    public function abonar(Requests\PropietarioPagoRequest $request)
+    {
+        $data = \Input::all();
+        $pago = (new Pago)->find($data["id"]);
+        if($data['valor_abono'] <= ($pago->valor -$pago->valor_pagado))
+        {
+                $pago->valor_pagado = $pago->valor_pagado + $data['valor_abono'];
+                $pago->update();
+                Abono::create(['valor' => $data['valor_abono'], 'pago_id' => $pago->id ]);
+                return Response::json(['status' => true],200);
+        }
+        else if($pago->valor_pagado == $pago->valor)
+            {
+                return Response::json(['status' => false, 'message' => 'Usted ya pago la totalidad de la deuda.'],400);
+            }
+        else
+        {
+            return Response::json(['status' => false, 'message' => 'Lo sentimos el pago sobrepasa el valor de la deuda'],400);
+        }
     }
 
 
