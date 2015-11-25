@@ -21,12 +21,6 @@ class Abono extends Model
 
     public $primaryKey = 'id';
 
-    protected $hidden = array(
-        'deleted_at',
-        'created_at',
-        'updated_at'
-    );
-
 
     // relaciones
 

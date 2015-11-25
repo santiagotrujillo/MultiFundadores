@@ -183,4 +183,9 @@ class PropietarioController extends Controller
         }
         return false;
     }
+
+    public function abonosPago($id)
+    {
+        return (new Abono)->where('pago_id',$id)->get();
+    }
 }

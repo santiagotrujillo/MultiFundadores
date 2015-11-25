@@ -60,6 +60,9 @@ app.config(["$routeProvider", function($router)
     .when("/pagos", {
         templateUrl: "/templates/pagos/index.html"
     })
+    .when("/pago/profile/:id", {
+        templateUrl: "/templates/pagos/profile.html"
+    })
     .otherwise({
         redirectTo: '/operaciones'
     });
@@ -258,3 +261,29 @@ app.controller("PagosController", [
         };
         $scope.listar();
     }]);
+
+app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
+{
+    $scope.abonos = [], $scope.total=0;
+    $scope.listar = function(page)
+    {
+        $http.get('/propietarios/abonos/pago/'+$params.id)
+            .success(function(data, status, headers, config)
+            {
+                $scope.abonos = $scope.abonos.concat(data);
+                $scope.total=$scope.abonos.length;
+                $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                    total: $scope.abonos.length,
+                    getData: function($defer, params)
+                    {
+                        TableService.getTable($defer,params,$scope.filter, $scope.abonos);
+                    }
+                });
+                $scope.tableParams.reload();
+                $scope.$watch("filter.$", function () {
+                    $scope.tableParams.reload();
+                });
+            });
+    };
+    $scope.listar();
+}]);
