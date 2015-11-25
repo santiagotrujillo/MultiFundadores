@@ -6,7 +6,7 @@
             <p>B&uacute;squeda: <input class="form-control" type="text" ng-model="filter.$" /></p>
             <table ng-table="tableParams" class="table table-striped">
                 <tr ng-repeat="propietario in $data">
-                    <td align="center" data-title="'C&oacute;digo de Cobro'" sortable="'id'">{{propietario.id}}</td>
+                    <td align="center" data-title="'C&oacute;digo de Cobro'" sortable="'id'"><a href="#/pago/profile/{{propietario.id}}">{{propietario.id}}</a></td>
                     <td align="center" data-title="'Tipo de Pago'" sortable="'tipo_pago.concepto'">{{propietario.tipo_pago.concepto}}</td>
                     <td align="center" data-title="'Valor'" sortable="'deuda'">{{propietario.deuda}}</td>
                     <td align="center" data-title="'Descripci&oacute;n'" sortable="'descripcion'">{{propietario.descripcion}}</td>
