@@ -13,13 +13,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Abono extends Model
 {
-    protected $fillable = ['id' ,'valor', 'pago_id'];
+    protected $fillable = ['id' ,'valor', 'pago_id', 'forma_pago'];
 
     protected $table = 'abonos';
 
     public $incrementing = true;
 
     public $primaryKey = 'id';
+
+    protected $hidden = array(
+        'deleted_at',
+        'created_at',
+        'updated_at'
+    );
 
 
     // relaciones

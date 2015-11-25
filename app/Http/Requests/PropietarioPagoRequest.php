@@ -25,7 +25,8 @@ class PropietarioPagoRequest extends Request
     {
         return [
             'id' => 'required|numeric|exists:pagos,id',
-            'valor_abono'   => 'required|numeric'
+            'valor_abono'   => 'required|numeric',
+            'forma_pago'    => 'required'
         ];
     }
 }

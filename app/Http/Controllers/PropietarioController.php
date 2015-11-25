@@ -109,8 +109,8 @@ class PropietarioController extends Controller
         {
                 $pago->valor_pagado = $pago->valor_pagado + $data['valor_abono'];
                 $pago->update();
-                Abono::create(['valor' => $data['valor_abono'], 'pago_id' => $pago->id ]);
-                return Response::json(['status' => true],200);
+                Abono::create(['valor' => $data['valor_abono'], 'pago_id' => $pago->id, 'forma_pago' => $data['forma_pago']]);
+                return Response::json(['status' => 'true'], 200);
         }
         else if($pago->valor_pagado == $pago->valor)
             {

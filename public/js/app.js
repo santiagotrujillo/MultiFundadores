@@ -181,13 +181,15 @@ app.controller("RecaudoController", [
             })
             .success(function(data, status, headers, config)
             {
-                alert("SE realizo el pago satisfactoriamente")
-                window.location.reload();
+                console.log('data', data)
+                //alert("SE realizo el pago satisfactoriamente")
+                //window.location.reload();
             })
             .error(function(error, status, headers, config)
             {
-                alert(error["message"])
-                window.location.reload();
+                console.log('error', error)
+                //alert(error["message"])
+                //window.location.reload();
             });
         }
     }]);

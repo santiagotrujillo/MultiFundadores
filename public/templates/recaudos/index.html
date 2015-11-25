@@ -38,6 +38,13 @@
                             <label>Valor</label>
                             <input type="number" required name="nombre" class="form-control" ng-model="propietarioPago.valor_abono" placeholder="Ingrese el valor">
                         </div>
+                        <div class="col-md-6">
+                            <label>Tipo de Pago*</label>
+                            <select type="text"  name="forma_pago" class="form-control" ng-model="propietarioPago.forma_pago">
+                                <option value="EFECTIVO">EFECTIVO</option>
+                                <option value="CONSIGNACION">CONSIGNACION</option>
+                            </select>
+                        </div>
                     </div>
                     <button type="button" class="btn btn-success" ng-click="realizarPago()">Confirmar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
