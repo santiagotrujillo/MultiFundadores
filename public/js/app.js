@@ -57,6 +57,9 @@ app.config(["$routeProvider", function($router)
     .when("/egresos", {
         templateUrl: "/templates/egresos/index.html"
     })
+    .when("/pagos", {
+        templateUrl: "/templates/pagos/index.html"
+    })
     .otherwise({
         redirectTo: '/operaciones'
     });
@@ -182,14 +185,14 @@ app.controller("RecaudoController", [
             .success(function(data, status, headers, config)
             {
                 console.log('data', data)
-                //alert("SE realizo el pago satisfactoriamente")
-                //window.location.reload();
+                alert("SE realizo el pago satisfactoriamente")
+                window.location.reload();
             })
             .error(function(error, status, headers, config)
             {
                 console.log('error', error)
-                //alert(error["message"])
-                //window.location.reload();
+                alert(error["message"])
+                window.location.reload();
             });
         }
     }]);
@@ -206,7 +209,7 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
             })
             .error(function(error, status, headers, config)
             {
-                alert('Hubo un error')
+                alert(error["message"])
             });
     }
 }]);
@@ -227,3 +230,31 @@ app.controller("EgresosController", ['$scope', '$http', function($scope, $http)
             });
     };
 }]);
+
+app.controller("PagosController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.pagos = [], $scope.total=0;
+
+        $scope.listar = function(page)
+        {
+            $http.get('/propietarios/pagos/relizados')
+                .success(function(data, status, headers, config)
+                {
+                    $scope.pagos = $scope.pagos.concat(data);
+                    $scope.total=$scope.pagos.length;
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                        total: $scope.pagos.length,
+                        getData: function($defer, params)
+                        {
+                            TableService.getTable($defer,params,$scope.filter, $scope.pagos);
+                        }
+                    });
+                    $scope.tableParams.reload();
+                    $scope.$watch("filter.$", function () {
+                        $scope.tableParams.reload();
+                    });
+                });
+        };
+        $scope.listar();
+    }]);

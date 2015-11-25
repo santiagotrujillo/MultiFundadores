@@ -146,6 +146,7 @@ class PropietarioController extends Controller
         $year_actual = \DB::select('select year(NOW()) as year');
         $year_actual = $year_actual[0]->year;
 
+        if(!$this->validateDate()){
         $cobro = [
             'valor' => 50000,
             'descripcion' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
@@ -162,6 +163,24 @@ class PropietarioController extends Controller
             $pago->propiedad_id = $propiedad->id;
             $pago->save();
         }
-        return Response::json(['status => true']);
+            return Response::json(['status => true'],200);
+        }
+
+        return Response::json(['message'=>'El mes actual ya tiene facturas generadas de admon'],406);
+    }
+
+    public function pagosRealizados()
+    {
+        return (new Pago)->whereRaw('valor = valor_pagado')->with(['tipo_pago'])->get();
+    }
+
+    private function validateDate()
+    {
+        $pago = (new Pago)->whereRaw('date(created_at) = date(now())')->first();
+        if( count($pago) > 0)
+        {
+            return true;
+        }
+        return false;
     }
 }

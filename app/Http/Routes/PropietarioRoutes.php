@@ -56,4 +56,10 @@ Route::get('/propietarios/{id}/pagos','PropietarioController@show');
 Route::get('/propietarios/create','PropietarioController@viewCreate');
 
 
+/**
+ * @Ruta para traer los pagos ...
+ */
+Route::get('/propietarios/pagos/relizados','PropietarioController@pagosRealizados');
+
+
 
