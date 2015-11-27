@@ -148,7 +148,7 @@ app.controller("PropietarioController", [
 app.controller("RecaudoController", [
     '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
     {
-        $scope.propietarios = [], $scope.total=0, $scope.propietarioPago= {};
+        $scope.propietarios = [], $scope.total=0, $scope.propietarioPago= {}, $scope.pagorealizado = {};
 
         $scope.listar = function(page)
         {
@@ -187,9 +187,35 @@ app.controller("RecaudoController", [
             })
             .success(function(data, status, headers, config)
             {
-                console.log('data', data)
-                alert("SE realizo el pago satisfactoriamente")
+                console.log('data', data);
+                $scope.pagorealizado= data;
+
+                $scope.cerrarModalPago();
+
+                $scope.abrirModalCargoAbono();
+                //alert("Se realizó el pago satisfactoriamente")
+                //window.location.reload();
+            })
+            .error(function(error, status, headers, config)
+            {
+                console.log('error', error)
+                alert(error["message"])
                 window.location.reload();
+            });
+        };
+
+        $scope.deshacerAbono = function()
+        {
+            $scope.deshacerPago = {pago_id : $scope.pagorealizado.factura.id, abono_id : $scope.pagorealizado.abono.id };
+
+            $http({
+                method: 'POST',
+                url: '/propietarios/deshacer/abono',
+                data: $scope.deshacerPago,
+            })
+            .success(function(data, status, headers, config)
+            {
+                console.log('data', data);
             })
             .error(function(error, status, headers, config)
             {
@@ -198,6 +224,16 @@ app.controller("RecaudoController", [
                 window.location.reload();
             });
         }
+
+        $scope.cerrarModalPago = function()
+        {
+            cerrarModalPago()
+        };
+
+        $scope.abrirModalCargoAbono = function()
+        {
+            abrirModalCargoAbono()
+        };
     }]);
 
 app.controller("OperacionesController", ['$scope', '$http', function($scope, $http)
@@ -287,3 +323,13 @@ app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'Ta
     };
     $scope.listar();
 }]);
+
+
+function cerrarModalPago()
+{
+    $('#pagoPropietario').modal('hide');
+}
+function abrirModalCargoAbono()
+{
+    $('#cargoAbono').modal('show');
+}

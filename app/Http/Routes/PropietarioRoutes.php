@@ -57,14 +57,19 @@ Route::get('/propietarios/create','PropietarioController@viewCreate');
 
 
 /**
- * @Ruta para traer los pagos ...
+ * @Ruta para traer los pagos  realizados
  */
 Route::get('/propietarios/pagos/relizados','PropietarioController@pagosRealizados');
 
 /**
- * @Ruta para traer los abonos ...
+ * @Ruta para traer los abonos cargados a un pago
  */
 Route::get('/propietarios/abonos/pago/{id}','PropietarioController@abonosPago');
+
+/**
+ * @Ruta para deshacer el abono realizado a un pago
+ */
+Route::post('/propietarios/deshacer/abono','PropietarioController@deshacerAbono');
 
 
 

@@ -12,6 +12,7 @@ use App\Http\Requests\PropietarioLoginRequest;
 use App\Http\Requests;
 use App\Http\Requests\PropietarioRequest\PropietarioRequestCreate;
 use App\Http\Requests\PropietarioRequestUpdate;
+use App\Http\Requests\PropietarioDeshacerAbonoRequest;
 
 class PropietarioController extends Controller
 {
@@ -109,8 +110,8 @@ class PropietarioController extends Controller
         {
                 $pago->valor_pagado = $pago->valor_pagado + $data['valor_abono'];
                 $pago->update();
-                Abono::create(['valor' => $data['valor_abono'], 'pago_id' => $pago->id, 'forma_pago' => $data['forma_pago']]);
-                return Response::json(['status' => 'true'], 200);
+                $abono = Abono::create(['valor' => $data['valor_abono'], 'pago_id' => $pago->id, 'forma_pago' => $data['forma_pago']]);
+                return Response::json(['status' => 'true', 'abono' => $abono, 'factura' => $pago ], 200);
         }
         else if($pago->valor_pagado == $pago->valor)
             {
@@ -148,8 +149,8 @@ class PropietarioController extends Controller
 
         if(!$this->validateDate()){
         $cobro = [
-            'valor' => 50000,
-            'descripcion' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
+            'valor' => 90000,
+            'descripción' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
             'fecha_inicial' =>  $this->first_month_day(),
             'fecha_final' =>  $this->last_month_day(),
             'tipo_pago_id' =>  1
@@ -166,7 +167,7 @@ class PropietarioController extends Controller
             return Response::json(['status => true'],200);
         }
 
-        return Response::json(['message'=>'El mes actual ya tiene facturas generadas de admon'],406);
+        return Response::json(['message'=>'El mes actual ya tiene facturas generadas de administración'],406);
     }
 
     public function pagosRealizados()
@@ -187,5 +188,16 @@ class PropietarioController extends Controller
     public function abonosPago($id)
     {
         return (new Abono)->where('pago_id',$id)->get();
+    }
+
+    public function deshacerAbono(PropietarioDeshacerAbonoRequest $request)
+    {
+        $data = \Input::all();
+        $abono = (new Abono)->find($data['abono_id']);
+        $pago = (new Pago)->find($data['pago_id']);
+        $pago->valor_pagado = $pago->valor_pagado - $abono->valor;
+        $pago->update();
+        $abono->delete();
+        return Response::json($pago);
     }
 }

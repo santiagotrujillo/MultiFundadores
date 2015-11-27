@@ -54,5 +54,39 @@
             </div>
         </div>
     </div>
-    <!-- end modal soft update owner -->
+    <!-- end modal soft pago propietario -->
+
+
+    <!-- init modal soft cargo abono -->
+    <div class="modal fade" id="cargoAbono" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">Abono Realizado</h4>
+                    <aside><label>Propiedad: </label>{{pagorealizado.factura.propiedad_id}}</aside>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Forma de Pago : </label> {{pagorealizado.abono.forma_pago}}<br/>
+                            <label>Codigo Abono : </label> {{pagorealizado.abono.id}}<br/>
+                            <label>Fecha de Pago : </label> {{pagorealizado.abono.created_at}}<br/>
+                            <label>Valor del Abono : </label> {{pagorealizado.abono.valor}}<br/>
+                            <label>Periodo de Cobro: </label> <br/>
+                            {{pagorealizado.factura.fecha_inicial}} - {{pagorealizado.factura.fecha_final}}<br/>
+                            <label>Valor Restante: </label> {{pagorealizado.factura.deuda}}<br/>
+                            <label>Total pagado: </label> {{pagorealizado.factura.valor_pagado}}<br/>
+                            <label>Valor de la Factura: </label> {{pagorealizado.factura.valor}}<br/>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="realizarPago()">Confirmar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deshacerAbono()">Deshacer</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal soft pago cargo abono -->
 </div>

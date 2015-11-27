@@ -10,9 +10,12 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Abono extends Model
 {
+    use SoftDeletes;
+    
     protected $fillable = ['id' ,'valor', 'pago_id', 'forma_pago'];
 
     protected $table = 'abonos';
