@@ -40,21 +40,10 @@ Route::post('/propietarios/cobro/admin','PropietarioController@cobroAdmin');
  */
 Route::post('/propietarios/abonar','PropietarioController@abonar');
 
-// @----------------------@
-
-// ruta para login propietario
-Route::get('/propietarios/login', 'PropietarioController@viewlogin');
-
-Route::get('/propietarios/home', 'PropietarioController@viewHome');
-
-//Ruta para consultar pagos
-Route::get('/propietarios/{id}/pagos','PropietarioController@show');
-
 /**
  * @Ruta para traer la vista de crear un propietario
  */
 Route::get('/propietarios/create','PropietarioController@viewCreate');
-
 
 /**
  * @Ruta para traer los pagos  realizados
@@ -70,6 +59,23 @@ Route::get('/propietarios/abonos/pago/{id}','PropietarioController@abonosPago');
  * @Ruta para deshacer el abono realizado a un pago
  */
 Route::post('/propietarios/deshacer/abono','PropietarioController@deshacerAbono');
+
+/**
+ * @Ruta para cargar la vista de login de propietario
+ */
+Route::get('/propietarios/login', 'PropietarioController@viewlogin');
+
+// @----------------------@
+
+/**
+ * @Ruta para procesar el login de propietarios
+ */
+Route::post('/propietarios/login', 'PropietarioController@login');
+
+Route::get('/propietarios/home', 'PropietarioController@viewHome');
+
+//Ruta para consultar pagos
+Route::get('/propietarios/{id}/pagos','PropietarioController@show');
 
 
 

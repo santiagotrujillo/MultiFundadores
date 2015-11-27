@@ -29,8 +29,8 @@
                     <li><a href="#">Reglamento</a></li>
                 </ul>
                 <a href="/usuarios/login" class="login_btn">Usuarios</a>
-                <a href="#" class="login_btn">Propietarios</a>
-                <a href="#" class="login_btn">Junta</a>
+                <a href="/propietarios/login" class="login_btn">Propietarios</a>
+                <a href="/usuarios/login" class="login_btn">Junta</a>
             </nav>
         </div>
     </header><!--  end header section  -->

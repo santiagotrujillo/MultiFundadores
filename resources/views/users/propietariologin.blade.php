@@ -28,7 +28,7 @@
             </div>
         @endif
 
-        <form class="form-horizontal templatemo-signin-form" role="form" action="/usuarios/login" method="POST">
+        <form class="form-horizontal templatemo-signin-form" role="form" action="/propietarios/login" method="POST">
             <div class="form-group">
                 <div class="col-md-12">
                     <label for="username" class="col-sm-2 control-label">Identificación</label>
