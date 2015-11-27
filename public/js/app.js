@@ -193,8 +193,6 @@ app.controller("RecaudoController", [
                 $scope.cerrarModalPago();
 
                 $scope.abrirModalCargoAbono();
-                //alert("Se realizó el pago satisfactoriamente")
-                //window.location.reload();
             })
             .error(function(error, status, headers, config)
             {
@@ -215,6 +213,7 @@ app.controller("RecaudoController", [
             })
             .success(function(data, status, headers, config)
             {
+                alert("El abono fue deshecho, no se realizo el pago");
                 console.log('data', data);
             })
             .error(function(error, status, headers, config)
@@ -223,7 +222,12 @@ app.controller("RecaudoController", [
                 alert(error["message"])
                 window.location.reload();
             });
-        }
+        };
+
+        $scope.verConfirmacion = function()
+        {
+            verConfirmacion();
+        };
 
         $scope.cerrarModalPago = function()
         {
@@ -329,7 +333,15 @@ function cerrarModalPago()
 {
     $('#pagoPropietario').modal('hide');
 }
+
 function abrirModalCargoAbono()
 {
     $('#cargoAbono').modal('show');
+}
+
+function verConfirmacion()
+{
+    $('#cargoAbono').modal('hide');
+    alert("Se realizó el pago satisfactoriamente")
+    window.location.reload();
 }
