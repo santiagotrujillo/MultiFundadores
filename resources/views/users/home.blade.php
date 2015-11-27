@@ -37,7 +37,7 @@
             <li><a href="#egresos"><i class="fa fa-credit-card"></i> Egresos</a></li>
             <li><a href="#propietario"><i class="fa fa-users"></i>Propietarios</a></li>
             <li><a href="#pagos"><i class="fa fa-bank"></i>Pagos Totales</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Salir</a></li>
+            <li><a href="/usuarios/salir"><i class="fa fa-sign-out"></i>Salir</a></li>
         </ul>
     </div><!--/.navbar-collapse -->
 

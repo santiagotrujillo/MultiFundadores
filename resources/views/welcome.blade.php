@@ -27,10 +27,10 @@
                     <li><a href="#">Eventos</a></li>
                     <li><a href="#">Sal&oacute;n comunal</a></li>
                     <li><a href="#">Reglamento</a></li>
-                    <li><a href="#">Actas</a></li>
-                    <li><a href="#">Manual de Convivencia</a></li>
                 </ul>
-                <a href="#" class="login_btn">Login</a>
+                <a href="/usuarios/login" class="login_btn">Usuarios</a>
+                <a href="#" class="login_btn">Propietarios</a>
+                <a href="#" class="login_btn">Junta</a>
             </nav>
         </div>
     </header><!--  end header section  -->
@@ -54,7 +54,7 @@
     </div>
 
     <div class="copyrights wrapper">
-        Copyright © 2015 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">Pixelhint.com</a>. All Rights Reserved.
+        Copyright © 2015 <a href="http://multifundadoores.com">Multifundadoores.com</a>. All Rights Reserved.
     </div>
 </footer><!--  end footer  -->
 

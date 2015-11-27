@@ -22,47 +22,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/users/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7941176">
-              <caret line="346" column="1" selection-start-line="346" selection-start-column="1" selection-end-line="346" selection-end-column="1" />
-              <folding>
-                <element signature="e#113#1456#0" expanded="false" />
-                <element signature="e#2155#4672#0" expanded="false" />
-                <element signature="e#7931#8418#0" expanded="false" />
-                <element signature="e#8458#8945#0" expanded="false" />
-                <element signature="e#8983#10121#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropietarioRoutes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.807693">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.730769">
+              <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/templates/recaudos/index.html">
+      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077">
-              <caret line="77" column="96" selection-start-line="77" selection-start-column="96" selection-end-line="77" selection-end-column="96" />
+            <state vertical-scroll-proportion="0.4402174">
+              <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropietarioLoginRequest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/PropietarioLoginRequest.php">
+      <file leaf-file-name="UsuarioController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.3846154">
-              <caret line="8" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsuarioRoutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home2.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/users/home2.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.8461539">
+              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homePropietario.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/users/homePropietario.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="106.46154">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -98,7 +112,6 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/PropietarioPagoRequest.php" />
         <option value="$PROJECT_DIR$/public/templates/pagos/index.html" />
         <option value="$PROJECT_DIR$/public/templates/pagos/profile.html" />
-        <option value="$PROJECT_DIR$/resources/views/users/home.blade.php" />
         <option value="$PROJECT_DIR$/public/templates/operaciones/index.html" />
         <option value="$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/PropietarioDeshacerAbonoRequest.inc" />
@@ -107,6 +120,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php" />
         <option value="$PROJECT_DIR$/public/templates/recaudos/index.html" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/views/users/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
       </list>
     </option>
   </component>
@@ -234,170 +249,6 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propietarios" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recaudos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propietarios" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pagos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="operaciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="egresos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -449,33 +300,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Requests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Requests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PropietarioRequest" />
+              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -486,7 +311,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Abono&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Abono.php&#10;Pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Propieta&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;PRo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;app.js&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;larave&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;Pago&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;PAgo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;Pago.p&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;Propie&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;Pa&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;routes.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;laravel.log&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;PropietarioController&#9;FILE&#9;file://C:/xampp/htdocs/Multifundadores/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;la&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;kern&#9;null&#9;null&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;.htac&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/.htaccess&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;home.b&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/home.blade.php&#10;Usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/home2.blade.php&#10;usuarioCo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;create.b&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/propietarios/create.blade.php&#10;PRopietario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;Propietario&#9;null&#9;null&#10;PropietarioContro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;env&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/.env&#10;Usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;Usu&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Usuario.php&#10;usuarioContro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/auth.php&#10;Us&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;Usuari&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;database&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/database.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/.env" />
+    <property name="SearchEverywhereHistoryKey" value="usuar&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;Abono&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Abono.php&#10;Pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Propieta&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;PRo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;app.js&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;larave&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;Pago&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;PAgo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;Pago.p&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;Propie&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;Pa&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;routes.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;laravel.log&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;PropietarioController&#9;FILE&#9;file://C:/xampp/htdocs/Multifundadores/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;la&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;kern&#9;null&#9;null&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;.htac&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/.htaccess&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;home.b&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/home.blade.php&#10;Usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/home2.blade.php&#10;usuarioCo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;create.b&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/propietarios/create.blade.php&#10;PRopietario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;Propietario&#9;null&#9;null&#10;PropietarioContro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;env&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/.env&#10;Usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;Usu&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Usuario.php&#10;usuarioContro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/auth.php&#10;Us&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;Usuari&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;database&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/database.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/.env" />
     <property name="FullScreen" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -549,10 +374,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.04566929" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -662,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/homePropietario.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4963768">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/angular.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -687,13 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/home2.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -743,13 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.769231">
           <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -809,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Propiedad.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769">
@@ -834,13 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17555939">
           <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -880,14 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="70" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
           <folding />
         </state>
       </provider>
@@ -986,8 +768,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7941176">
-          <caret line="346" column="1" selection-start-line="346" selection-start-column="1" selection-end-line="346" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.32352942">
+          <caret line="330" column="0" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
           <folding>
             <element signature="e#113#1456#0" expanded="false" />
             <element signature="e#2155#4672#0" expanded="false" />
@@ -995,6 +777,54 @@
             <element signature="e#8458#8945#0" expanded="false" />
             <element signature="e#8983#10121#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/home2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8461539">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/homePropietario.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="106.46154">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.730769">
+          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4402174">
+          <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
