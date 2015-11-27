@@ -13,6 +13,6 @@ class Tipo_Propiedad extends Model
 
     public function propiedad()
     {
-        return $this->belongsTo(__NAMESPACE__.'\Propiedad');
+        return $this->hasMany(__NAMESPACE__.'\Propiedad');
     }
 }

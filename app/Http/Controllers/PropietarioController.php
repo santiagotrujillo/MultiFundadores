@@ -30,7 +30,7 @@ class PropietarioController extends Controller
         $propietario = $this->model->where('id',$this->data['id'])->first();
         if( Hash::check($this->data['clave'], $propietario->clave) )
         {
-            return redirect('/propietarios/home');
+            return redirect('/propietarios/home')->with('propietario', $propietario->id);
         }
         return view('users.propietariologin')->withErrors(['clave' => 'clave incorrecta']);
     }
@@ -198,5 +198,11 @@ class PropietarioController extends Controller
         $pago->update();
         $abono->delete();
         return Response::json($pago);
+    }
+
+
+    public function propiedades($id)
+    {
+        return Response::json( (new Propiedad)->where('propietario_id',$id)->with(['tipo_propiedad'])->get() );
     }
 }

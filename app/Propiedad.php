@@ -15,7 +15,7 @@ class Propiedad extends Model
 
     public function tipo_propiedad()
     {
-        return $this->belongsTo(__NAMESPACE__.'\Tipo_propiedad','tipo_propietdad_id');
+        return $this->belongsTo(__NAMESPACE__.'\Tipo_propiedad','tipo_propiedad_id');
     }
 
     public function propietario()
