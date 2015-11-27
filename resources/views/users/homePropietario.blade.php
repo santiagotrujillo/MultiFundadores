@@ -1,6 +1,6 @@
 @if( session('propietario') )
 <script>var session = {{ session('propietario')}}</script>
-
+@endif
 <!DOCTYPE html>
 <head>
     <meta charset="iso-8859-1" lang="en">
