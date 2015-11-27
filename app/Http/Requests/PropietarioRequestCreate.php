@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\PropietarioRequest;
+namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 

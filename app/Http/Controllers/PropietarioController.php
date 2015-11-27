@@ -8,7 +8,7 @@ use App\Propietario;
 use App\Propiedad;
 use \Response, \Input, \Hash;
 use App\Http\Requests;
-use App\Http\Requests\PropietarioRequest\PropietarioRequestCreate;
+use App\Http\Requests\PropietarioRequestCreate;
 use App\Http\Requests\PropietarioRequestUpdate;
 use App\Http\Requests\PropietarioLoginRequest;
 use App\Http\Requests\PropietarioDeshacerAbonoRequest;

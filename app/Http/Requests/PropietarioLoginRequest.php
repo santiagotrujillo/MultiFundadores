@@ -24,8 +24,13 @@ class PropietarioLoginRequest extends Request
     public function rules()
     {
         return [
-            'id' => 'required|numeric|exists:propietarios,id',
+            'id' => 'required|exists:propietarios,id',
             'clave' => 'required'
         ];
+    }
+
+    public function response(array $errors)
+    {
+        return redirect(null,400)->back()->withErrors($errors);
     }
 }
