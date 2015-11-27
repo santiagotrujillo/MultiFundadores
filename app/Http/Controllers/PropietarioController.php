@@ -30,9 +30,9 @@ class PropietarioController extends Controller
         $propietario = $this->model->where('id',$this->data['id'])->first();
         if( Hash::check($this->data['clave'], $propietario->clave) )
         {
-            return Response::json($propietario);
+            return redirect('/propietarios/home');
         }
-        return Response::json(['clave' => 'clave incorrecta']);
+        return view('users.propietariologin')->withErrors(['clave' => 'clave incorrecta']);
     }
 
     /**
