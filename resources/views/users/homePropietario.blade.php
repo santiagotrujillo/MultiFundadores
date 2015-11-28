@@ -1,6 +1,4 @@
-@if( session('propietario') )
-<script>var session = {{ session('propietario')}}</script>
-@endif
+<script>var session = {{ Auth::owner()->get()->id }}</script>
 <!DOCTYPE html>
 <head>
     <meta charset="iso-8859-1" lang="en">
@@ -34,8 +32,8 @@
                     <label><h1 style="font-size: medium">Bienvenido, {{Auth::owner()->get()->nombre}} </h1></label>
                 </form>
             </li>
-            <li class="active"><a href="#pagos"><i class="fa fa-home"></i>Men&uacute; principal</a></li>
-            <li><a href="#pagos"><i class="fa fa-money"></i>Facturas</a></li>
+            <li class="active"><a href="#propiedades"><i class="fa fa-home"></i>Men&uacute; principal</a></li>
+            <li><a href="#propiedades"><i class="fa fa-building"></i>Propiedades</a></li>
             <li><a href="/propietarios/salir"><i class="fa fa-sign-out"></i>Salir</a></li>
         </ul>
     </div><!--/.navbar-collapse -->

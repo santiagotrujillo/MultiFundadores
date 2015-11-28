@@ -45,11 +45,11 @@ app.service('TableService', function ($http, $filter) {
 app.config(["$routeProvider", function($router)
 {
     $router
-        .when("/pagos", {
+        .when("/propiedades", {
             templateUrl: "/templates/propietarios/content.html"
         })
         .otherwise({
-            redirectTo: '/pagos'
+            redirectTo: '/propiedades'
         });
 }]);
 
