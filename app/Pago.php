@@ -24,16 +24,26 @@ class Pago extends Model
     }
     // relaciones
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function tipo_pago()
     {
         return $this->belongsTo(__NAMESPACE__.'\Tipo_pago','tipo_pago_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function propiedad()
     {
         return $this->belongsTo(__NAMESPACE__.'\Propiedad','propiedad_id');
 
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function abonos()
     {
         return $this->belongsTo(__NAMESPACE__.'\Abono');

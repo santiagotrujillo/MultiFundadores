@@ -48,6 +48,9 @@ app.config(["$routeProvider", function($router)
         .when("/propiedades", {
             templateUrl: "/templates/propietarios/content.html"
         })
+        .when("/ver/pagos/:id", {
+            templateUrl: "/templates/propietarios/propiedad_pagos.html"
+        })
         .otherwise({
             redirectTo: '/propiedades'
         });
@@ -56,7 +59,7 @@ app.config(["$routeProvider", function($router)
 app.controller("PropietarioController", [
     '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
     {
-        $scope.propiedades = [], $scope.total=0;
+        $scope.propiedades = [], $scope.total=0, $scope.pagos = [];
 
         $scope.listar = function(page)
         {
@@ -82,21 +85,23 @@ app.controller("PropietarioController", [
         $scope.listar();
     }]);
 
-app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
+app.controller("PagosController", ['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', '$routeParams',
+    function($scope, $http, $filter, ngTableParams, TableService, $timeout,$routeParams)
 {
-    $scope.abonos = [], $scope.total=0;
-    $scope.listar = function(page)
+    $scope.pagos = [], $scope.total=0;
+
+    $scope.verPagos = function()
     {
-        $http.get('/propietarios/abonos/pago/'+$params.id)
+        $http.get('/propiedad/ver/'+$routeParams.id)
             .success(function(data, status, headers, config)
             {
-                $scope.abonos = $scope.abonos.concat(data);
-                $scope.total=$scope.abonos.length;
+                $scope.pagos = $scope.pagos.concat(data.pagos);
+                $scope.total=$scope.pagos.length;
                 $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
-                    total: $scope.abonos.length,
+                    total: $scope.pagos.length,
                     getData: function($defer, params)
                     {
-                        TableService.getTable($defer,params,$scope.filter, $scope.abonos);
+                        TableService.getTable($defer,params,$scope.filter, $scope.pagos);
                     }
                 });
                 $scope.tableParams.reload();
@@ -105,23 +110,5 @@ app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'Ta
                 });
             });
     };
-    $scope.listar();
+    $scope.verPagos();
 }]);
-
-
-function cerrarModalPago()
-{
-    $('#pagoPropietario').modal('hide');
-}
-
-function abrirModalCargoAbono()
-{
-    $('#cargoAbono').modal('show');
-}
-
-function verConfirmacion()
-{
-    $('#cargoAbono').modal('hide');
-    alert("Se realizó el pago satisfactoriamente")
-    window.location.reload();
-}

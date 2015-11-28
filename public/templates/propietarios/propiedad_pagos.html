@@ -1,0 +1,18 @@
+<div ng-controller = "PagosController">
+
+    <div class="row appcontainer">
+        <div class="col-lg-12">
+            <loading></loading>
+            <p>B&uacute;squeda: <input class="form-control" type="text" ng-model="filter.$" /></p>
+            <table ng-table="tableParams" class="table table-striped">
+                <tr ng-repeat="pago in $data">
+                    <td align="center" data-title="'Id'" sortable="'id'"><a href="#/ver/pagos/{{pago.id}}">{{pago.id}}</a></td>
+                    <td align="center" data-title="'Valor'" sortable="'numero_pisos'">{{pago.valor}}</td>
+                    <td align="center" data-title="'Fecha Inicial'" sortable="'tipo_pago.nombre'">{{pago.fecha_inicial}}</td>
+                    <td align="center" data-title="'Fecha Final'" sortable="'tipo_pago.descripcion'">{{pago.fecha_final}}</td>
+                </tr>
+            </table>
+            <p>Total:{{total}}</p>
+        </div>
+    </div>
+</div>
