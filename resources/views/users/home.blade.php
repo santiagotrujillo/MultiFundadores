@@ -28,7 +28,7 @@
         <ul class="templatemo-sidebar-menu">
             <li>
                 <form class="navbar-form">
-                    <label><h1 style="font-size: medium">Bienvenido, {{ Auth::user()->nombre }} </h1></label>
+                    <label><h1 style="font-size: medium">Bienvenido, {{ Auth::user()->get()->nombre }} </h1></label>
                 </form>
             </li>
             <li class="active"><a href="#operaciones"><i class="fa fa-home"></i>Men&uacute; principal</a></li>

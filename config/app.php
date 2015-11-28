@@ -39,6 +39,8 @@ return [
     |
     */
 
+
+
     'timezone' => 'America/Bogota',
 
     /*
@@ -114,7 +116,7 @@ return [
          * Laravel Framework Service Providers...
          */
         Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
-        Illuminate\Auth\AuthServiceProvider::class,
+        Kbwebs\MultiAuth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,

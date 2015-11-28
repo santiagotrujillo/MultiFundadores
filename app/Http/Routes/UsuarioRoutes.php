@@ -9,10 +9,8 @@ Route::post('/usuarios/login', 'UsuarioController@login');
 Route::get('/usuarios/login', 'UsuarioController@viewLogin');
 
 Route::get('/usuarios/home', [
-    'middleware' =>'auth',
     'uses'=>'UsuarioController@viewHome'
 ]);
 Route::get('/usuarios/salir', [
-    'middleware' =>'auth',
     'uses'=>'UsuarioController@salir'
 ]);

@@ -20,10 +20,10 @@ class UsuarioController extends Controller
     }
     public function login(UsuarioLoginRequest $request)
     {
-        $usuario = (new Usuario)->where('id',$this->data['id'])->first();
+        $usuario = (new Usuario)->where('id', $this->data['id'])->first();
         if( Hash::check($this->data['clave'], $usuario->clave) )
         {
-            Auth::login($usuario);
+            Auth::user()->login($usuario);
             return redirect('/usuarios/home');
         }
         return view('users.login')->withErrors(['clave' => 'clave incorrecta']);
@@ -31,18 +31,18 @@ class UsuarioController extends Controller
 
     public function viewHome()
     {
-        if(Auth::user()!= null)
+        if(Auth::user()->get()!= null)
         {
-            return view('users.home')->with(Auth::user()->toArray());
+            return view('users.home');
         }
-
+        return redirect('/usuarios/login');
     }
 
     public function salir()
     {
-        if(Auth::user()!= null)
+        if(Auth::user()->get()!= null)
         {
-            Auth::logout();
+            Auth::user()->logout();
             return redirect('/usuarios/login');
         }
     }
@@ -60,7 +60,7 @@ class UsuarioController extends Controller
 
     public function viewLogin()
     {
-        if(Auth::user()!= null)
+        if(Auth::user()->get()!= null)
         {
             return redirect('/usuarios/home');
         }

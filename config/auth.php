@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver' => 'eloquent',
+    //'driver' => 'eloquent',
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => App\Usuario::class,
+    //'model' => App\Usuario::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'table' => 'usuarios',
+    //'table' => 'usuarios',
 
     /*
     |--------------------------------------------------------------------------
@@ -57,6 +57,16 @@ return [
     | they have less time to be guessed. You may change this as needed.
     |
     */
+    'multi-auth' => [
+        'owner' => [
+            'driver' => 'database',
+            'table'  => 'propietarios',
+        ],
+        'user' => [
+            'driver' => 'database',
+            'table'  => 'usuarios'
+        ]
+    ],
 
     'password' => [
         'email' => 'emails.password',
