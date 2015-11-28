@@ -6,7 +6,7 @@ use App\Abono;
 use App\Pago;
 use App\Propietario;
 use App\Propiedad;
-use \Response, \Input, \Hash;
+use \Response, \Input, \Hash, \Auth;
 use App\Http\Requests;
 use App\Http\Requests\PropietarioRequestCreate;
 use App\Http\Requests\PropietarioRequestUpdate;
@@ -19,18 +19,26 @@ class PropietarioController extends Controller
 
     protected $model;
 
+    /**
+     * @param Propietario $model
+     */
     public function __construct(Propietario $model)
     {
         $this->data = Input::all();
         $this->model = $model;
     }
 
+    /**
+     * @param PropietarioLoginRequest $request
+     * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function login(PropietarioLoginRequest $request)
     {
         $propietario = $this->model->where('id',$this->data['id'])->first();
         if( Hash::check($this->data['clave'], $propietario->clave) )
         {
-            return redirect('/propietarios/home')->with('propietario', $propietario->id);
+            Auth::owner()->login($propietario);
+            return redirect('/propietarios/home');
         }
         return view('users.propietariologin')->withErrors(['clave' => 'clave incorrecta']);
     }
@@ -46,16 +54,33 @@ class PropietarioController extends Controller
         return Response::json($this->model->findOrFail($id));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function viewLogin()
     {
+        if(Auth::owner()->get()!= null)
+        {
+            return redirect('/propietarios/home');
+        }
         return view('users.propietariologin');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function viewHome()
     {
-        return view('users.homePropietario');
+        if(Auth::owner()->get()!= null)
+        {
+            return view('users.homePropietario');
+        }
+        return redirect('/propietarios/login');
     }
 
+    /*
+     * @return \Illuminate\Contracts\View\Factory
+     */
     public function viewCreate()
     {
         return view('propietarios.create');
@@ -82,11 +107,18 @@ class PropietarioController extends Controller
         return $propietario->update();
     }
 
+    /**
+     * @return mixed
+     */
     public function listar()
     {
         return $this->model->all();
     }
 
+    /**
+     * @param int $id
+     * @return mixed
+     */
     public function borrar($id)
     {
         $propietario = (new Propietario)->find($id);
@@ -94,13 +126,19 @@ class PropietarioController extends Controller
         return $propietario;
     }
 
+    /**
+     * @return mixed
+     */
     public function cobroAdminPendientes()
     {
         return (new Pago)->with(['tipo_pago'])
             ->whereRaw('valor_pagado < valor')->orWhere('valor_pagado',null)->orderby('fecha_inicial', 'asc')->get();
     }
 
-
+    /**
+     * @param Requests\PropietarioPagoRequest $request
+     * @return mixed
+     */
     public function abonar(Requests\PropietarioPagoRequest $request)
     {
         $data = \Input::all();
@@ -138,6 +176,10 @@ class PropietarioController extends Controller
         $year = date('Y');
         return date('Y-m-d', mktime(0,0,0, $month, 1, $year));
     }
+
+    /**
+     * @return mixed
+     */
     public function cobroAdmin()
     {
         $mes_actual = \DB::select('select month(NOW()) as mes');
@@ -169,6 +211,9 @@ class PropietarioController extends Controller
         return Response::json(['message'=>'El mes actual ya tiene facturas generadas de administración'],406);
     }
 
+    /**
+     * @return mixed
+     */
     public function pagosRealizados()
     {
         return (new Pago)->whereRaw('valor = valor_pagado')->with(['tipo_pago'])->get();
@@ -189,6 +234,10 @@ class PropietarioController extends Controller
         return (new Abono)->where('pago_id',$id)->get();
     }
 
+    /**
+     * @param PropietarioDeshacerAbonoRequest $request
+     * @return mixed
+     */
     public function deshacerAbono(PropietarioDeshacerAbonoRequest $request)
     {
         $data = \Input::all();

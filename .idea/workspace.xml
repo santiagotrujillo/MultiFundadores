@@ -22,77 +22,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+      <file leaf-file-name="PropietarioController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.811321">
-              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="laravel.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
-          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-266.13794">
-              <caret line="493" column="0" selection-start-line="493" selection-start-column="0" selection-end-line="493" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/app.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6153846">
-              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/auth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.9615383">
-              <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioRoutes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4456522">
-              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state vertical-scroll-proportion="6.048193">
+              <caret line="247" column="25" selection-start-line="247" selection-start-column="25" selection-end-line="247" selection-end-column="25" />
               <folding>
-                <element signature="e#40#56#0#PHP" expanded="true" />
+                <element signature="e#40#54#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/users/home.blade.php">
+      <file leaf-file-name="Usuario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Usuario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.038462">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="42" />
+              <folding>
+                <element signature="e#23#59#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Propietario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Propietario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+              <folding>
+                <element signature="e#22#67#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homePropietario.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/users/homePropietario.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsuarioController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.807693">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="66" selection-end-column="35" />
+              <folding>
+                <element signature="e#40#56#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,16 +117,13 @@
         <option value="$PROJECT_DIR$/app/Http/Routes/JuntaRoutes.inc" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/propietarios/home.blade.php.inc" />
-        <option value="$PROJECT_DIR$/app/Propietario.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/PropietarioRequest/PropietarioRequestCreate.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/PropietarioLoginRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php" />
         <option value="$PROJECT_DIR$/app/Tipo_Propiedad.php" />
         <option value="$PROJECT_DIR$/app/Propiedad.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php" />
         <option value="$PROJECT_DIR$/public/js/propietario.js" />
         <option value="$PROJECT_DIR$/public/templates/propietarios/content.html" />
-        <option value="$PROJECT_DIR$/resources/views/users/homePropietario.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/propietariologin.blade.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/app.php" />
@@ -152,6 +132,9 @@
         <option value="$PROJECT_DIR$/resources/views/users/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php" />
         <option value="$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php" />
+        <option value="$PROJECT_DIR$/app/Propietario.php" />
+        <option value="$PROJECT_DIR$/resources/views/users/homePropietario.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php" />
       </list>
     </option>
   </component>
@@ -383,6 +366,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MultiFundadores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MultiFundadores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -391,7 +396,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;lara&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;composer&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/composer.json&#10;usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;auth.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/auth.php&#10;app.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/app.php&#10;usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/propietariologin.blade.php&#10;tipo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Tipo_Propiedad.php&#10;propi&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Propiedad.php&#10;PRo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Propietario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Propietario.php&#10;PropietarioRoutes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;pr&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Requests/UsuarioLoginRequest.php&#10;PropietarioLoginRequest&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Requests/PropietarioLoginRequest.php&#10;propie&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;Usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;Prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;usuar&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;Abono&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Abono.php&#10;Pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Propieta&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;app.js&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;larave&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;Pago&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;PAgo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;Pago.p&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;Propie&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;Pa&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;routes.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;laravel.log&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;PropietarioController&#9;FILE&#9;file://C:/xampp/htdocs/Multifundadores/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;la&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;kern&#9;null&#9;null&#10;.htac&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/.htaccess&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;home.b&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/home.blade.php&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/home2.blade.php&#10;usuarioCo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;create.b&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/propietarios/create.blade.php&#10;PRopietario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;PropietarioContro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;env&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/.env&#10;Usu&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Usuario.php&#10;usuarioContro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php" />
+    <property name="SearchEverywhereHistoryKey" value="pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Propietario.php&#10;usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Usuario.php&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;lara&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;composer&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/composer.json&#10;auth.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/auth.php&#10;app.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/app.php&#10;usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/propietariologin.blade.php&#10;tipo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Tipo_Propiedad.php&#10;propi&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Propiedad.php&#10;PRo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Propietario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Propietario.php&#10;PropietarioRoutes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;pr&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Requests/UsuarioLoginRequest.php&#10;PropietarioLoginRequest&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Requests/PropietarioLoginRequest.php&#10;propie&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;Usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;Prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;usuar&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;Abono&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Abono.php&#10;Pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Propieta&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;app.js&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;larave&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;Pago&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;PAgo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;Pago.p&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;Propie&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;Pa&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;routes.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;laravel.log&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;PropietarioController&#9;FILE&#9;file://C:/xampp/htdocs/Multifundadores/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;la&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;kern&#9;null&#9;null&#10;.htac&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/.htaccess&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;home.b&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/home.blade.php&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/users/home2.blade.php&#10;usuarioCo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;create.b&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/propietarios/create.blade.php&#10;PRopietario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;PropietarioContro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;env&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/.env&#10;Usu&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Usuario.php&#10;usuarioContro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php" />
     <property name="FullScreen" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -518,13 +523,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/angular.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="192" column="68" selection-start-line="192" selection-start-column="68" selection-end-line="192" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/angular-route.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -735,14 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Propietario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -785,14 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/homePropietario.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/propietarios/list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -806,16 +788,6 @@
         <state vertical-scroll-proportion="-8.615385">
           <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17934783">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding>
-            <element signature="e#40#54#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -896,10 +868,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4456522">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        <state vertical-scroll-proportion="-15.807693">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="66" selection-end-column="35" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Usuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="42" />
+          <folding>
+            <element signature="e#23#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Propietario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+          <folding>
+            <element signature="e#22#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/homePropietario.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.048193">
+          <caret line="247" column="25" selection-start-line="247" selection-start-column="25" selection-end-line="247" selection-end-column="25" />
+          <folding>
+            <element signature="e#40#54#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
