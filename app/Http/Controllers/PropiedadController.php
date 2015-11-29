@@ -22,6 +22,6 @@ class PropiedadController extends Controller
 
     public function ver($id)
     {
-        return (new Propiedad)->with(['pagos'])->find($id);
+        return (new Propiedad)->with(['pagos','pagos.tipo_pago'])->find($id);
     }
 }

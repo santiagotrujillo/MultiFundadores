@@ -88,7 +88,7 @@ app.controller("PropietarioController", [
 app.controller("PagosController", ['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', '$routeParams',
     function($scope, $http, $filter, ngTableParams, TableService, $timeout,$routeParams)
 {
-    $scope.pagos = [], $scope.total=0;
+    $scope.pagos = [], $scope.total=0, $scope.propiedad_id = $routeParams.id;
 
     $scope.verPagos = function()
     {
