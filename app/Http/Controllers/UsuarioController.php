@@ -24,16 +24,37 @@ class UsuarioController extends Controller
         if( Hash::check($this->data['clave'], $usuario->clave) )
         {
             Auth::user()->login($usuario);
-            return redirect('/usuarios/home');
+            if($this->validarRol($usuario))
+            {
+                return redirect('/usuarios/home');
+            }
+            else
+            {
+                return redirect('/usuarios/junta/home');
+            }
         }
         return view('users.login')->withErrors(['clave' => 'clave incorrecta']);
     }
 
+    private function validarRol( Usuario $usuario)
+    {
+        if($usuario->rol_id == 1 || $usuario->rol_id ==3)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public function viewHome()
     {
-        if(Auth::user()->get()!= null)
+        $user = Auth::user()->get();
+        if($user!= null && ($user-> rol_id == 1 || $user->rol_id == 3))
         {
             return view('users.home');
+        }
+        else if($user!= null && $user-> rol_id == 2)
+        {
+            return redirect('/usuarios/junta/home');
         }
         return redirect('/usuarios/login');
     }
@@ -60,11 +81,30 @@ class UsuarioController extends Controller
 
     public function viewLogin()
     {
-        if(Auth::user()->get()!= null)
+        $user = Auth::user()->get();
+        if($user!= null && ($user-> rol_id == 1 || $user->rol_id == 3))
         {
             return redirect('/usuarios/home');
         }
+        else if($user!= null && $user-> rol_id == 2)
+        {
+            return redirect('/usuarios/junta/home');
+        }
         return view('users.login');
+    }
+
+    public function viewJuntaHome()
+    {
+        $user = Auth::user()->get();
+        if($user!= null && $user-> rol_id ==2)
+        {
+            return view('junta.home');
+        }
+        else if($user!= null && ($user-> rol_id == 1 || $user->rol_id == 3))
+        {
+            return redirect('/usuarios/home');
+        }
+        return redirect('/usuarios/login');
     }
 
 }
