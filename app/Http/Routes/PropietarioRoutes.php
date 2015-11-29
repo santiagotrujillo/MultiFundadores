@@ -66,6 +66,11 @@ Route::post('/propietarios/deshacer/abono','PropietarioController@deshacerAbono'
 Route::get('/propietarios/login', 'PropietarioController@viewlogin');
 
 /**
+ * @Ruta para cerrar la session del propietario
+ */
+Route::get('/propietarios/logout', 'PropietarioController@logout');
+
+/**
  * @Ruta para cargar la lista de propiedades de un propietario
  */
 Route::get('/propietarios/propiedades/{id}', 'PropietarioController@propiedades');

@@ -229,6 +229,10 @@ class PropietarioController extends Controller
         return false;
     }
 
+    /**
+     * @param int $id
+     * @return mixed
+     */
     public function abonosPago($id)
     {
         return (new Abono)->where('pago_id',$id)->get();
@@ -249,9 +253,25 @@ class PropietarioController extends Controller
         return Response::json($pago);
     }
 
-
+    /**
+     * @param int $id
+     * @return mixed
+     */
     public function propiedades($id)
     {
         return Response::json( (new Propiedad)->where('propietario_id',$id)->with(['tipo_propiedad'])->get() );
+    }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function logout()
+    {
+        if(Auth::owner()->get()!= null)
+        {
+            Auth::owner()->logout();
+            return redirect('/propietarios/login');
+        }
+        return redirect('/');
     }
 }

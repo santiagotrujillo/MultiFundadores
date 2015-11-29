@@ -34,7 +34,7 @@
             </li>
             <li class="active"><a href="#propiedades"><i class="fa fa-home"></i>Men&uacute; principal</a></li>
             <li><a href="#propiedades"><i class="fa fa-building"></i>Propiedades</a></li>
-            <li><a href="/propietarios/salir"><i class="fa fa-sign-out"></i>Salir</a></li>
+            <li><a href="/propietarios/logout"><i class="fa fa-sign-out"></i>Salir</a></li>
         </ul>
     </div><!--/.navbar-collapse -->
 
