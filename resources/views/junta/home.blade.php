@@ -31,8 +31,6 @@
                     <label><h1 style="font-size: medium">Bienvenido, {{ Auth::user()->get()->nombre }} </h1></label>
                 </form>
             </li>
-            <li class="active"><a href="#operaciones"><i class="fa fa-home"></i>Men&uacute; principal</a></li>
-
             <li><a href="#recaudos"><i class="fa fa-money"></i> Recaudos</a></li>
             <li><a href="#egresos"><i class="fa fa-credit-card"></i> Egresos</a></li>
             <li><a href="#propietario"><i class="fa fa-users"></i>Propietarios</a></li>
@@ -58,6 +56,6 @@
 <script src="/js/templatemo_script.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <script src="/js/ng-table.min.js"></script>
-<script src="/js/app.js"></script>
+<script src="/js/junta.js"></script>
 </body>
 </html>
