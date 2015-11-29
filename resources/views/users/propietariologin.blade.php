@@ -33,7 +33,7 @@
                 <div class="col-md-12">
                     <label for="username" class="col-sm-2 control-label">Identificaci&oacute;n</label>
                     <div class="col-sm-10">
-                        <input type="text" name="id" class="form-control" id="username" placeholder="Ingrese su Identificación">
+                        <input type="text" name="id" class="form-control" id="username" placeholder="Ingrese su Identificaci&oacute;n">
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="col-md-12">
                     <label for="password" class="col-sm-2 control-label">Contrase&ntilde;a</label>
                     <div class="col-sm-10">
-                        <input type="password" name="clave" class="form-control" id="password" placeholder="Ingrese su contraseña">
+                        <input type="password" name="clave" class="form-control" id="password" placeholder="Ingrese su contrase&ntilde;a">
                     </div>
                 </div>
             </div>

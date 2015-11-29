@@ -1,4 +1,4 @@
-<div ng-controller ="PagoProfile">
+<div ng-controller = "AbonosController">
 
     <div class="row appcontainer">
         <div class="col-lg-12">
@@ -7,10 +7,9 @@
             <table ng-table="tableParams" class="table table-striped">
                 <tr ng-repeat="abono in $data">
                     <td align="center" data-title="'Numero de Factura'" sortable="'id'">{{abono.id}}</td>
-                    <td align="center" data-title="'Valor'" sortable="'valor'">{{abono.valor}}</td>
-                    <td align="center" data-title="'Pago id'" sortable="'pago_id'">{{abono.pago_id}}</td>
-                    <td align="center" data-title="'Forma Pago'" sortable="'forma_pago'">{{abono.forma_pago}}</td>
-                    <td align="center" data-title="'Fecha'" sortable="'created_at'">{{abono.created_at}}</td>
+                    <td align="center" data-title="'Valor'" sortable="'numero_pisos'">{{abono.valor}}</td>
+                    <td align="center" data-title="'Forma Pago'" sortable="'numero_pisos'">{{abono.forma_pago}}</td>
+                    <td align="center" data-title="'Fecha de pago'" sortable="'numero_pisos'">{{abono.created_at}}</td>
                 </tr>
             </table>
             <p>Total:{{total}}</p>

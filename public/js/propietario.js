@@ -51,6 +51,9 @@ app.config(["$routeProvider", function($router)
         .when("/ver/pagos/:id", {
             templateUrl: "/templates/propietarios/propiedad_pagos.html"
         })
+        .when("/ver/abonos/:id", {
+            templateUrl: "/templates/propietarios/pago_abonos.html"
+        })
         .otherwise({
             redirectTo: '/propiedades'
         });
@@ -112,3 +115,32 @@ app.controller("PagosController", ['$scope', '$http', '$filter', 'ngTableParams'
     };
     $scope.verPagos();
 }]);
+
+
+app.controller("AbonosController", ['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', '$routeParams',
+    function($scope, $http, $filter, ngTableParams, TableService, $timeout,$routeParams)
+    {
+        $scope.abonos = [], $scope.total=0, $scope.pago_id= $routeParams.id;
+
+        $scope.verAbonos = function()
+        {
+            $http.get('/propietarios/abonos/pago/'+$routeParams.id)
+                .success(function(data, status, headers, config)
+                {
+                    $scope.abonos = $scope.abonos.concat(data);
+                    $scope.total=$scope.abonos.length;
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                        total: $scope.abonos.length,
+                        getData: function($defer, params)
+                        {
+                            TableService.getTable($defer,params,$scope.filter, $scope.abonos);
+                        }
+                    });
+                    $scope.tableParams.reload();
+                    $scope.$watch("filter.$", function () {
+                        $scope.tableParams.reload();
+                    });
+                });
+        };
+        $scope.verAbonos();
+    }]);
