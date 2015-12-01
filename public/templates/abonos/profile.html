@@ -1,0 +1,28 @@
+<div ng-controller ="AbonoProfile">
+
+    <div class="row appcontainer">
+        <br/>
+        <br/>
+        <br/>
+        <div class="col-md-12">
+            <h1>Recibo de Factura # {{abono.abono.id}}</h1>
+            <h4>Propiedad # {{abono.propiedad.id}}</h4>
+        </div>
+
+        <div class="col-md-12">
+            <h5>Usuario: {{abono.propietario.nombre}} {{abono.propietario.apellido}}</h5>
+        </div>
+        <div class="col-md-12">
+            <label>Forma de Pago : </label> {{abono.abono.forma_pago}}<br/>
+            <label>Fecha de Pago : </label> {{abono.abono.created_at}}<br/>
+            <label>Valor del Abono : </label> {{abono.abono.valor}}<br/>
+            <label>Periodo de Cobro: </label> <br/>
+            {{abono.factura.fecha_inicial}} - {{abono.factura.fecha_final}}<br/>
+            <label>Valor Restante: </label> {{abono.factura.deuda}}<br/>
+            <label>Total pagado: </label> {{abono.factura.valor_pagado}}<br/>
+            <label>Valor de la Factura: </label> {{abono.factura.valor}}<br/>
+        </div>
+
+
+    </div>
+</div>

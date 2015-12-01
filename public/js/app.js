@@ -75,6 +75,9 @@ app.config(["$routeProvider", function($router)
     .when("/pago/profile/:id", {
         templateUrl: "/templates/pagos/profile.html"
     })
+    .when("/confirmacion/abono/:id", {
+        templateUrl: "/templates/abonos/profile.html"
+    })
     .otherwise({
         redirectTo: '/operaciones'
     });
@@ -606,6 +609,20 @@ app.controller("IngresosConsignacionController", [
             return posicion;
         };
     }]);
+
+app.controller("AbonoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
+{
+    $scope.abono = {};
+    $scope.ver = function()
+    {
+        $http.get('/propietarios/abono/'+$params.id)
+            .success(function(data, status, headers, config)
+            {
+                $scope.abono = data;
+            });
+    };
+    $scope.ver();
+}]);
 
 
 function cerrarModalPago()

@@ -1,6 +1,6 @@
 <div ng-controller ="RecaudoController">
 
-    <div class="row appcontainer">
+    <div class="row appcontainer non-printable">
         <div class="col-lg-12">
             <loading></loading>
             <p>B&uacute;squeda: <input class="form-control" type="text" ng-model="filter.$" /></p>
@@ -58,7 +58,7 @@
 
 
     <!-- init modal soft cargo abono -->
-    <div class="modal fade" id="cargoAbono" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade printable" id="cargoAbono" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -80,7 +80,7 @@
                             <label>Valor de la Factura: </label> {{pagorealizado.factura.valor}}<br/>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success" ng-click="verConfirmacion()">Confirmar</button>
+                    <button type="button" class="btn btn-success"><a href="#confirmacion/abono/{{pagorealizado.abono.id}}">Confirmar</a></button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deshacerAbono()">Deshacer</button>
                 </div>
                 <div class="modal-footer">

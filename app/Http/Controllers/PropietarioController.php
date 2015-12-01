@@ -160,6 +160,19 @@ class PropietarioController extends Controller
         }
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function mostrarAbono($id)
+    {
+        $abono = (new Abono)->find($id);
+        $pago = (new Pago)->find($abono->pago_id);
+        $propiedad = (new Propiedad)->find($pago->propiedad_id);
+        $propietario = (new Propietario)->find($propiedad->propietario_id);
+        return Response::json(['abono' => $abono, 'factura' => $pago, 'propiedad' => $propiedad, 'propietario' => $propietario]);
+    }
+
 
     /** Actual month last day **/
     private function last_month_day() {
