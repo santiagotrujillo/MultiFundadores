@@ -11,6 +11,7 @@ use \Response, \Input, \Hash, \Auth;
 use App\Http\Requests;
 use App\Http\Requests\PropietarioRequestCreate;
 use App\Http\Requests\PropietarioRequestUpdate;
+use App\Http\Requests\CobroSalonRequest;
 use App\Http\Requests\PropietarioLoginRequest;
 use App\Http\Requests\PropietarioDeshacerAbonoRequest;
 
@@ -173,6 +174,21 @@ class PropietarioController extends Controller
         $propiedad = (new Propiedad)->find($pago->propiedad_id);
         $propietario = (new Propietario)->find($propiedad->propietario_id);
         return Response::json(['abono' => $abono, 'factura' => $pago, 'propiedad' => $propiedad,'tipo' => $tipo_pago, 'propietario' => $propietario]);
+    }
+
+    /**
+     * @param CobroSalonRequest $request
+     * @return mixed
+     */
+    public function cobroSalon(CobroSalonRequest $request)
+    {
+        $data = \Input::all();
+        $cobro = ['tipo_pago_id' => 3, 'valor' => $data["valor"], 'descripcion' => $data['descripcion'] ,
+            'fecha_inicial' => date('Y-m-d'), 'fecha_final' =>date('Y-m-d'), 'propiedad_id' => 1234567890, 'valor_pagado' => 0];
+        $pago = (new Pago);
+        $pago->fill($cobro);
+        $pago->save();
+        return Response::json(['pago' => $pago->toArray()]);
     }
 
 

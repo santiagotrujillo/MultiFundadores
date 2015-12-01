@@ -41,6 +41,11 @@ Route::post('/propietarios/cobro/admin','PropietarioController@cobroAdmin');
 Route::post('/propietarios/cobro/seguro','PropietarioController@cobroSeguro');
 
 /**
+ * Ruta para realizar la cuenta de cobro a los propietarios en el año actual por concepto de admin - anualmente
+ */
+Route::post('/propietarios/cobro/salon','PropietarioController@cobroSalon');
+
+/**
  * Ruta para realizar el pago de una deuda
  */
 Route::post('/propietarios/abonar','PropietarioController@abonar');

@@ -275,14 +275,33 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
     {
         closeModal('cobrosSeguro');
         $http.post('/propietarios/cobro/seguro')
-            .success(function(data, status, headers, config)
-            {
-                alert('Se cargaron los cobros de seguro correctamente')
-            })
-            .error(function(error, status, headers, config)
-            {
-                alert(error["message"])
-            });
+        .success(function(data, status, headers, config)
+        {
+            alert('Se cargaron los cobros de seguro correctamente')
+        })
+        .error(function(error, status, headers, config)
+        {
+            alert(error["message"])
+        });
+    };
+
+    $scope.realizarCobroSalon = function()
+    {
+        closeModal('cobrosSalon');
+        $http({
+            method: 'POST',
+            url: '/propietarios/cobro/salon',
+            data: $scope.pago,
+        })
+        .success(function(data, status, headers, config)
+        {
+            alert('Se cargo el cobro del salon correctamente')
+        })
+        .error(function(error, status, headers, config)
+        {
+            alert(error["message"])
+        });
+
     }
 }]);
 
