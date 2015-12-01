@@ -57,6 +57,9 @@ app.config(["$routeProvider", function($router)
     .when("/egresos", {
         templateUrl: "/templates/egresos/index.html"
     })
+    .when("/menu/ingresos", {
+        templateUrl: "/templates/ingresos/menu.html"
+    })
     .when("/ingresos", {
         templateUrl: "/templates/ingresos/reporte_total.html"
     })
