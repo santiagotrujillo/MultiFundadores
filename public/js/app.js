@@ -261,9 +261,23 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
     {
         closeModal('cobrosAdmin');
         $http.post('/propietarios/cobro/admin')
+        .success(function(data, status, headers, config)
+        {
+            alert('Se cargaron los cobros de administración correctamente')
+        })
+        .error(function(error, status, headers, config)
+        {
+            alert(error["message"])
+        });
+    };
+
+    $scope.realizarCobroSeguro = function ()
+    {
+        closeModal('cobrosSeguro');
+        $http.post('/propietarios/cobro/seguro')
             .success(function(data, status, headers, config)
             {
-                alert('Se cargaron los cobros de adminsitración correctamente')
+                alert('Se cargaron los cobros de seguro correctamente')
             })
             .error(function(error, status, headers, config)
             {

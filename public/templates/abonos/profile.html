@@ -13,6 +13,10 @@
             <h5>Usuario: {{abono.propietario.nombre}} {{abono.propietario.apellido}}</h5>
         </div>
         <div class="col-md-12">
+            <label>Concepto: </label> {{abono.tipo.concepto}}<br/>
+            <label>Descripcion: </label> {{abono.tipo.descripcion}}<br/>
+        </div>
+        <div class="col-md-12">
             <label>Forma de Pago : </label> {{abono.abono.forma_pago}}<br/>
             <label>Fecha de Pago : </label> {{abono.abono.created_at}}<br/>
             <label>Valor del Abono : </label> {{abono.abono.valor}}<br/>
@@ -25,7 +29,6 @@
         <div class="col-md-12">
             <button class="btn btn-success" ng-click="imprimir()">Imprimir</button>
         </div>
-
 
     </div>
 </div>

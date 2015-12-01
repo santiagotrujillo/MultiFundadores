@@ -6,6 +6,7 @@ use App\Abono;
 use App\Pago;
 use App\Propietario;
 use App\Propiedad;
+use App\Tipo_pago;
 use \Response, \Input, \Hash, \Auth;
 use App\Http\Requests;
 use App\Http\Requests\PropietarioRequestCreate;
@@ -168,9 +169,10 @@ class PropietarioController extends Controller
     {
         $abono = (new Abono)->find($id);
         $pago = (new Pago)->find($abono->pago_id);
+        $tipo_pago = (new Tipo_pago)->find($pago->tipo_pago_id);
         $propiedad = (new Propiedad)->find($pago->propiedad_id);
         $propietario = (new Propietario)->find($propiedad->propietario_id);
-        return Response::json(['abono' => $abono, 'factura' => $pago, 'propiedad' => $propiedad, 'propietario' => $propietario]);
+        return Response::json(['abono' => $abono, 'factura' => $pago, 'propiedad' => $propiedad,'tipo' => $tipo_pago, 'propietario' => $propietario]);
     }
 
 
@@ -224,6 +226,32 @@ class PropietarioController extends Controller
         return Response::json(['message'=>'El mes actual ya tiene facturas generadas de administración'],406);
     }
 
+    public function cobroSeguro()
+    {
+        $year_actual = \DB::select('select year(NOW()) as year');
+        $year_actual = $year_actual[0]->year;
+        if(!$this->validateYearSeguro())
+        {
+            $cobro = [
+                'valor' => 76500,
+                'descripción' => 'Pago a realizar del seguro en el año : '. $year_actual,
+                'fecha_inicial' =>  "$year_actual-01-01",
+                'fecha_final' =>  "$year_actual-12-31",
+                'tipo_pago_id' => 2
+            ];
+            $propiedades = (new Propiedad)->all();
+            foreach($propiedades as $propiedad)
+            {
+                $pago = (new Pago);
+                $pago->fill($cobro);
+                $pago->propiedad_id = $propiedad->id;
+                $pago->save();
+            }
+            return Response::json(['status => true'],200);
+        }
+        return Response::json(['message'=>'Ya se tienen facturas generadas de seguro'],406);
+    }
+
     /**
      * @return mixed
      */
@@ -234,7 +262,17 @@ class PropietarioController extends Controller
 
     private function validateDate()
     {
-        $pago = (new Pago)->whereRaw('date(created_at) = date(now())')->first();
+        $pago = (new Pago)->whereRaw('date(created_at) = date(now()) and tipo_pago_id = 1')->first();
+        if( count($pago) > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private function validateYearSeguro()
+    {
+        $pago = (new Pago)->whereRaw('year(created_at) = year(now()) and tipo_pago_id = 2')->first();
         if( count($pago) > 0)
         {
             return true;
