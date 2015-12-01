@@ -57,6 +57,9 @@ app.config(["$routeProvider", function($router)
     .when("/egresos", {
         templateUrl: "/templates/egresos/index.html"
     })
+    .when("/ingresos", {
+        templateUrl: "/templates/ingresos/reporte_total.html"
+    })
     .when("/pagos", {
         templateUrl: "/templates/pagos/index.html"
     })
@@ -327,6 +330,83 @@ app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'Ta
     };
     $scope.listar();
 }]);
+
+app.controller("IngresosController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.ingresos = [], $scope.fecha_inicial= null, $scope.fecha_final = null, $scope.matrizIngresos= [];
+
+        $scope.total = { admin :0, seguro :0, salon:0, incumplimiento: 0, parqueadero:0, otros:0};
+
+$scope.obtenerReporte = function()
+        {
+            $http.get('/usuarios/ingresos/totales/'+$scope.fecha_inicial+'/'+$scope.fecha_final)
+                .success(function(data, status, headers, config)
+                {
+                    $scope.ingresos = data;
+                    $scope.matrizIngresos =[];
+                    $scope.total = { admin :0, seguro :0, salon:0, incumplimiento: 0, parqueadero:0, otros:0};
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        if($scope.ValidateMatriz(ingreso.prefix) == -1)
+                        {
+                            $scope.matrizIngresos.push({ prefix : ingreso.prefix, admin : 0,
+                                                          seguro:0, salon:0, incumplimiento :0, otros : 0, parqueadero:0 , periodo: ingreso.month +"-"+ingreso.year})
+                        }
+                    });
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        index = $scope.ValidateMatriz(ingreso.prefix);
+                        if(ingreso.id == 1)
+                        {
+                            $scope.total.admin = $scope.total.admin+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].admin = ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 2)
+                        {
+                            $scope.total.seguro = $scope.total.seguro+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].seguro = ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 3)
+                        {
+                            $scope.total.salon = $scope.total.salon+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].salon = ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 4)
+                        {
+                            $scope.total.incumplimiento = $scope.total.incumplimiento+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].incumplimiento = ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 5)
+                        {
+                            $scope.total.parqueadero = $scope.total.parqueadero+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].parqueadero = ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 6)
+                        {
+                            $scope.total.otros = $scope.total.otros+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].otros = ingreso.ingresos;
+                        }
+                    });
+                    console.log('matriz', $scope.matrizIngresos);
+                });
+        };
+
+        $scope.ValidateMatriz = function(prefix)
+        {
+            var posicion= -1;
+            $scope.matrizIngresos.forEach(function(ingreso, index)
+            {
+                if(ingreso.prefix == prefix)
+                {
+                    posicion= index;
+                }
+            });
+            return posicion;
+        };
+    }]);
 
 
 function cerrarModalPago()

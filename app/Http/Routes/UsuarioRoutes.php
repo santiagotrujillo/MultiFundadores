@@ -35,3 +35,10 @@ Route::get('/usuarios/junta/home', [
 Route::get('/usuarios/salir', [
     'uses'=>'UsuarioController@salir'
 ]);
+
+/**
+ * Ruta para obtener el reporte de ingresos totales
+ */
+Route::get('/usuarios/ingresos/totales/{fecha_inicial}/{fecha_final}', [
+    'uses'=>'UsuarioController@obtenerIngresosTotales'
+]);

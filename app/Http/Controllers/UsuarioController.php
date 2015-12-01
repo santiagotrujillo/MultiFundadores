@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Usuario;
 use Illuminate\Http\Request;
-use \Response, \Input, \Hash, \Auth;
+use \Response, \Input, \Hash, \Auth, \DB;
 use App\Http\Requests\UsuarioLoginRequest;
 
 use App\Http\Requests;
@@ -105,6 +105,21 @@ class UsuarioController extends Controller
             return redirect('/usuarios/home');
         }
         return redirect('/usuarios/login');
+    }
+
+    /**
+     * @param date $fecha_inicial
+     * @param date $fecha_final
+     * @return mixed
+     */
+    public function obtenerIngresosTotales($fecha_inicial, $fecha_final)
+    {
+        $query = "select sum(pagos.valor_pagado) as ingresos,tipo_pagos.id, tipo_pagos.concepto, month(pagos.created_at) as month, year(pagos.created_at) as year, concat('prefix',month(pagos.created_at),year(pagos.created_at)) as prefix
+                  from pagos, tipo_pagos
+                  where date(pagos.created_at) between '$fecha_inicial' and '$fecha_final'
+                  and tipo_pagos.id = pagos.tipo_pago_id
+                  group by pagos.tipo_pago_id, month(pagos.created_at), year(pagos.created_at)";
+        return DB::select($query,[]);
     }
 
 }
