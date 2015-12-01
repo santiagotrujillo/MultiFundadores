@@ -60,6 +60,12 @@ app.config(["$routeProvider", function($router)
     .when("/menu/ingresos", {
         templateUrl: "/templates/ingresos/menu.html"
     })
+    .when("/ingresos/efectivo", {
+        templateUrl: "/templates/ingresos/efectivo.html"
+    })
+    .when("/ingresos/consignaciones", {
+        templateUrl: "/templates/ingresos/consignaciones.html"
+    })
     .when("/ingresos", {
         templateUrl: "/templates/ingresos/reporte_total.html"
     })
@@ -356,6 +362,96 @@ $scope.obtenerReporte = function()
                         {
                             $scope.matrizIngresos.push({ prefix : ingreso.prefix, admin : 0,
                                                           seguro:0, salon:0, incumplimiento :0, otros : 0, parqueadero:0 , periodo: ingreso.month +"-"+ingreso.year, total:0})
+                        }
+                    });
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        index = $scope.ValidateMatriz(ingreso.prefix);
+                        if(ingreso.id == 1)
+                        {
+                            $scope.total.admin = $scope.total.admin+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].admin = ingreso.ingresos;
+                            $scope.matrizIngresos[index].total = $scope.matrizIngresos[index].total+ ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 2)
+                        {
+                            $scope.total.seguro = $scope.total.seguro+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].seguro = ingreso.ingresos;
+                            $scope.matrizIngresos[index].total = $scope.matrizIngresos[index].total+ ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 3)
+                        {
+                            $scope.total.salon = $scope.total.salon+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].salon = ingreso.ingresos;
+                            $scope.matrizIngresos[index].total = $scope.matrizIngresos[index].total+ ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 4)
+                        {
+                            $scope.total.incumplimiento = $scope.total.incumplimiento+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].incumplimiento = ingreso.ingresos;
+                            $scope.matrizIngresos[index].total = $scope.matrizIngresos[index].total+ ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 5)
+                        {
+                            $scope.total.parqueadero = $scope.total.parqueadero+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].parqueadero = ingreso.ingresos;
+                            $scope.matrizIngresos[index].total = $scope.matrizIngresos[index].total+ ingreso.ingresos;
+                        }
+                        else if(ingreso.id == 6)
+                        {
+                            $scope.total.otros = $scope.total.otros+ ingreso.ingresos;
+                            $scope.matrizIngresos[index].otros = ingreso.ingresos;
+                            $scope.matrizIngresos[index].total = $scope.matrizIngresos[index].total+ ingreso.ingresos;
+                        }
+                    });
+                    $scope.total.total = $scope.total.admin + $scope.total.seguro+$scope.total.salon +$scope.total.incumplimiento+$scope.total.parqueadero+$scope.total.otros;
+                    console.log('matriz', $scope.matrizIngresos);
+                });
+        };
+
+        $scope.imprimir = function()
+        {
+            window.print();
+        }
+
+        $scope.ValidateMatriz = function(prefix)
+        {
+            var posicion= -1;
+            $scope.matrizIngresos.forEach(function(ingreso, index)
+            {
+                if(ingreso.prefix == prefix)
+                {
+                    posicion= index;
+                }
+            });
+            return posicion;
+        };
+    }]);
+
+
+app.controller("IngresosEfectivoController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.ingresos = [], $scope.fecha_inicial= null, $scope.fecha_final = null, $scope.matrizIngresos= [];
+
+        $scope.total = { admin :0, seguro :0, salon:0, incumplimiento: 0, parqueadero:0, otros:0, total:0};
+
+        $scope.obtenerReporte = function()
+        {
+            $http.get('/usuarios/ingresos/efectivos/totales/'+$scope.fecha_inicial+'/'+$scope.fecha_final)
+                .success(function(data, status, headers, config)
+                {
+                    $scope.ingresos = data;
+                    $scope.matrizIngresos =[];
+                    $scope.total = { admin :0, seguro :0, salon:0, incumplimiento: 0, parqueadero:0, otros:0 ,total:0};
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        if($scope.ValidateMatriz(ingreso.prefix) == -1)
+                        {
+                            $scope.matrizIngresos.push({ prefix : ingreso.prefix, admin : 0,
+                                seguro:0, salon:0, incumplimiento :0, otros : 0, parqueadero:0 , periodo: ingreso.month +"-"+ingreso.year, total:0})
                         }
                     });
 

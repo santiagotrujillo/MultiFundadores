@@ -42,3 +42,17 @@ Route::get('/usuarios/salir', [
 Route::get('/usuarios/ingresos/totales/{fecha_inicial}/{fecha_final}', [
     'uses'=>'UsuarioController@obtenerIngresosTotales'
 ]);
+
+/**
+ * Ruta para obtener el reporte de ingresos efectivos totales
+ */
+Route::get('/usuarios/ingresos/efectivos/totales/{fecha_inicial}/{fecha_final}', [
+    'uses'=>'UsuarioController@obtenerIngresosEfectivoTotales'
+]);
+
+/**
+ * Ruta para obtener el reporte de ingresos consignaciones totales
+ */
+Route::get('/usuarios/ingresos/consignaciones/totales/{fecha_inicial}/{fecha_final}', [
+    'uses'=>'UsuarioController@obtenerIngresosEfectivoTotales'
+]);

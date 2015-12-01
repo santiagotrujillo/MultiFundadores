@@ -122,4 +122,38 @@ class UsuarioController extends Controller
         return DB::select($query,[]);
     }
 
+    /**
+     * @param $fecha_inicial
+     * @param $fecha_final
+     * @return mixed
+     */
+    public function obtenerIngresosEfectivoTotales($fecha_inicial, $fecha_final)
+    {
+        $query =    "select sum(abonos.valor) as ingresos,tipo_pagos.id, tipo_pagos.concepto, month(pagos.created_at) as month, year(pagos.created_at) as year, concat('prefix',month(pagos.created_at),year(pagos.created_at)) as prefix
+                    from pagos, tipo_pagos, abonos
+                    where date(pagos.created_at) between '$fecha_inicial' and '$fecha_final'
+                    and tipo_pagos.id = pagos.tipo_pago_id
+                    and pagos.id = abonos.pago_id
+                    and abonos.forma_pago like 'EFECTIVO'
+                    group by pagos.tipo_pago_id, month(pagos.created_at), year(pagos.created_at)";
+        return DB::select($query,[]);
+    }
+
+    /**
+     * @param $fecha_inicial
+     * @param $fecha_final
+     * @return mixed
+     */
+    public function obtenerIngresosConsignacionesTotales($fecha_inicial, $fecha_final)
+    {
+        $query =    "select sum(abonos.valor) as ingresos,tipo_pagos.id, tipo_pagos.concepto, month(pagos.created_at) as month, year(pagos.created_at) as year, concat('prefix',month(pagos.created_at),year(pagos.created_at)) as prefix
+                    from pagos, tipo_pagos, abonos
+                    where date(pagos.created_at) between '$fecha_inicial' and '$fecha_final'
+                    and tipo_pagos.id = pagos.tipo_pago_id
+                    and pagos.id = abonos.pago_id
+                    and abonos.forma_pago like 'CONSIGNACION'
+                    group by pagos.tipo_pago_id, month(pagos.created_at), year(pagos.created_at)";
+        return DB::select($query,[]);
+    }
+
 }
