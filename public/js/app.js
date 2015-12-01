@@ -622,6 +622,11 @@ app.controller("AbonoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'T
             });
     };
     $scope.ver();
+
+    $scope.imprimir = function()
+    {
+        window.print();
+    }
 }]);
 
 

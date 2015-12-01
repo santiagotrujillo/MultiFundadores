@@ -42,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.965517">
-              <caret line="623" column="17" selection-start-line="623" selection-start-column="17" selection-end-line="623" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.61764705">
+              <caret line="627" column="23" selection-start-line="627" selection-start-column="23" selection-end-line="627" selection-end-column="23" />
               <folding>
                 <element signature="e#2647#5164#0" expanded="false" />
                 <element signature="e#5204#8379#0" expanded="false" />
@@ -63,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/templates/abonos/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39005736">
-              <caret line="12" column="89" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
+            <state vertical-scroll-proportion="-5.0595236">
+              <caret line="25" column="62" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -170,9 +170,9 @@
         <option value="$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php" />
         <option value="$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php" />
         <option value="$PROJECT_DIR$/public/templates/recaudos/index.html" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php" />
         <option value="$PROJECT_DIR$/public/templates/abonos/profile.html" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
       </list>
     </option>
   </component>
@@ -915,25 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.965517">
-          <caret line="623" column="17" selection-start-line="623" selection-start-column="17" selection-end-line="623" selection-end-column="17" />
-          <folding>
-            <element signature="e#2647#5164#0" expanded="false" />
-            <element signature="e#5204#8379#0" expanded="false" />
-            <element signature="e#8423#8910#0" expanded="false" />
-            <element signature="e#8950#9437#0" expanded="false" />
-            <element signature="e#9475#10613#0" expanded="false" />
-            <element signature="e#10646#11720#0" expanded="false" />
-            <element signature="e#10818#11719#0" expanded="false" />
-            <element signature="e#11761#16351#0" expanded="false" />
-            <element signature="e#16400#20982#0" expanded="false" />
-            <element signature="e#21035#25622#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/recaudos/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.6538463">
@@ -960,9 +941,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/abonos/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39005736">
-          <caret line="12" column="89" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
+        <state vertical-scroll-proportion="-5.0595236">
+          <caret line="25" column="62" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="62" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61764705">
+          <caret line="627" column="23" selection-start-line="627" selection-start-column="23" selection-end-line="627" selection-end-column="23" />
+          <folding>
+            <element signature="e#2647#5164#0" expanded="false" />
+            <element signature="e#5204#8379#0" expanded="false" />
+            <element signature="e#8423#8910#0" expanded="false" />
+            <element signature="e#8950#9437#0" expanded="false" />
+            <element signature="e#9475#10613#0" expanded="false" />
+            <element signature="e#10646#11720#0" expanded="false" />
+            <element signature="e#10818#11719#0" expanded="false" />
+            <element signature="e#11761#16351#0" expanded="false" />
+            <element signature="e#16400#20982#0" expanded="false" />
+            <element signature="e#21035#25622#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
