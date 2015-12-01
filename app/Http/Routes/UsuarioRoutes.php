@@ -54,5 +54,5 @@ Route::get('/usuarios/ingresos/efectivos/totales/{fecha_inicial}/{fecha_final}',
  * Ruta para obtener el reporte de ingresos consignaciones totales
  */
 Route::get('/usuarios/ingresos/consignaciones/totales/{fecha_inicial}/{fecha_final}', [
-    'uses'=>'UsuarioController@obtenerIngresosEfectivoTotales'
+    'uses'=>'UsuarioController@obtenerIngresosConsignacionesTotales'
 ]);

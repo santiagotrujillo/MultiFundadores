@@ -25,8 +25,8 @@
       <file leaf-file-name="UsuarioController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7307692">
-              <caret line="128" column="7" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
+            <state vertical-scroll-proportion="-14.5">
+              <caret line="146" column="56" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="56" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
                 <marker date="1448945906060" expanded="true" signature="2913:3415" placeholder="select sum(p..." />
@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsuarioRoutes.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UsuarioRoutes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.884615">
-              <caret line="43" column="3" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.73666096">
+              <caret line="50" column="3" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -60,18 +60,18 @@
       <file leaf-file-name="reporte_total.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/templates/ingresos/reporte_total.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537">
-              <caret line="12" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="6" />
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="10" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5766063">
-              <caret line="435" column="73" selection-start-line="435" selection-start-column="73" selection-end-line="435" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="526" column="0" selection-start-line="526" selection-start-column="0" selection-end-line="526" selection-end-column="0" />
               <folding>
                 <element signature="e#2547#5064#0" expanded="false" />
                 <element signature="e#5104#8279#0" expanded="false" />
@@ -81,6 +81,7 @@
                 <element signature="e#10546#11620#0" expanded="false" />
                 <element signature="e#10718#11619#0" expanded="false" />
                 <element signature="e#11661#16251#0" expanded="false" />
+                <element signature="e#16300#20882#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,8 +100,8 @@
       <file leaf-file-name="consignaciones.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/templates/ingresos/consignaciones.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -109,8 +110,8 @@
       <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/templates/ingresos/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state vertical-scroll-proportion="-3.2692308">
+              <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -190,10 +191,10 @@
         <option value="$PROJECT_DIR$/public/templates/ingresos/reporte_total.html" />
         <option value="$PROJECT_DIR$/resources/views/users/home.blade.php" />
         <option value="$PROJECT_DIR$/public/templates/ingresos/menu.html" />
-        <option value="$PROJECT_DIR$/public/templates/ingresos/consignaciones.html" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/templates/ingresos/efectivo.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/public/templates/ingresos/consignaciones.html" />
         <option value="$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php" />
       </list>
     </option>
@@ -1028,30 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/consignaciones.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/reporte_total.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
-          <caret line="12" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/ingresos/efectivo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923">
@@ -1060,10 +1037,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/reporte_total.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/consignaciones.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="526" column="0" selection-start-line="526" selection-start-column="0" selection-end-line="526" selection-end-column="0" />
+          <folding>
+            <element signature="e#2547#5064#0" expanded="false" />
+            <element signature="e#5104#8279#0" expanded="false" />
+            <element signature="e#8323#8810#0" expanded="false" />
+            <element signature="e#8850#9337#0" expanded="false" />
+            <element signature="e#9375#10513#0" expanded="false" />
+            <element signature="e#10546#11620#0" expanded="false" />
+            <element signature="e#10718#11619#0" expanded="false" />
+            <element signature="e#11661#16251#0" expanded="false" />
+            <element signature="e#16300#20882#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7307692">
-          <caret line="128" column="7" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
+        <state vertical-scroll-proportion="-14.5">
+          <caret line="146" column="56" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="56" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
             <marker date="1448945906060" expanded="true" signature="2913:3415" placeholder="select sum(p..." />
@@ -1075,26 +1094,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.884615">
-          <caret line="43" column="3" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.73666096">
+          <caret line="50" column="3" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5766063">
-          <caret line="435" column="73" selection-start-line="435" selection-start-column="73" selection-end-line="435" selection-end-column="73" />
-          <folding>
-            <element signature="e#2547#5064#0" expanded="false" />
-            <element signature="e#5104#8279#0" expanded="false" />
-            <element signature="e#8323#8810#0" expanded="false" />
-            <element signature="e#8850#9337#0" expanded="false" />
-            <element signature="e#9375#10513#0" expanded="false" />
-            <element signature="e#10546#11620#0" expanded="false" />
-            <element signature="e#10718#11619#0" expanded="false" />
-            <element signature="e#11661#16251#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
