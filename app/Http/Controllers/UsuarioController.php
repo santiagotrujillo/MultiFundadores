@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Tipo_deuda;
+use App\Deuda;
 use App\Usuario;
 use Illuminate\Http\Request;
 use \Response, \Input, \Hash, \Auth, \DB;
 use App\Http\Requests\UsuarioLoginRequest;
+use App\Http\Requests\EgresoCreateRequest;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -160,6 +162,15 @@ class UsuarioController extends Controller
     public function tipoDeudas()
     {
         return (new Tipo_deuda)->all();
+    }
+
+    public function egreso(EgresoCreateRequest $request)
+    {
+        $data = \Input::all();
+        $deuda = new Deuda();
+        $deuda->fill($data);
+        $deuda->conjunto_id = 810004843;
+        return Response::json($deuda->save());
     }
 
 }

@@ -307,7 +307,7 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
 
 app.controller("EgresosController", ['$scope', '$http', function($scope, $http)
 {
-    $scope.tipo_deudas = [];
+    $scope.tipo_deudas = []; $scope.egreso = null;
     $scope.listarTipoDeudas = function()
     {
         $http.get('/usuarios/tipodeudas')
@@ -317,6 +317,7 @@ app.controller("EgresosController", ['$scope', '$http', function($scope, $http)
         })
     };
     $scope.listarTipoDeudas();
+
     $scope.realizarCobroAdmin = function ()
     {
         closeModal('cobrosAdmin');
@@ -330,6 +331,30 @@ app.controller("EgresosController", ['$scope', '$http', function($scope, $http)
                 alert('Hubo un error')
             });
     };
+
+    $scope.enviarEgreso = function()
+    {
+        abrirModal('cargoEgreso');
+    }
+
+    $scope.realizarEgreso = function()
+    {
+        $http({
+            method: 'POST',
+            url: '/usuarios/egreso',
+            data: $scope.egreso,
+        })
+        .success(function(data, status, headers, config)
+        {
+            cerrarModal('cargoEgreso');
+            alert('Se realizo el egreso');
+            window.location.reload();
+        })
+        .error(function(error, status, headers, config)
+        {
+            alert(error);
+        });
+    }
 }]);
 
 app.controller("PagosController", [
@@ -688,4 +713,14 @@ function verConfirmacion()
     $('#cargoAbono').modal('hide');
     alert("Se realizó el pago satisfactoriamente")
     window.location.reload();
+}
+
+function abrirModal(name)
+{
+    $('#'+name).modal('show');
+}
+
+function cerrarModal(name)
+{
+    $('#'+name).modal('hide');
 }

@@ -63,3 +63,10 @@ Route::get('/usuarios/ingresos/consignaciones/totales/{fecha_inicial}/{fecha_fin
 Route::get('/usuarios/tipodeudas', [
     'uses'=>'UsuarioController@tipoDeudas'
 ]);
+
+/**
+ * Ruta para realizar el egreso
+ */
+Route::post('/usuarios/egreso', [
+    'uses'=>'UsuarioController@egreso'
+]);
