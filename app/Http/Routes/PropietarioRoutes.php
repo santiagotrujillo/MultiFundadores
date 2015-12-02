@@ -46,6 +46,11 @@ Route::post('/propietarios/cobro/seguro','PropietarioController@cobroSeguro');
 Route::post('/propietarios/cobro/salon','PropietarioController@cobroSalon');
 
 /**
+ * Ruta para realizar la cuenta de cobro a los propietarios en el año actual por concepto de parqueadero
+ */
+Route::post('/propietarios/cobro/parqueadero','PropietarioController@cobroParqueadero');
+
+/**
  * Ruta para realizar el pago de una deuda
  */
 Route::post('/propietarios/abonar','PropietarioController@abonar');

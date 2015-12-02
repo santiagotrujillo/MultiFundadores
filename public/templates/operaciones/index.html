@@ -20,7 +20,7 @@
             <br>
         </div>
         <div class="col-md-4">
-            <button class="btn btn-primary"style="button:30px;">Generar cobros de Parqueadero</button><br/>
+            <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosParqueadero" style="button:30px;">Generar cobros de Parqueadero</button><br/>
             <br>
         </div>               <br/>
 
@@ -113,6 +113,48 @@
         </div>
     </div>
     <!-- end modal soft cobro salon -->
+
+    <!-- init modal soft cobro parqueadero -->
+    <div class="modal fade" id="cobrosParqueadero" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">Cobro Parqueadero</h4>
+                    <aside>Cobro para el parqueadero</aside>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            Recuerde que este cobro se genera dependiendo las fechas en que se utiliza el parqueadero
+                        </div>
+                        <div class="col-md-12">
+                            <label>Descripción*</label>
+                            <input type="text" name="descripcion" required class="form-control" ng-model="pago.descripcion" placeholder="Digite la descripcion">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Fecha inicial*</label>
+                            <input type="date" name="fecha_inicial" required class="form-control" ng-model="pago.fecha_inicial">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Fecha final*</label>
+                            <input type="date" name="fecha_final" required class="form-control" ng-model="pago.fecha_final">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Valor*</label>
+                            <input type="text"  name="valor" required class="form-control" ng-model="pago.valor" placeholder="Digite el valor">
+                            <br/><br/>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="realizarCobroParquedero()">Confirmar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal soft cobro parquedero -->
 
 </div>
 

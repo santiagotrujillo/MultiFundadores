@@ -14,6 +14,7 @@ use App\Http\Requests\PropietarioRequestUpdate;
 use App\Http\Requests\CobroSalonRequest;
 use App\Http\Requests\PropietarioLoginRequest;
 use App\Http\Requests\PropietarioDeshacerAbonoRequest;
+use App\Http\Requests\CobroParqueaderoRequest;
 
 class PropietarioController extends Controller
 {
@@ -266,6 +267,23 @@ class PropietarioController extends Controller
             return Response::json(['status => true'],200);
         }
         return Response::json(['message'=>'Ya se tienen facturas generadas de seguro'],406);
+    }
+
+    public function cobroParqueadero(CobroParqueaderoRequest $request)
+    {
+        $cobro = [
+            'valor' => $this->data["valor"],
+            'descripcion' => $this->data["descripcion"],
+            'fecha_inicial' =>  $this->data["fecha_inicial"],
+            'fecha_final' =>  $this->data["fecha_final"],
+            'tipo_pago_id' => 5
+        ];
+
+        $pago = (new Pago);
+        $pago->fill($cobro);
+        $pago->propiedad_id = 1234567891;
+        $pago->save();
+        return Response::json(['status => true'],200);
     }
 
     /**

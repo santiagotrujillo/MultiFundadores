@@ -304,7 +304,24 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
         {
             alert(error["message"])
         });
+    };
 
+    $scope.realizarCobroParquedero = function()
+    {
+        closeModal('cobrosParqueadero');
+        $http({
+            method: 'POST',
+            url: '/propietarios/cobro/parqueadero',
+            data: $scope.pago,
+        })
+        .success(function(data, status, headers, config)
+        {
+            alert('Se cargo el cobro del parqueadero correctamente')
+        })
+        .error(function(error, status, headers, config)
+        {
+            alert(error["message"])
+        });
     }
 }]);
 
