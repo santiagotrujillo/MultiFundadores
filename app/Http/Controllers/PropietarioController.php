@@ -294,6 +294,10 @@ class PropietarioController extends Controller
         return Response::json(['status => true'],200);
     }
 
+    /**
+     * @param CobroOtrosRequest $request
+     * @return mixed
+     */
     public function cobroOtros(CobroOtrosRequest $request)
     {
         $cobro = [
@@ -303,6 +307,26 @@ class PropietarioController extends Controller
             'fecha_final' =>  $this->data["fecha_final"],
             'propiedad_id' =>  $this->data["propiedad_id"],
             'tipo_pago_id' => 6
+        ];
+        $pago = (new Pago);
+        $pago->fill($cobro);
+        $pago->save();
+        return Response::json(['status => true'],200);
+    }
+
+    /**
+     * @param CobroOtrosRequest $request
+     * @return mixed
+     */
+    public function cuentaCobro(CobroOtrosRequest $request)
+    {
+        $cobro = [
+            'valor' => $this->data["valor"],
+            'descripcion' => $this->data["descripcion"],
+            'fecha_inicial' =>  $this->data["fecha_inicial"],
+            'fecha_final' =>  $this->data["fecha_final"],
+            'propiedad_id' =>  $this->data["propiedad_id"],
+            'tipo_pago_id' => 1
         ];
         $pago = (new Pago);
         $pago->fill($cobro);

@@ -21,6 +21,11 @@ class UsuarioController extends Controller
     {
         $this->data = Input::all();
     }
+
+    /**
+     * @param UsuarioLoginRequest $request
+     * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function login(UsuarioLoginRequest $request)
     {
         $usuario = (new Usuario)->where('id', $this->data['id'])->first();
@@ -39,6 +44,10 @@ class UsuarioController extends Controller
         return view('users.login')->withErrors(['clave' => 'clave incorrecta']);
     }
 
+    /**
+     * @param Usuario $usuario
+     * @return bool
+     */
     private function validarRol( Usuario $usuario)
     {
         if($usuario->rol_id == 1 || $usuario->rol_id ==3)
@@ -48,6 +57,9 @@ class UsuarioController extends Controller
         return false;
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function viewHome()
     {
         $user = Auth::user()->get();
@@ -82,6 +94,9 @@ class UsuarioController extends Controller
         return Response::json((new Usuario)->with(['rol'])->findOrFail($id));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function viewLogin()
     {
         $user = Auth::user()->get();
@@ -96,6 +111,9 @@ class UsuarioController extends Controller
         return view('users.login');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function viewJuntaHome()
     {
         $user = Auth::user()->get();

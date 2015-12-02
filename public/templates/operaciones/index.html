@@ -19,14 +19,21 @@
             <button class="btn btn-primary"style="button:30px;">Generar cobros de Multa incumplimiento</button><br/>
             <br>
         </div>
+
         <div class="col-md-4">
             <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosParqueadero" style="button:30px;">Generar cobros de Parqueadero</button><br/>
             <br>
-        </div>               <br/>
+        </div>
 
         <div class="col-md-4">
             <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosOtros" style="button:30px;">Generar cobros de Otros</button><br/>
-        </div>              <br/>
+            <br/>
+        </div>
+
+        <div class="col-md-4">
+            <button class="btn btn-danger" data-toggle="modal"  data-target="#cobrosCuentaCobrar" style="button:30px;">Generar cuenta por cobrar</button><br/>
+            <br/>
+        </div>
     </div>
 
 
@@ -194,6 +201,52 @@
                         </div>
                     </div>
                     <button type="button" class="btn btn-success" ng-click="realizarCobroOtros()">Confirmar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal soft cobro otros -->
+
+    <!-- init modal soft cobro otros -->
+    <div class="modal fade" id="cobrosCuentaCobrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">Cuenta por cobrar</h4>
+                    <aside>Cuenta de cobro</aside>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                        </div>
+                        <div class="col-md-12">
+                            <label>Descripción*</label>
+                            <input type="text" name="descripcion" required class="form-control" ng-model="pago.descripcion" placeholder="Digite la descripcion">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Fecha inicial*</label>
+                            <input type="date" name="fecha_inicial" required class="form-control" ng-model="pago.fecha_inicial">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Fecha final*</label>
+                            <input type="date" name="fecha_final" required class="form-control" ng-model="pago.fecha_final">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Valor*</label>
+                            <input type="text"  name="valor" required class="form-control" ng-model="pago.valor" placeholder="Digite el valor">
+                            <br/><br/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Propiedad*</label>
+                            <input type="number"  name="propiedad_id" required class="form-control" ng-model="pago.propiedad_id" placeholder="Digite la propiedad">
+                            <br/><br/>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="realizarCobroCuentaCobro()">Confirmar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
                 </div>
                 <div class="modal-footer">
