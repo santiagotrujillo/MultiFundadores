@@ -307,6 +307,16 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
 
 app.controller("EgresosController", ['$scope', '$http', function($scope, $http)
 {
+    $scope.tipo_deudas = [];
+    $scope.listarTipoDeudas = function()
+    {
+        $http.get('/usuarios/tipodeudas')
+        .success(function(data, status, headers, config)
+        {
+            $scope.tipo_deudas = data;
+        })
+    };
+    $scope.listarTipoDeudas();
     $scope.realizarCobroAdmin = function ()
     {
         closeModal('cobrosAdmin');

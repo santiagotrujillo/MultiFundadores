@@ -56,3 +56,10 @@ Route::get('/usuarios/ingresos/efectivos/totales/{fecha_inicial}/{fecha_final}',
 Route::get('/usuarios/ingresos/consignaciones/totales/{fecha_inicial}/{fecha_final}', [
     'uses'=>'UsuarioController@obtenerIngresosConsignacionesTotales'
 ]);
+
+/**
+ * Ruta para obtener la lista de las dueudas
+ */
+Route::get('/usuarios/tipodeudas', [
+    'uses'=>'UsuarioController@tipoDeudas'
+]);

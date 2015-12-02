@@ -10,6 +10,9 @@ class Tipo_deuda extends Model
 
     protected $table = 'tipo_deudas';
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function deuda()
     {
         return $this->belongsTo(__NAMESPACE__.'\Deuda');

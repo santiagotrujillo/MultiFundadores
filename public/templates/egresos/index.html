@@ -2,23 +2,29 @@
     <div class="table-responsive">
         <br/>
         <br/>
-        <div class="col-md-6">
+        <div class="col-md-12">
+            <h1>Registro de Egreso</h1><br/>
+        </div>
+        <div class="col-md-12">
             <label>Descripción*</label>
-            <input type="text" name="nombre" class="form-control" ng-model="propietario.nombre" placeholder="Digite el concepto">
+            <input type="text" name="descripcion" class="form-control" ng-model="egreso.descripcion" placeholder="Digite la descripcion">
         </div>
         <div class="col-md-6">
             <label>Valor*</label>
-            <input type="text"  name="apellido" class="form-control" ng-model="propietario.apellido" placeholder="Digite el valor">
+            <input type="number"  name="valor" class="form-control" ng-model="egreso.valor" placeholder="Digite el valor">
         </div>
         <div class="col-md-6">
             <label>Categoría</label>
-            <input type="numeric" name="telefono" class="form-control"  ng-model="propietario.telefono" placeholder="Digite el teléfono">
+
+            <select class="form-control" ng-model="driver.tipo_deuda_id">
+                <option ng-repeat="egreso in tipo_deudas" value="{{egreso.id}}">{{egreso.concepto}}</option>
+            </select>
             <br>
             <br>
-            <div class="col-md-6">
-                <button type="button" class="btn btn-success" ng-click="realizarPago()">Confirmar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
-            </div>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-success" ng-click="realizarPago()">Confirmar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
         </div>
 
 

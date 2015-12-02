@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tipo_deuda;
 use App\Usuario;
 use Illuminate\Http\Request;
 use \Response, \Input, \Hash, \Auth, \DB;
@@ -154,6 +155,11 @@ class UsuarioController extends Controller
                     and abonos.forma_pago like 'CONSIGNACION'
                     group by pagos.tipo_pago_id, month(pagos.created_at), year(pagos.created_at)";
         return DB::select($query,[]);
+    }
+
+    public function tipoDeudas()
+    {
+        return (new Tipo_deuda)->all();
     }
 
 }
