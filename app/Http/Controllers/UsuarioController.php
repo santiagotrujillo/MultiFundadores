@@ -159,18 +159,32 @@ class UsuarioController extends Controller
         return DB::select($query,[]);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
     public function tipoDeudas()
     {
         return (new Tipo_deuda)->all();
     }
 
+    /**
+     * @param EgresoCreateRequest $request
+     * @return mixed
+     */
     public function egreso(EgresoCreateRequest $request)
     {
         $data = \Input::all();
-        $deuda = new Deuda();
-        $deuda->fill($data);
-        $deuda->conjunto_id = 810004843;
-        return Response::json($deuda->save());
+        $data["conjunto_id"] = 810004843;
+        $deuda = Deuda::create($data);
+        return Response::json($deuda);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function verEgreso($id)
+    {
+        return Response::json((new Deuda)->find($id));
+    }
 }

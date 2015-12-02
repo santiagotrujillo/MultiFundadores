@@ -78,6 +78,9 @@ app.config(["$routeProvider", function($router)
     .when("/confirmacion/abono/:id", {
         templateUrl: "/templates/abonos/profile.html"
     })
+    .when("/egresos/profile/:id", {
+        templateUrl: "/templates/egresos/profile.html"
+    })
     .otherwise({
         redirectTo: '/operaciones'
     });
@@ -348,7 +351,8 @@ app.controller("EgresosController", ['$scope', '$http', function($scope, $http)
         {
             cerrarModal('cargoEgreso');
             alert('Se realizo el egreso');
-            window.location.reload();
+            console.log('dataxx', data);
+            window.location.href= '#/egresos/profile/'+data.id;
         })
         .error(function(error, status, headers, config)
         {
@@ -409,6 +413,25 @@ app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'Ta
             });
     };
     $scope.listar();
+}]);
+
+app.controller("EgresoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
+{
+    $scope.deuda = {};
+    $scope.show = function(page)
+    {
+        $http.get('/usuarios/egreso/'+$params.id)
+            .success(function(data, status, headers, config)
+            {
+               $scope.deuda =data;
+            });
+    };
+    $scope.show();
+
+    $scope.imprimir = function()
+    {
+        window.print();
+    }
 }]);
 
 app.controller("IngresosController", [

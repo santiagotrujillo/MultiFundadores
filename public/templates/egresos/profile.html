@@ -1,0 +1,24 @@
+<div ng-controller ="EgresoProfile">
+    <div class="row appcontainer">
+        <br/>
+        <br/>
+        <br/>
+        <div class="col-md-12">
+            <h1>Deuda # {{deuda.id}}</h1>
+        </div>
+
+        <div class="col-md-12">
+            <label>Descripcion: </label> {{deuda.descripcion}}<br/>
+        </div>
+        <div class="col-md-12">
+
+            <label>Fecha: </label>
+            {{deuda.created_at}}<br/>
+            <label>Valor: </label> {{deuda.valor}}<br/>
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-success" ng-click="imprimir()">Imprimir</button>
+        </div>
+
+    </div>
+</div>

@@ -70,3 +70,11 @@ Route::get('/usuarios/tipodeudas', [
 Route::post('/usuarios/egreso', [
     'uses'=>'UsuarioController@egreso'
 ]);
+
+
+/**
+ * Ruta para realizar el egreso
+ */
+Route::get('/usuarios/egreso/{id}', [
+    'uses'=>'UsuarioController@verEgreso'
+]);
