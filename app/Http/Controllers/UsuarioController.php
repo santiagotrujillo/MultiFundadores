@@ -177,6 +177,15 @@ class UsuarioController extends Controller
         return DB::select($query,[]);
     }
 
+    public function ingresosBlogues()
+    {
+        $query = "SELECT pagos.*, month(pagos.created_at) as month, year(pagos.created_at) as year,
+                  substr(CAST(propiedad_id AS CHAR),1,1) as bloque
+                  from pagos where tipo_pago_id in (1,2)
+                  and year(pagos.created_at) = year(now())";
+        return DB::select($query,[]);
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */

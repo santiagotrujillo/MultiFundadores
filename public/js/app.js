@@ -63,6 +63,9 @@ app.config(["$routeProvider", function($router)
     .when("/ingresos/efectivo", {
         templateUrl: "/templates/ingresos/efectivo.html"
     })
+    .when("/ingresos/bloque", {
+        templateUrl: "/templates/ingresos/bloque.html"
+    })
     .when("/ingresos/consignaciones", {
         templateUrl: "/templates/ingresos/consignaciones.html"
     })
@@ -746,6 +749,125 @@ app.controller("IngresosConsignacionController", [
             $scope.matrizIngresos.forEach(function(ingreso, index)
             {
                 if(ingreso.prefix == prefix)
+                {
+                    posicion= index;
+                }
+            });
+            return posicion;
+        };
+    }]);
+
+app.controller("IngresosBloqueController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.ingresos = [],$scope.matrizIngresos= [];
+
+
+        $scope.excel= function()
+        {
+            var blob = new Blob([document.getElementById('bajar').innerHTML], {
+                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+            });
+            saveAs(blob, "Descarga Ingresos Bloques.xls");
+        };
+
+        $scope.obtenerReporte = function()
+        {
+            $http.get('/usuarios/ingresos/bloques')
+                .success(function(data, status, headers, config)
+                {
+                    $scope.ingresos = data;
+                    $scope.matrizIngresos =[];
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        if($scope.ValidateMatriz(ingreso.propiedad_id) == -1)
+                        {
+                            $scope.matrizIngresos.push({
+                                bloque: ingreso.bloque,
+                                propiedad_id : ingreso.propiedad_id,
+                                enero : 0,
+                                febrero:0,
+                                marzo:0,
+                                abril:0,
+                                mayo : 0,
+                                junio:0,
+                                julio: 0,
+                                agosto:0,
+                                septiembre:0,
+                                octubre:0,
+                                noviembre :0,
+                                diciembre:0})
+                        }
+                    });
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        index = $scope.ValidateMatriz(ingreso.propiedad_id);
+                        if(ingreso.month == 1)
+                        {
+                            $scope.matrizIngresos[index].enero = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 2)
+                        {
+                            $scope.matrizIngresos[index].febrero = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 3)
+                        {
+                            $scope.matrizIngresos[index].marzo = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 4)
+                        {
+                            $scope.matrizIngresos[index].abril = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 5)
+                        {
+                            $scope.matrizIngresos[index].mayo = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 6)
+                        {
+                            $scope.matrizIngresos[index].junio = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 7)
+                        {
+                            $scope.matrizIngresos[index].julio = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 8)
+                        {
+                            $scope.matrizIngresos[index].agosto = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 9)
+                        {
+                            $scope.matrizIngresos[index].septiembre = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 10)
+                        {
+                            $scope.matrizIngresos[index].octubre = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 11)
+                        {
+                            $scope.matrizIngresos[index].noviembre = ingreso.valor_pagado;
+                        }
+                        else if(ingreso.month == 12)
+                        {
+                            $scope.matrizIngresos[index].diciembre = ingreso.valor_pagado;
+                        }
+                    });
+                    console.log('matriz', $scope.matrizIngresos);
+                });
+        };
+
+        $scope.imprimir = function()
+        {
+            window.print();
+        }
+
+        $scope.ValidateMatriz = function(propiedad_id)
+        {
+            var posicion= -1;
+            $scope.matrizIngresos.forEach(function(ingreso, index)
+            {
+                if(ingreso.propiedad_id == propiedad_id)
                 {
                     posicion= index;
                 }

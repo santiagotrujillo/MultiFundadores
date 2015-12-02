@@ -58,6 +58,13 @@ Route::get('/usuarios/ingresos/consignaciones/totales/{fecha_inicial}/{fecha_fin
 ]);
 
 /**
+ * Ruta para obtener el reporte de ingresos por bloque
+ */
+Route::get('/usuarios/ingresos/bloques', [
+    'uses'=>'UsuarioController@ingresosBlogues'
+]);
+
+/**
  * Ruta para obtener la lista de las dueudas
  */
 Route::get('/usuarios/tipodeudas', [
