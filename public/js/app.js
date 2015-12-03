@@ -277,6 +277,20 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
         });
     };
 
+    $scope.realizarCobroMulta = function ()
+    {
+        closeModal('cobrosMulta');
+        $http.post('/propietarios/cobro/multa')
+        .success(function(data, status, headers, config)
+        {
+            alert('Se cargaron los cobros de multa correctamente')
+        })
+        .error(function(error, status, headers, config)
+        {
+            alert(error["message"])
+        });
+    };
+
     $scope.realizarCobroSeguro = function ()
     {
         closeModal('cobrosSeguro');

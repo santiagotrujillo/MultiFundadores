@@ -224,7 +224,7 @@ class PropietarioController extends Controller
         if(!$this->validateDate()){
         $cobro = [
             'valor' => 90000,
-            'descripción' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
+            'descripcion' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
             'fecha_inicial' =>  $this->first_month_day(),
             'fecha_final' =>  $this->last_month_day(),
             'tipo_pago_id' =>  1
@@ -248,8 +248,36 @@ class PropietarioController extends Controller
         }
             return Response::json(['status => true'],200);
         }
-
         return Response::json(['message'=>'El mes actual ya tiene facturas generadas de administración'],406);
+    }
+
+    public function cobroMulta()
+    {
+        $fecha = date('Y-m-j');
+        $nuevafecha = strtotime ( '-1 month' , strtotime ( $fecha ) ) ;
+        $nuevafecha = date ( 'Y-m-j' , $nuevafecha );
+        if(!$this->validateDateMulta($nuevafecha))
+        {
+
+            $cobro = [
+                'valor' => 2000,
+                'descripcion' => "Multa por pago atrazado de admin : $nuevafecha",
+                'fecha_inicial' =>  $this->first_month_day(),
+                'fecha_final' =>  $this->last_month_day(),
+                'tipo_pago_id' =>  4
+            ];
+
+            $pagosAtrazados = (new Pago)->whereRaw("valor <> valor_pagado")->get();
+            foreach($pagosAtrazados as $pagoAtrazado)
+            {
+                $pago = (new Pago);
+                $pago->fill($cobro);
+                $pago->propiedad_id = $pagoAtrazado->propiedad_id;
+                $pago->save();
+            }
+            return Response::json(['status => true'],200);
+        }
+        return Response::json(['message'=>'El mes anterior ya se le hizo el cobro de multas'],406);
     }
 
     /**
@@ -263,7 +291,7 @@ class PropietarioController extends Controller
         {
             $cobro = [
                 'valor' => 76500,
-                'descripción' => 'Pago a realizar del seguro en el año : '. $year_actual,
+                'descripcion' => 'Pago a realizar del seguro en el año : '. $year_actual,
                 'fecha_inicial' =>  "$year_actual-01-01",
                 'fecha_final' =>  "$year_actual-12-31",
                 'tipo_pago_id' => 2
@@ -356,6 +384,20 @@ class PropietarioController extends Controller
     private function validateDate()
     {
         $pago = (new Pago)->whereRaw('date(created_at) = date(now()) and tipo_pago_id = 1')->first();
+        if( count($pago) > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @param $fecha
+     * @return bool
+     */
+    private function validateDateMulta($fecha)
+    {
+        $pago = (new Pago)->whereRaw("date(created_at) = date($fecha) and tipo_pago_id = 4")->first();
         if( count($pago) > 0)
         {
             return true;

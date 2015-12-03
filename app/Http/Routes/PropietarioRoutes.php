@@ -36,6 +36,11 @@ Route::get('/propietarios/cobro/admin/pendientes','PropietarioController@cobroAd
 Route::post('/propietarios/cobro/admin','PropietarioController@cobroAdmin');
 
 /**
+ * Ruta para realizar la cuenta de cobro a los propietarios en el mes actual por concepto de multa - mensualmente
+ */
+Route::post('/propietarios/cobro/multa','PropietarioController@cobroMulta');
+
+/**
  * Ruta para realizar la cuenta de cobro a los propietarios en el año actual por concepto de admin - anualmente
  */
 Route::post('/propietarios/cobro/seguro','PropietarioController@cobroSeguro');

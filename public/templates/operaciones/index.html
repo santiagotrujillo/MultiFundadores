@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-md-4">
-            <button class="btn btn-primary"style="button:30px;">Generar cobros de Multa incumplimiento</button><br/>
+            <button class="btn btn-primary"style="button:30px;" data-toggle="modal" data-target="#cobrosMulta" >Generar cobros de Multa incumplimiento</button><br/>
             <br>
         </div>
 
@@ -61,6 +61,31 @@
         </div>
     </div>
     <!-- end modal soft cobro admin -->
+
+    <!-- init modal soft cobro multa -->
+    <div class="modal fade" id="cobrosMulta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">Cobro de Multa</h4>
+                    <aside>Cobro de multa para pago atrasado del mes anterior de la mensualidad de Admin </aside>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            Recuerde que este cobro se debe generar mensualmente, y se cobra por el mes vencido anterior
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="realizarCobroMulta()">Confirmar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal soft cobro multa -->
 
     <!-- init modal soft cobro seguro -->
     <div class="modal fade" id="cobrosSeguro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
