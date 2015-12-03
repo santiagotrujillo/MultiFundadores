@@ -34,18 +34,19 @@
                 <tbody><tr ng-repeat="ingreso in matrizIngresos">
                     <td>{{ ingreso.bloque }}</td>
                     <td>{{ ingreso.propiedad_id }}</td>
-                    <td>{{ ingreso.enero }}</td>
-                    <td>{{ ingreso.febrero }}</td>
-                    <td>{{ ingreso.marzo }}</td>
-                    <td>{{ ingreso.abril }}</td>
-                    <td>{{ ingreso.mayo }}</td>
-                    <td>{{ ingreso.junio }}</td>
-                    <td>{{ ingreso.julio }}</td>
-                    <td>{{ ingreso.agosto }}</td>
-                    <td>{{ ingreso.septimbre }}</td>
-                    <td>{{ ingreso.octubre }}</td>
-                    <td>{{ ingreso.noviembre }}</td>
-                    <td>{{ ingreso.diciembre }}</td>
+
+                    <td><a href="#/pago/profile/{{ingreso.enero.id}}">{{ ingreso.enero.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.febrero.id}}">{{ ingreso.febrero.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.marzo.id}}">{{ ingreso.marzo.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.abril.id}}">{{ ingreso.abril.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.mayo.id}}">{{ ingreso.mayo.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.junio.id}}">{{ ingreso.junio.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.julio.id}}">{{ ingreso.julio.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.agosto.id}}">{{ ingreso.agosto.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.septiembre.id}}">{{ ingreso.septiembre.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.octubre.id}}">{{ ingreso.octubre.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.noviembre.id}}">{{ ingreso.noviembre.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.diciembre.id}}">{{ ingreso.diciembre.total }}</a></td>
                 </tr>
                 </tbody>
             </table>
