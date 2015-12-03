@@ -233,10 +233,18 @@ class PropietarioController extends Controller
         $propiedades = (new Propiedad)->all();
         foreach($propiedades as $propiedad)
         {
-            $pago = (new Pago);
-            $pago->fill($cobro);
-            $pago->propiedad_id = $propiedad->id;
-            $pago->save();
+            // se cobra una parte de admin a estas propiedades
+            if($propiedad->id == 3201 || $propiedad->id == 5301 || $propiedad->id == 6302)
+            {
+                $cobro['valor'] = 67500;
+            }
+            if($propiedad->id != 1201)
+            {
+                $pago = (new Pago);
+                $pago->fill($cobro);
+                $pago->propiedad_id = $propiedad->id;
+                $pago->save();
+            }
         }
             return Response::json(['status => true'],200);
         }
