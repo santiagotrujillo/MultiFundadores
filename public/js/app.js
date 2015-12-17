@@ -84,6 +84,9 @@ app.config(["$routeProvider", function($router)
     .when("/egresos/profile/:id", {
         templateUrl: "/templates/egresos/profile.html"
     })
+    .when("/pazysalvo/document/:id", {
+        templateUrl: "/templates/pazysalvo/document.html"
+    })
     .otherwise({
         redirectTo: '/operaciones'
     });
@@ -263,6 +266,7 @@ app.controller("RecaudoController", [
 
 app.controller("OperacionesController", ['$scope', '$http', function($scope, $http)
 {
+
     $scope.realizarCobroAdmin = function ()
     {
         closeModal('cobrosAdmin');
@@ -382,8 +386,14 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
         $http.get('/propietarios/pazysalvo/'+$scope.propiedad_pazysalvo)
             .success(function(data, status, headers, config)
             {
-                console.log('data', data)
+                closeModal('pazysalvo');
+                window.location.href= '#/pazysalvo/document/'+$scope.propiedad_pazysalvo;
             })
+            .error(function(error, status, headers, config)
+            {
+                closeModal('pazysalvo');
+                alert("La propiedad no se encuentra al dia con los pagos");
+            });
     }
 }]);
 
@@ -492,6 +502,22 @@ app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'Ta
             });
     };
     $scope.listar();
+}]);
+
+app.controller("PazySalvoDocument",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
+{
+    $scope.propiedad = $params.id;
+    $scope.date = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+    console.log('entro')
+    $scope.imprimir = function()
+    {
+        if($scope.propiedad)
+        {
+
+            window.print();
+        }
+    }
 }]);
 
 app.controller("EgresoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
@@ -930,6 +956,8 @@ app.controller("IngresosBloqueController", [
             });
             return posicion;
         };
+
+
     }]);
 
 app.controller("AbonoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)

@@ -60,5 +60,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <script src="/js/ng-table.min.js"></script>
 <script src="/js/app.js"></script>
+<script src="/js/moments.js"></script>
 </body>
 </html>

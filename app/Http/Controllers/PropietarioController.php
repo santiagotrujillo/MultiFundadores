@@ -466,19 +466,19 @@ class PropietarioController extends Controller
     }
 
     /**
-     * @param $id
+     * @param int $id
      * @return mixed
      */
     public function pazysalvo($id)
     {
-        $query = \DB::select("select pagos.id, pagos.valor, pagos.valor_pagado from
+        $query = \DB::select("select pagos.* from
                             propiedades, pagos
                             where propiedades.id = pagos.propiedad_id
                             and valor_pagado < valor
                             and propiedad_id = $id;");
         if( count($query) > 0)
         {
-            return Response::json(['pazysalvo' => false]);
+            return Response::json(['pazysalvo' => false,'deudas' => $query],400);
         }
         return Response::json(['pazysalvo' => true]);
     }
