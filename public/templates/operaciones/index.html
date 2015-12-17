@@ -135,11 +135,16 @@
                         <label>Descripción*</label>
                         <input type="text" name="descripcion" required class="form-control" ng-model="pago.descripcion" placeholder="Digite la descripcion">
                         </div>
-                    <div class="col-md-6">
-                        <label>Valor*</label>
-                        <input type="text"  name="valor" required class="form-control" ng-model="pago.valor" placeholder="Digite el valor">
-                    <br/><br/>
-                    </div>
+                        <div class="col-md-6">
+                            <label>Valor*</label>
+                            <input type="text"  name="valor" required class="form-control" ng-model="pago.valor" placeholder="Digite el valor">
+                        <br/><br/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Fecha*</label>
+                            <input type="date"  name="valor" required class="form-control" ng-model="pago.fecha">
+                            <br/><br/>
+                        </div>
                     </div>
                     <button type="button" class="btn btn-success" ng-click="realizarCobroSalon()">Confirmar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>

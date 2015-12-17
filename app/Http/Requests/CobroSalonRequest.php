@@ -25,7 +25,8 @@ class CobroSalonRequest extends Request
     {
         return [
             'valor'         => 'required|numeric',
-            'descripcion'   => 'required'
+            'descripcion'   => 'required',
+            'fecha'         => 'required|date',
         ];
     }
 }

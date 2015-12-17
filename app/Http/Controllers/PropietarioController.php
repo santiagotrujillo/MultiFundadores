@@ -185,8 +185,13 @@ class PropietarioController extends Controller
     public function cobroSalon(CobroSalonRequest $request)
     {
         $data = \Input::all();
+        $cobros_anteriores = (new Pago)->where('fecha_inicial',$data["fecha"])->where('tipo_pago_id',3)->get();
+        if(count($cobros_anteriores) > 0)
+        {
+            return Response::json(['message' => 'Ya se encuentra reservado para esta fecha'],400);
+        }
         $cobro = ['tipo_pago_id' => 3, 'valor' => $data["valor"], 'descripcion' => $data['descripcion'] ,
-            'fecha_inicial' => date('Y-m-d'), 'fecha_final' =>date('Y-m-d'), 'propiedad_id' => 1234567890, 'valor_pagado' => 0];
+            'fecha_inicial' => $data["fecha"], 'fecha_final' => $data["fecha"], 'propiedad_id' => 1234567890, 'valor_pagado' => 0];
         $pago = (new Pago);
         $pago->fill($cobro);
         $pago->save();
