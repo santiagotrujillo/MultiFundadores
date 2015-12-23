@@ -23,7 +23,7 @@
             <nav>
                 <ul>
                     <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Sal&oacute;n comunal</a></li>
+                    <li><a href="/salon/comunal">Sal&oacute;n comunal</a></li>
                     <li><a href="#">Reglamento</a></li>
                 </ul>
                 <a href="/usuarios/login" class="login_btn">Usuarios</a>
@@ -39,21 +39,6 @@
 </section><!--  end hero section  -->
 
 <footer>
-    <!--
-
-    <div class="wrapper footer">
-        <ul>
-            <li class="links">
-                <ul>
-                    <li><a href="#">Acerca</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    -->
-
-
     <div class="copyrights wrapper">
         Copyright © 2015 <a href="http://multifundadores.com">Multifundadores.com</a>
     </div>

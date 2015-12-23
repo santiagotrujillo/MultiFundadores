@@ -17,12 +17,9 @@ Route::get('/', function () {
 
 require __DIR__.'/Routes/BaseRoutes.php';
 
-Route::get('test', function ()
-{
-    $pago = \DB::select("select * from pagos where
-year(fecha_inicial) = year('2015-10-10') and month(fecha_inicial) = month('2015-10-10') and tipo_pago_id = 4
 
-");
 
-    dd(count($pago));
+Route::get('/salon/comunal', function () {
+    $reservas_salon = (new \App\Pago)->whereRaw('month(fecha_inicial) = month(current_date)')->where('tipo_pago_id',3)->get();
+    return view('salon.index')->with(['reservas'=>$reservas_salon]);
 });
