@@ -19,7 +19,10 @@ require __DIR__.'/Routes/BaseRoutes.php';
 
 Route::get('test', function ()
 {
-    $month = date('m');
-    $year = date('Y');
-    return date('Y-m-d', mktime(0,0,0, $month, 1, $year));
+    $pago = \DB::select("select * from pagos where
+year(fecha_inicial) = year('2015-10-10') and month(fecha_inicial) = month('2015-10-10') and tipo_pago_id = 4
+
+");
+
+    dd(count($pago));
 });

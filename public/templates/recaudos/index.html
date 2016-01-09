@@ -70,14 +70,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Forma de Pago : </label> {{pagorealizado.abono.forma_pago}}<br/>
-                            <label>Codigo Abono : </label> {{pagorealizado.abono.id}}<br/>
+                            <label>N&uacute;mero de Recibo : </label> {{pagorealizado.abono.id}}<br/>
                             <label>Fecha de Pago : </label> {{pagorealizado.abono.created_at}}<br/>
                             <label>Valor del Abono : </label> {{pagorealizado.abono.valor}}<br/>
                             <label>Periodo de Cobro: </label> <br/>
                             {{pagorealizado.factura.fecha_inicial}} - {{pagorealizado.factura.fecha_final}}<br/>
                             <label>Valor Restante: </label> {{pagorealizado.factura.deuda}}<br/>
                             <label>Total pagado: </label> {{pagorealizado.factura.valor_pagado}}<br/>
-                            <label>Valor de la Factura: </label> {{pagorealizado.factura.valor}}<br/>
                         </div>
                     </div>
                     <button type="button" class="btn btn-success"><a href="#confirmacion/abono/{{pagorealizado.abono.id}}">Confirmar</a></button>

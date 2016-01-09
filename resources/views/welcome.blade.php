@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <title>Multifamiliar Fundadores</title>
     <meta charset="utf-8">
-    <meta name="author" content="pixelhint.com">
-    <meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
 
     <link rel="stylesheet" type="text/css" href="css/resetcasa.css">
     <link rel="stylesheet" type="text/css" href="css/responsivecasa.css">
@@ -41,6 +39,8 @@
 </section><!--  end hero section  -->
 
 <footer>
+    <!--
+
     <div class="wrapper footer">
         <ul>
             <li class="links">
@@ -51,9 +51,11 @@
             </li>
         </ul>
     </div>
+    -->
+
 
     <div class="copyrights wrapper">
-        Copyright © 2015 <a href="http://multifundadoores.com">Multifundadoores.com</a>. All Rights Reserved.
+        Copyright © 2015 <a href="http://multifundadores.com">Multifundadores.com</a>
     </div>
 </footer><!--  end footer  -->
 

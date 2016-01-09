@@ -258,16 +258,16 @@ class PropietarioController extends Controller
         $nuevafecha = date ( 'Y-m-j' , $nuevafecha );
         if(!$this->validateDateMulta($nuevafecha))
         {
-
             $cobro = [
                 'valor' => 2000,
                 'descripcion' => "Multa por pago atrazado de admin : $nuevafecha",
-                'fecha_inicial' =>  $this->first_month_day(),
+                'fecha_inicial' =>  $nuevafecha,
                 'fecha_final' =>  $this->last_month_day(),
                 'tipo_pago_id' =>  4
             ];
 
-            $pagosAtrazados = (new Pago)->whereRaw("valor <> valor_pagado")->get();
+            $pagosAtrazados = (new Pago)->whereRaw("valor <> valor_pagado and year(fecha_inicial) = year('$nuevafecha')
+                            and month(fecha_inicial) = month('$nuevafecha') and tipo_pago_id = 1")->get();
             foreach($pagosAtrazados as $pagoAtrazado)
             {
                 $pago = (new Pago);
@@ -397,7 +397,8 @@ class PropietarioController extends Controller
      */
     private function validateDateMulta($fecha)
     {
-        $pago = (new Pago)->whereRaw("date(created_at) = date($fecha) and tipo_pago_id = 4")->first();
+        $pago = \DB::select("select * from pagos where year(fecha_inicial) = year('$fecha')
+                            and month(fecha_inicial) = month('$fecha') and tipo_pago_id = 4");
         if( count($pago) > 0)
         {
             return true;
