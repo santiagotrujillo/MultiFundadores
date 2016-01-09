@@ -128,4 +128,6 @@ Route::get('/propietarios/home', 'PropietarioController@viewHome');
 Route::get('/propietarios/{id}/pagos','PropietarioController@show');
 
 
+Route::get('/propietarios/events/current/month','PropietarioController@eventsCurrentMonth');
+
 

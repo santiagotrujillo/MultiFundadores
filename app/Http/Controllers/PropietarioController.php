@@ -24,6 +24,30 @@ class PropietarioController extends Controller
     protected $model;
 
     /**
+     * valor del pago de administracion
+     * @var int
+     */
+    protected $valorAdmin = 90000;
+
+    /**
+     * valor de la multa
+     * @var int
+     */
+    protected $valorMulta = 2000;
+
+    /**
+     * valor del pago de mensualidad de la junta
+     * @var int
+     */
+    protected $valorJunta = 67500;
+
+    /**
+     * valor del pago del cobro del seguro
+     * @var int
+     */
+    protected $cobroSeguro = 75000;
+
+    /**
      * @param Propietario $model
      */
     public function __construct(Propietario $model)
@@ -228,7 +252,7 @@ class PropietarioController extends Controller
 
         if(!$this->validateDate()){
         $cobro = [
-            'valor' => 90000,
+            'valor' => $this->valorAdmin,
             'descripcion' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
             'fecha_inicial' =>  $this->first_month_day(),
             'fecha_final' =>  $this->last_month_day(),
@@ -241,7 +265,7 @@ class PropietarioController extends Controller
             // se cobra una parte de admin a estas propiedades
             if($propiedad->id == 3201 || $propiedad->id == 5301 || $propiedad->id == 6302)
             {
-                $cobro['valor'] = 67500;
+                $cobro['valor'] = $this->valorJunta;
             }
             if($propiedad->id != 1201)
             {
@@ -264,7 +288,7 @@ class PropietarioController extends Controller
         if(!$this->validateDateMulta($nuevafecha))
         {
             $cobro = [
-                'valor' => 2000,
+                'valor' => $this->valorMulta,
                 'descripcion' => "Multa por pago atrazado de admin : $nuevafecha",
                 'fecha_inicial' =>  $nuevafecha,
                 'fecha_final' =>  $this->last_month_day(),
@@ -295,7 +319,7 @@ class PropietarioController extends Controller
         if(!$this->validateYearSeguro())
         {
             $cobro = [
-                'valor' => 76500,
+                'valor' => $this->cobroSeguro,
                 'descripcion' => 'Pago a realizar del seguro en el año : '. $year_actual,
                 'fecha_inicial' =>  "$year_actual-01-01",
                 'fecha_final' =>  "$year_actual-12-31",
@@ -486,5 +510,16 @@ class PropietarioController extends Controller
             return Response::json(['pazysalvo' => false,'deudas' => $query],400);
         }
         return Response::json(['pazysalvo' => true]);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function eventsCurrentMonth()
+    {
+        $query = "select * from pagos where tipo_pago_id = 3 and month(fecha_inicial) = month(current_date) and
+                  year(fecha_inicial) = year(current_date);";
+
+        return \DB::select($query);
     }
 }
