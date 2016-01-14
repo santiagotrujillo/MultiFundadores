@@ -464,4 +464,22 @@ class PropietarioController extends Controller
         }
         return redirect('/');
     }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function pazysalvo($id)
+    {
+        $query = \DB::select("select pagos.id, pagos.valor, pagos.valor_pagado from
+                            propiedades, pagos
+                            where propiedades.id = pagos.propiedad_id
+                            and valor_pagado < valor
+                            and propiedad_id = $id;");
+        if( count($query) > 0)
+        {
+            return Response::json(['pazysalvo' => false]);
+        }
+        return Response::json(['pazysalvo' => true]);
+    }
 }

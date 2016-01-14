@@ -110,6 +110,11 @@ Route::get('/propietarios/logout', 'PropietarioController@logout');
  */
 Route::get('/propietarios/propiedades/{id}', 'PropietarioController@propiedades');
 
+/**
+ * @Ruta para cargar el paz y salvo de una propiedad
+ */
+Route::get('/propietarios/pazysalvo/{id}','PropietarioController@pazysalvo');
+
 // @----------------------@
 
 /**

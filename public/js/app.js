@@ -375,6 +375,15 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
             {
                 alert(error["message"])
             });
+    };
+
+    $scope.verificarPazYSalvo= function()
+    {
+        $http.get('/propietarios/pazysalvo/'+$scope.propiedad_pazysalvo)
+            .success(function(data, status, headers, config)
+            {
+                console.log('data', data)
+            })
     }
 }]);
 

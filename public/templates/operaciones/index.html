@@ -34,6 +34,11 @@
             <button class="btn btn-danger" data-toggle="modal"  data-target="#cobrosCuentaCobrar" style="button:30px;">Generar cuenta por cobrar</button><br/>
             <br/>
         </div>
+
+        <div class="col-md-4">
+            <button class="btn btn-success" data-toggle="modal"  data-target="#pazysalvo" style="button:30px;">Generar Paz y Salvo</button><br/>
+            <br/>
+        </div>
     </div>
 
 
@@ -280,6 +285,36 @@
         </div>
     </div>
     <!-- end modal soft cobro otros -->
+
+    <!-- init modal soft paz y salvo -->
+    <div class="modal fade" id="pazysalvo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">Paz y Salvo</h4>
+                    <aside>Generar paz y salvo</aside>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            Recuerde que el paz y salvo
+                        </div>
+                        <div class="col-md-12">
+                            <label>Propiedad*</label>
+                            <input type="text" name="propiedad_pazysalvo" required class="form-control" ng-model="propiedad_pazysalvo" placeholder="Digite El numero de la propiedad">
+                            </br>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="verificarPazYSalvo()">Confirmar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal soft paz y salvo -->
 </div>
 
 <script type="text/javascript">
