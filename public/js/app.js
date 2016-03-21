@@ -57,6 +57,9 @@ app.config(["$routeProvider", function($router)
     .when("/egresos", {
         templateUrl: "/templates/egresos/index.html"
     })
+    .when("/reporte_egresos", {
+        templateUrl: "/templates/reporte_egresos/index.html"
+    })
     .when("/menu/ingresos", {
         templateUrl: "/templates/ingresos/menu.html"
     })
@@ -476,6 +479,47 @@ app.controller("PagosController", [
                 });
         };
         $scope.listar();
+    }]);
+
+
+app.controller("EgresosTotalesController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.date1 = '', $scope.date2= '';
+        $scope.egresos = [], $scope.total=0;
+
+        // init http request
+        $scope.search = function(page)
+        {
+            $scope.egreso = [], $scope.total = 0;
+            $http.get('/egresos/between/'+$scope.date1+'/'+$scope.date2)
+                .success(function(data, status, headers, config)
+                {
+                    $scope.egresos = data;
+                    $scope.total=$scope.egresos.length;
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                        total: $scope.egresos.length,
+                        getData: function($defer, params)
+                        {
+                            TableService.getTable($defer,params,$scope.filter, $scope.egresos);
+                        }
+                    });
+                    $scope.tableParams.reload();
+                    $scope.$watch("filter.$", function () {
+                        $scope.tableParams.reload();
+                    });
+                });
+        };
+
+        $scope.excel= function()
+        {
+            var blob = new Blob([document.getElementById('bajar').innerHTML], {
+                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+            });
+            saveAs(blob, "Descarga Egresos Totales.xls");
+        };
+
+
     }]);
 
 app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)

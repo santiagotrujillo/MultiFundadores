@@ -35,6 +35,7 @@
 
             <li><a href="#recaudos"><i class="fa fa-money"></i> Recaudos</a></li>
             <li><a href="#egresos"><i class="fa fa-credit-card"></i> Egresos</a></li>
+            <li><a href="#reporte_egresos"><i class="fa fa-empire"></i> Reporte de Egresos</a></li>
             <li><a href="#menu/ingresos"><i class="fa fa-dollar"></i> Ingresos</a></li>
             <li><a href="#propietario"><i class="fa fa-users"></i>Propietarios</a></li>
             <li><a href="#pagos"><i class="fa fa-bank"></i>Pagos Totales</a></li>
