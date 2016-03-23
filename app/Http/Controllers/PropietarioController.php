@@ -171,19 +171,17 @@ class PropietarioController extends Controller
     {
         $data = \Input::all();
         $pago = (new Pago)->find($data["id"]);
-        if($data['valor_abono'] <= ($pago->valor -$pago->valor_pagado))
-        {
+
+        if( $data['valor_abono'] <= ($pago->valor -$pago->valor_pagado) ) {
                 $pago->valor_pagado = $pago->valor_pagado + $data['valor_abono'];
                 $pago->update();
                 $abono = Abono::create(['valor' => $data['valor_abono'], 'pago_id' => $pago->id, 'forma_pago' => $data['forma_pago']]);
                 return Response::json(['status' => 'true', 'abono' => $abono, 'factura' => $pago ], 200);
         }
-        else if($pago->valor_pagado == $pago->valor)
-            {
-                return Response::json(['status' => false, 'message' => 'Usted ya pago la totalidad de la deuda.'],400);
-            }
-        else
-        {
+        else if( $pago->valor_pagado == $pago->valor ) {
+            return Response::json(['status' => false, 'message' => 'Usted ya pago la totalidad de la deuda.'],400);
+        }
+        else {
             return Response::json(['status' => false, 'message' => 'Lo sentimos el pago sobrepasa el valor de la deuda'],400);
         }
     }
@@ -468,7 +466,7 @@ class PropietarioController extends Controller
         $pago = (new Pago)->find($data['pago_id']);
         $pago->valor_pagado = $pago->valor_pagado - $abono->valor;
         $pago->update();
-        $abono->delete();
+        $abono->forceDelete();
         return Response::json($pago);
     }
 
