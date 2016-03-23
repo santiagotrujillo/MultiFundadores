@@ -485,6 +485,7 @@ app.controller("PagosController", [
 app.controller("EgresosTotalesController", [
     '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
     {
+        $scope.acumulado = 0;
         $scope.date1 = '', $scope.date2= '';
         $scope.egresos = [], $scope.total=0;
 
@@ -495,9 +496,13 @@ app.controller("EgresosTotalesController", [
             $http.get('/egresos/between/'+$scope.date1+'/'+$scope.date2)
                 .success(function(data, status, headers, config)
                 {
+                    $scope.acumulado = 0;
+                    for(i=0; i<data.length; i++){
+                        $scope.acumulado += data[i].valor
+                    }
                     $scope.egresos = data;
                     $scope.total=$scope.egresos.length;
-                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { concepto: 'asc'}}, {
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { concepto : 'asc'}}, {
                         total: $scope.egresos.length,
                         getData: function($defer, params)
                         {
@@ -509,14 +514,6 @@ app.controller("EgresosTotalesController", [
                         $scope.tableParams.reload();
                     });
                 });
-        };
-
-        $scope.excel= function()
-        {
-            var blob = new Blob([document.getElementById('bajar').innerHTML], {
-                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
-            });
-            saveAs(blob, "Descarga Egresos Totales.xls");
         };
 
 
