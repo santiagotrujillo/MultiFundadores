@@ -497,7 +497,7 @@ app.controller("EgresosTotalesController", [
                 {
                     $scope.egresos = data;
                     $scope.total=$scope.egresos.length;
-                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { concepto: 'asc'}}, {
                         total: $scope.egresos.length,
                         getData: function($defer, params)
                         {

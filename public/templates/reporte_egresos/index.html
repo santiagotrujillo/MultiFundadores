@@ -28,11 +28,8 @@
             <p>B&uacute;squeda: <input class="form-control" type="text" ng-model="filter.$" /></p>
             <table ng-table="tableParams" class="table table-striped">
                 <tr ng-repeat="egreso in $data">
-                    <td align="center" data-title="'Factura #'" sortable="'id'">{{egreso.id}}</td>
-                    <td align="center" data-title="'Valor'" sortable="'valor'">{{egreso.valor}}</td>
-                    <td align="center" data-title="'Descripci&oacute;n'" sortable="'descripcion'">{{egreso.descripcion}}</td>
-                    <td align="center" data-title="'Fecha inicial'" sortable="'fecha'">{{egreso.fecha}}</td>
                     <td align="center" data-title="'Concepto'" sortable="'concepto'">{{egreso.concepto}}</td>
+                    <td align="center" data-title="'Valor'" sortable="'valor'">{{egreso.valor}}</td>
                 </tr>
             </table>
             <p>Total:{{total}}</p>
