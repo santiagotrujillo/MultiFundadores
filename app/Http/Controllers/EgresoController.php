@@ -47,6 +47,52 @@ class EgresoController extends Controller
     /**
      * @param $date1
      * @param $date2
+     * @param $concepto
+     * @return mixed
+     */
+    public function getDeudasBetweenDatesByConceptExcelQuery($date1, $date2, $concepto)
+    {
+        $query = "(select deudas.id, deudas.descripcion, tp.concepto,
+                  deudas.created_at as fecha, deudas.valor
+                  from deudas
+                  join tipo_deudas tp on tp.id = deudas.tipo_deuda_id
+                  where ( date(deudas.created_at)
+                  between '$date1' and '$date2')
+                  and tp.concepto like '$concepto'
+                  order by deudas.created_at asc)
+                  union
+                  ( select '' as id, ''as descripcion, '' as valor,
+                    'TOTAL' as fecha, sum(deudas.valor) as concepto
+                    from deudas
+                    join tipo_deudas tp on tp.id = deudas.tipo_deuda_id
+                    where ( date(deudas.created_at)
+                    between '$date1' and '$date2')
+                    and tp.concepto like '$concepto'
+                  )";
+        return $this->executeQuery($query);
+    }
+
+    /**
+     * @param $date1
+     * @param $date2
+     * @param $concept
+     * @return mixed
+     */
+    public function getDeudasBetweenDatesByConceptExcel($date1, $date2, $concept)
+    {
+        $valores = json_decode(json_encode($this->getDeudasBetweenDatesByConceptExcelQuery($date1, $date2, $concept)),true);
+        return Excel::create("Deudas por concepto de $concept de $date1 hasta $date2", function($excel) use($valores, $date1, $date2)
+        {
+            $excel->sheet('Hoja 1', function($sheet) use($valores, $date1, $date2) {
+                $sheet->fromArray([['fecha inicial'=> $date1, 'fecha_final'=> $date2 ]]);
+                $sheet->fromArray($valores);
+            });
+        })->export('xlsx');
+    }
+
+    /**
+     * @param $date1
+     * @param $date2
      * @return mixed
      */
     public function getDeudasBetweenDates($date1, $date2)
@@ -96,9 +142,9 @@ class EgresoController extends Controller
     public function getDeudasBetweenDatesExcel($date1, $date2)
     {
         $valores = json_decode(json_encode($this->getTotalDeudasBetweenDates($date1, $date2)),true);
-        return Excel::create('Laravel Excel', function($excel) use($valores, $date1, $date2)
+        return Excel::create("Deudas Generales de $date1 hasta $date2", function($excel) use($valores, $date1, $date2)
         {
-            $excel->sheet('Excel sheet', function($sheet) use($valores, $date1, $date2) {
+            $excel->sheet('Hoja 1', function($sheet) use($valores, $date1, $date2) {
                 $sheet->fromArray([['fecha inicial'=> $date1, 'fecha_final'=> $date2 ]]);
                 $sheet->fromArray($valores);
             });
