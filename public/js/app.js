@@ -60,6 +60,9 @@ app.config(["$routeProvider", function($router)
     .when("/reporte_egresos", {
         templateUrl: "/templates/reporte_egresos/index.html"
     })
+    .when("/reporte_egresos/:date1/:date2/:concept", {
+        templateUrl: "/templates/reporte_egresos/detail.html"
+    })
     .when("/menu/ingresos", {
         templateUrl: "/templates/ingresos/menu.html"
     })
@@ -1018,6 +1021,41 @@ app.controller("AbonoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'T
     {
         window.print();
     }
+}]);
+
+app.controller("EgresosTotalesDetailController",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams',
+    function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params) {
+    $scope.egresos = [];
+    $scope.total=0;
+    $scope.date1 = $params.date1;
+    $scope.date2 = $params.date2;
+    $scope.concept = $params.concept;
+    $scope.acumulado = 0;
+    $scope.search = function(page)
+    {
+        $http.get('/egresos/concept/'+$params.date1+'/'+$params.date2+'/'+$params.concept)
+            .success(function(data, status, headers, config)
+            {
+                $scope.acumulado = 0;
+                for(i=0; i<data.length; i++){
+                    $scope.acumulado += data[i].valor
+                }
+                $scope.egresos = data;
+                $scope.total=$scope.egresos.length;
+                $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                    total: $scope.egresos.length,
+                    getData: function($defer, params)
+                    {
+                        TableService.getTable($defer,params,$scope.filter, $scope.egresos);
+                    }
+                });
+                $scope.tableParams.reload();
+                $scope.$watch("filter.$", function () {
+                    $scope.tableParams.reload();
+                });
+            });
+    };
+    $scope.search();
 }]);
 
 

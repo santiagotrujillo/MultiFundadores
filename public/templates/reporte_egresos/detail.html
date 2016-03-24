@@ -1,23 +1,23 @@
 <script src="http://rawgithub.com/eligrey/FileSaver.js/master/FileSaver.js" type="text/javascript"></script>
 
-<div ng-controller = "EgresosTotalesController">
+
+<div ng-controller = "EgresosTotalesDetailController">
     <div class="row appcontainer">
         <br/>
         <div class="col-lg-12">
-            <label>Reporte de Egresos Generales</label>
+            <label>Reporte de Egresos por Detalle por concepto de {{concept}}</label>
         </div>
         <div class="col-lg-4">
-            <label>Fecha Inicial</label> <input type="date" ng-model="date1">
+            <label>Fecha Inicial</label> <input type="date" readonly ng-model="date1">
         </div>
         <div class="col-lg-4">
-            <label>Fecha Final</label> <input type="date" ng-model="date2">
+            <label>Fecha Final</label> <input type="date" readonly ng-model="date2">
         </div>
         <div class="col-lg-4">
             <label>Total:</label> <p> {{acumulado}}</p>
         </div>
         <div class="col-lg-12">
             <br/>
-            <button class="btn btn-primary" ng-click="search()">Buscar</button>
             <a class="btn btn-success" data-toggle="tooltip" data-placement="bottom"
                title="Descargar en excel "download="Egresos" href="/egresos/between/{{date1}}/{{date2}}/excel">
                 <i class="fa fa-file-excel-o"></i> Descarga
@@ -31,8 +31,9 @@
             <p>B&uacute;squeda: <input class="form-control" type="text" ng-model="filter.$" /></p>
             <table ng-table="tableParams" class="table table-striped">
                 <tr ng-repeat="egreso in $data">
-                    <td align="center" data-title="'Detalle'"><a href="#reporte_egresos/{{date1}}/{{date2}}/{{egreso.concepto}}">Ver</a></td>
-                    <td align="center" data-title="'Concepto'" sortable="'concepto'">{{egreso.concepto}}</td>
+                    <td align="center" data-title="'Factura #'" sortable="'id'">{{egreso.id}}</td>
+                    <td align="center" data-title="'Descripcion'" sortable="'descripcion'">{{egreso.descripcion}}</td>
+                    <td align="center" data-title="'Fecha'" sortable="'fecha'">{{egreso.fecha}}</td>
                     <td align="center" data-title="'Valor'" sortable="'valor'">{{egreso.valor}}</td>
                 </tr>
             </table>
