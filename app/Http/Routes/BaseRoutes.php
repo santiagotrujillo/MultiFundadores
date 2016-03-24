@@ -15,6 +15,6 @@ require __DIR__. '/UsuarioRoutes.php';
 require __DIR__. '/PropiedadRoutes.php';
 
 /**
- *
+ * Rutas de los egresos
  */
 require __DIR__. '/EgresoRoutes.php';
