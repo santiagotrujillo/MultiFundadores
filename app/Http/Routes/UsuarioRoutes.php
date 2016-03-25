@@ -64,10 +64,19 @@ Route::get('/usuarios/ingresos/detail-totales-excel/{year}/{month}/{concept}', [
 ]);
 
 /**
- * Ruta para obtener el reporte de ingresos efectivos totales
+ * @module Ruta para obtener el reporte de ingresos efectivos totales
+ * @activity 2
  */
 Route::get('/usuarios/ingresos/efectivos/totales/{fecha_inicial}/{fecha_final}', [
     'uses'=>'UsuarioController@obtenerIngresosEfectivoTotales'
+]);
+
+/**
+ * @module Ruta para obtener el reporte de ingresos efectivos totales
+ * @activity 2.1
+ */
+Route::get('/usuarios/ingresos/detail-efectivos/totales/{yeat}/{month}/{concept}', [
+    'uses'=>'UsuarioController@obtenerIngresosEfectivoTotalesDetail'
 ]);
 
 /**

@@ -249,26 +249,23 @@ class PropietarioController extends Controller
         $year_actual = $year_actual[0]->year;
 
         if(!$this->validateDate()){
-        $cobro = [
-            'valor' => $this->valorAdmin,
-            'descripcion' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
-            'fecha_inicial' =>  $this->first_month_day(),
-            'fecha_final' =>  $this->last_month_day(),
-            'tipo_pago_id' =>  1
-        ];
 
         $propiedades = (new Propiedad)->all();
         foreach($propiedades as $propiedad)
         {
+            $cobro = [
+                'valor' => $this->valorAdmin,
+                'descripcion' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
+                'fecha_inicial' =>  $this->first_month_day(),
+                'fecha_final' =>  $this->last_month_day(),
+                'tipo_pago_id' =>  1
+            ];
             // se cobra una parte de admin a estas propiedades
             if($propiedad->id == 3201 || $propiedad->id == 5301 || $propiedad->id == 6302)
             {
                 $cobro['valor'] = $this->valorJunta;
             }
             if(     $propiedad->id != 1201 && (
-                    $propiedad->id != 3201 &&
-                    $propiedad->id != 5301 &&
-                    $propiedad->id != 6302 &&
                     $propiedad->id != 1234567890 &&
                     $propiedad->id != 1234567891 ))
             {

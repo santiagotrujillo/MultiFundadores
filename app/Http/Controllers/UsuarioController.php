@@ -163,6 +163,19 @@ class UsuarioController extends Controller
         return DB::select($query,[]);
     }
 
+    public function l($year, $month , $concept)
+    {
+        $query = "select pagos.id as codigo_cobro, pagos.valor_pagado as ingresos, tipo_pagos.concepto, pagos.created_at as fecha , pagos.propiedad_id
+                  from pagos, tipo_pagos
+                  where year(pagos.created_at) = $year
+                  and month(pagos.created_at) = $month
+                  and tipo_pagos.id = pagos.tipo_pago_id
+                  and valor_pagado >0
+                  and
+                  and tipo_pagos.id = $concept";
+        return DB::select($query,[]);
+    }
+
     /**
      * @param $year
      * @param $month
