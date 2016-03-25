@@ -331,10 +331,13 @@ class PropietarioController extends Controller
             $propiedades = (new Propiedad)->all();
             foreach($propiedades as $propiedad)
             {
-                $pago = (new Pago);
-                $pago->fill($cobro);
-                $pago->propiedad_id = $propiedad->id;
-                $pago->save();
+                if($propiedad->id != 1234567890 && $propiedad->id != 1234567891)
+                {
+                    $pago = (new Pago);
+                    $pago->fill($cobro);
+                    $pago->propiedad_id = $propiedad->id;
+                    $pago->save();
+                }
             }
             return Response::json(['status => true'],200);
         }

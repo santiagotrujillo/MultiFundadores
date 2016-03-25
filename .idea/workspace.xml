@@ -55,8 +55,8 @@
       <file leaf-file-name="PropietarioRoutes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7090907">
-              <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+            <state vertical-scroll-proportion="-7.8">
+              <caret line="45" column="75" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -65,13 +65,13 @@
       <file leaf-file-name="PropietarioController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31739962">
-              <caret line="270" column="42" selection-start-line="270" selection-start-column="42" selection-end-line="270" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.26003823">
+              <caret line="328" column="29" selection-start-line="328" selection-start-column="17" selection-end-line="328" selection-end-column="29" />
               <folding>
                 <element signature="e#40#54#0#PHP" expanded="true" />
-                <marker date="1458865235927" expanded="true" signature="13378:13532" placeholder="select * fro..pagos..." />
-                <marker date="1458865235927" expanded="true" signature="15243:15480" placeholder="select pagos..propiedades..." />
-                <marker date="1458865235927" expanded="true" signature="15784:15936" placeholder="select * fro..pagos..." />
+                <marker date="1458865861062" expanded="true" signature="13511:13665" placeholder="select * fro..pagos..." />
+                <marker date="1458865861062" expanded="true" signature="15376:15613" placeholder="select pagos..propiedades..." />
+                <marker date="1458865861062" expanded="true" signature="15917:16069" placeholder="select * fro..pagos..." />
               </folding>
             </state>
           </provider>
@@ -378,7 +378,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -802,14 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7090907">
-          <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Propiedad.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18478261">
@@ -818,15 +810,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8">
+          <caret line="45" column="75" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31739962">
-          <caret line="270" column="42" selection-start-line="270" selection-start-column="42" selection-end-line="270" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.26003823">
+          <caret line="328" column="29" selection-start-line="328" selection-start-column="17" selection-end-line="328" selection-end-column="29" />
           <folding>
             <element signature="e#40#54#0#PHP" expanded="true" />
-            <marker date="1458865235927" expanded="true" signature="13378:13532" placeholder="select * fro..pagos..." />
-            <marker date="1458865235927" expanded="true" signature="15243:15480" placeholder="select pagos..propiedades..." />
-            <marker date="1458865235927" expanded="true" signature="15784:15936" placeholder="select * fro..pagos..." />
+            <marker date="1458865861062" expanded="true" signature="13511:13665" placeholder="select * fro..pagos..." />
+            <marker date="1458865861062" expanded="true" signature="15376:15613" placeholder="select pagos..propiedades..." />
+            <marker date="1458865861062" expanded="true" signature="15917:16069" placeholder="select * fro..pagos..." />
           </folding>
         </state>
       </provider>
