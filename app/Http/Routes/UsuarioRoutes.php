@@ -55,6 +55,15 @@ Route::get('/usuarios/ingresos/detail-totales/{year}/{month}/{concept}', [
 ]);
 
 /**
+ * @module reporte de ingresos totales por consignacion y efectivo en excel
+ * @activity 1.1.1
+ * Ruta para obtener el reporte de ingresos totales detallado por consignacion y efectivo segun año y mes y concepto
+ */
+Route::get('/usuarios/ingresos/detail-totales-excel/{year}/{month}/{concept}', [
+    'uses'=>'UsuarioController@obtenerIngresosTotalesDetailExcel'
+]);
+
+/**
  * Ruta para obtener el reporte de ingresos efectivos totales
  */
 Route::get('/usuarios/ingresos/efectivos/totales/{fecha_inicial}/{fecha_final}', [

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use \Response, \Input, \Hash, \Auth, \DB;
 use App\Http\Requests\UsuarioLoginRequest;
 use App\Http\Requests\EgresoCreateRequest;
+use Maatwebsite\Excel\Facades\Excel as Excel;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -152,7 +153,7 @@ class UsuarioController extends Controller
      */
     public function obtenerIngresosTotalesDetail($year, $month , $concept)
     {
-        $query = "select pagos.id, pagos.valor_pagado as ingresos, tipo_pagos.concepto, pagos.created_at
+        $query = "select pagos.id as codigo_cobro, pagos.valor_pagado as ingresos, tipo_pagos.concepto, pagos.created_at as fecha , pagos.propiedad_id
                   from pagos, tipo_pagos
                   where year(pagos.created_at) = $year
                   and month(pagos.created_at) = $month
@@ -160,6 +161,25 @@ class UsuarioController extends Controller
                   and valor_pagado >0
                   and tipo_pagos.id = $concept";
         return DB::select($query,[]);
+    }
+
+    /**
+     * @param $year
+     * @param $month
+     * @param $concept
+     * @return mixed
+     */
+    public function obtenerIngresosTotalesDetailExcel($year, $month , $concept)
+    {
+        $valores = json_decode(json_encode($this->obtenerIngresosTotalesDetail($year, $month , $concept)), true);
+
+        return Excel::create("Ingresos por concepto del $year del mes $month", function($excel) use($valores, $year, $month)
+        {
+            $excel->sheet('Hoja 1', function($sheet) use($valores, $year, $month) {
+                $sheet->fromArray([['PERIODO'=> "$year - $month"]]);
+                $sheet->fromArray($valores);
+            });
+        })->export('xlsx');
     }
 
     /**

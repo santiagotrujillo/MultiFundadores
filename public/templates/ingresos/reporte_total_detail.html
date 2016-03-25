@@ -8,7 +8,8 @@
         <div class="col-lg-12">
             <br/>
             <a class="btn btn-success" data-toggle="tooltip" data-placement="bottom"
-               title="Descargar en excel" download="Ingresos Detallados"  href="/egresos/concept/{{date1}}/{{date2}}/{{concept}}/excel">
+               title="Descargar en excel" download="Ingresos Detallados"
+               href="/usuarios/ingresos/detail-totales-excel/{{values[1]}}/{{values[0]}}/{{id}}">
                 <i class="fa fa-file-excel-o"></i> Descarga
             </a>
         </div>
@@ -17,16 +18,19 @@
                 <thead><tr>
                     <th>Código de Cobro #</th>
                     <th>Valor</th>
+                    <th>Propiedad</th>
                     <th>Fecha</th>
                 </tr></thead>
                 <tbody><tr ng-repeat="pago in pagos">
-                    <td><a href="#/pago/profile/{{pago.id}}"> {{ pago.id }}</a> </td>
+                    <td><a href="#/pago/profile/{{pago.id}}"> {{ pago.codigo_cobro }}</a> </td>
                     <td>{{ pago.ingresos }} </td>
-                    <td>{{ pago.created_at }} </td>
+                    <td>{{ pago.propiedad_id }} </td>
+                    <td>{{ pago.fecha }} </td>
                 </tr>
                 <tr>
                     <td><label>Total</label></td>
                     <td>{{ingresos}}</td>
+                    <td></td>
                     <td></td>
                 </tr>
                 </tbody>

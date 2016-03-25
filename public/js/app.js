@@ -572,7 +572,7 @@ app.controller("ReporteTotalDetail",['$scope', '$http', '$filter', 'ngTableParam
                     $scope.ingresos += $scope.pagos[i].ingresos;
                 }
                 $scope.total=$scope.pagos.length;
-                $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { codigo_cobro: 'asc'}}, {
                     total: $scope.pagos.length,
                     getData: function($defer, params)
                     {
