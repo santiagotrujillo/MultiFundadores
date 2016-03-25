@@ -557,27 +557,32 @@ app.controller("ReporteTotalDetail",['$scope', '$http', '$filter', 'ngTableParam
 
     $scope.values = $scope.periodo.split('-');
     $scope.id = $params.id;
+    $scope.ingresos = 0;
 
-    $scope.abonos = [], $scope.total=0;
+    $scope.pagos = [], $scope.total=0;
     $scope.listar = function(page)
     {
         $http.get('/usuarios/ingresos/detail-totales/'+$scope.values[1]+'/'+$scope.values[0]+'/'+$scope.id)
             .success(function(data, status, headers, config)
             {
-                console.log(data);
-                $scope.abonos = data;
-                $scope.total=$scope.abonos.length;
-                /*$scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
-                    total: $scope.abonos.length,
+                $scope.pagos = data;
+                $scope.ingresos = 0;
+
+                for(i=0 ; i< $scope.pagos.length; i++){
+                    $scope.ingresos += $scope.pagos[i].ingresos;
+                }
+                $scope.total=$scope.pagos.length;
+                $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                    total: $scope.pagos.length,
                     getData: function($defer, params)
                     {
-                        TableService.getTable($defer,params,$scope.filter, $scope.abonos);
+                        TableService.getTable($defer,params,$scope.filter, $scope.pagos);
                     }
                 });
                 $scope.tableParams.reload();
                 $scope.$watch("filter.$", function () {
                     $scope.tableParams.reload();
-                });*/
+                });
             });
     };
     $scope.listar();
