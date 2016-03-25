@@ -26,52 +26,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-5.230769">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EgresoController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EgresoController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46195653">
-              <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
-              <folding>
-                <element signature="e#41#55#0#PHP" expanded="true" />
-                <marker date="1458790193606" expanded="true" signature="613:1021" placeholder="select deuda..deudas..." />
-                <marker date="1458790193606" expanded="true" signature="1292:1700" placeholder="select deuda..deudas..." />
-                <marker date="1458790193606" expanded="true" signature="3086:3440" placeholder="select tp.co..deudas..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseRoutes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Routes/BaseRoutes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1030" column="33" selection-start-line="1030" selection-start-column="33" selection-end-line="1030" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/templates/reporte_egresos/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.153846">
-              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -80,8 +35,53 @@
       <file leaf-file-name="EgresoRoutes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Routes/EgresoRoutes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
+            <state vertical-scroll-proportion="0.0">
               <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseRoutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Routes/BaseRoutes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PropietarioRoutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.7090907">
+              <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PropietarioController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31739962">
+              <caret line="270" column="42" selection-start-line="270" selection-start-column="42" selection-end-line="270" selection-end-column="42" />
+              <folding>
+                <element signature="e#40#54#0#PHP" expanded="true" />
+                <marker date="1458865235927" expanded="true" signature="13378:13532" placeholder="select * fro..pagos..." />
+                <marker date="1458865235927" expanded="true" signature="15243:15480" placeholder="select pagos..propiedades..." />
+                <marker date="1458865235927" expanded="true" signature="15784:15936" placeholder="select * fro..pagos..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.068966">
+              <caret line="278" column="20" selection-start-line="278" selection-start-column="20" selection-end-line="278" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -150,15 +150,15 @@
         <option value="$PROJECT_DIR$/public/templates/propietarios/pago_abonos.html" />
         <option value="$PROJECT_DIR$/public/templates/recaudos/index.html" />
         <option value="$PROJECT_DIR$/public/templates/egresos/index.html" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php" />
         <option value="$PROJECT_DIR$/app/Abono.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel.log" />
         <option value="$PROJECT_DIR$/app/Http/Routes/BaseRoutes.php" />
         <option value="$PROJECT_DIR$/public/templates/reporte_egresos/index.html" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/app/Http/Routes/EgresoRoutes.php" />
         <option value="$PROJECT_DIR$/public/templates/reporte_egresos/detail.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EgresoController.php" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php" />
       </list>
     </option>
   </component>
@@ -213,6 +213,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -310,13 +311,12 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="app.js&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;Egreso&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/EgresoController.php&#10;routes.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;laravel.log&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;PropietarioController&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;egre&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/EgresoController.php&#10;pago&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/templates/propietarios/pago_abonos.html&#10;abono&#9;null&#9;null&#10;abon&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Abono.php&#10;app.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/app.php&#10;EgresoController&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/EgresoController.php&#10;compo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/composer.json&#10;propiet&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;responsivecasa&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/css/responsivecasa.css&#10;resetcasa.css&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/css/resetcasa.css&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;Propiet&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;propie&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;boot&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/bootstrap.min.js&#10;consig&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/templates/ingresos/consignaciones.html&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;propi&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;usuar&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;modal&#9;null&#9;null&#10;cargo&#9;null&#9;null&#10;cargoa&#9;null&#9;null&#10;carg&#9;null&#9;null&#10;abonar&#9;null&#9;null&#10;contr&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropiedadController.php&#10;abonos&#9;null&#9;null&#10;Abo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/templates/propietarios/pago_abonos.html&#10;usu&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;pr&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;us&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;welc&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/welcome.blade.php&#10;Usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;Pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Deuda.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Deuda.php&#10;Usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;Propieta&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;PAgo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;laravel&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;PropietarioCon&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;PropietarioRoutes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php" />
+    <property name="SearchEverywhereHistoryKey" value="PropietarioController&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;app.js&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;Egreso&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/EgresoController.php&#10;routes.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;laravel.log&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;egre&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/EgresoController.php&#10;pago&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/templates/propietarios/pago_abonos.html&#10;abono&#9;null&#9;null&#10;abon&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Abono.php&#10;app.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/config/app.php&#10;EgresoController&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/EgresoController.php&#10;compo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/composer.json&#10;propiet&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;responsivecasa&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/css/responsivecasa.css&#10;resetcasa.css&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/css/resetcasa.css&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;Propiet&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/app.js&#10;propie&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;boot&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/js/bootstrap.min.js&#10;consig&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/templates/ingresos/consignaciones.html&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/routes.php&#10;propi&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;usuar&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;modal&#9;null&#9;null&#10;cargo&#9;null&#9;null&#10;cargoa&#9;null&#9;null&#10;carg&#9;null&#9;null&#10;abonar&#9;null&#9;null&#10;contr&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropiedadController.php&#10;abonos&#9;null&#9;null&#10;Abo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/public/templates/propietarios/pago_abonos.html&#10;usu&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;pr&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;us&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/UsuarioController.php&#10;welc&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/resources/views/welcome.blade.php&#10;Usuario&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;Pro&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Deuda.php&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Deuda.php&#10;Usua&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/UsuarioRoutes.php&#10;Propieta&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;PAgo&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Pago.php&#10;laravel&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/storage/logs/laravel.log&#10;PropietarioCon&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Controllers/PropietarioController.php&#10;Prop&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php&#10;PropietarioRoutes&#9;FILE&#9;file://C:/xampp/htdocs/MultiFundadores/app/Http/Routes/PropietarioRoutes.php" />
     <property name="FullScreen" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -384,6 +384,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.022693997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="7.320644E-4" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04566929" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -397,7 +398,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="7.320644E-4" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -450,13 +450,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/templates/junta/recaudos/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
-          <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/junta/propietarios/list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
@@ -710,13 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39770555">
-          <caret line="470" column="5" selection-start-line="470" selection-start-column="5" selection-end-line="470" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.332696">
@@ -732,37 +718,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43021032">
-          <caret line="73" column="49" selection-start-line="73" selection-start-column="49" selection-end-line="73" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/egresos/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.332696">
           <caret line="34" column="35" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5124283">
           <caret line="81" column="69" selection-start-line="81" selection-start-column="69" selection-end-line="81" selection-end-column="122" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,29 +746,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7536232">
           <caret line="34" column="98" selection-start-line="34" selection-start-column="98" selection-end-line="34" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Routes/BaseRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1030" column="33" selection-start-line="1030" selection-start-column="33" selection-end-line="1030" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/reporte_egresos/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.153846">
+        <state vertical-scroll-proportion="0.0">
           <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
           <folding />
         </state>
@@ -808,7 +759,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Routes/EgresoRoutes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
           <folding />
         </state>
@@ -816,13 +767,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EgresoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46195653">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.4003623">
+          <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
           <folding>
             <element signature="e#41#55#0#PHP" expanded="true" />
-            <marker date="1458790193606" expanded="true" signature="613:1021" placeholder="select deuda..deudas..." />
-            <marker date="1458790193606" expanded="true" signature="1292:1700" placeholder="select deuda..deudas..." />
-            <marker date="1458790193606" expanded="true" signature="3086:3440" placeholder="select tp.co..deudas..." />
+            <marker date="1458790193606" expanded="true" signature="-1:-1" placeholder="select deuda..deudas..." />
+            <marker date="1458790193606" expanded="true" signature="-1:-1" placeholder="select deuda..deudas..." />
+            <marker date="1458790193606" expanded="true" signature="-1:-1" placeholder="select tp.co..deudas..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Routes/BaseRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.068966">
+          <caret line="278" column="20" selection-start-line="278" selection-start-column="20" selection-end-line="278" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Routes/PropietarioRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7090907">
+          <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Propiedad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18478261">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31739962">
+          <caret line="270" column="42" selection-start-line="270" selection-start-column="42" selection-end-line="270" selection-end-column="42" />
+          <folding>
+            <element signature="e#40#54#0#PHP" expanded="true" />
+            <marker date="1458865235927" expanded="true" signature="13378:13532" placeholder="select * fro..pagos..." />
+            <marker date="1458865235927" expanded="true" signature="15243:15480" placeholder="select pagos..propiedades..." />
+            <marker date="1458865235927" expanded="true" signature="15784:15936" placeholder="select * fro..pagos..." />
           </folding>
         </state>
       </provider>

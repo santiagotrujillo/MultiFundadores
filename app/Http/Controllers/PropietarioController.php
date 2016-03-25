@@ -265,7 +265,12 @@ class PropietarioController extends Controller
             {
                 $cobro['valor'] = $this->valorJunta;
             }
-            if($propiedad->id != 1201)
+            if(     $propiedad->id != 1201 && (
+                    $propiedad->id != 3201 &&
+                    $propiedad->id != 5301 &&
+                    $propiedad->id != 6302 &&
+                    $propiedad->id != 1234567890 &&
+                    $propiedad->id != 1234567891 ))
             {
                 $pago = (new Pago);
                 $pago->fill($cobro);
