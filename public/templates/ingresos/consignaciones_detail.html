@@ -1,0 +1,41 @@
+<div ng-controller ="IngresosConsignacionDetailController">
+
+    <div class="row appcontainer">
+        <br/>
+        <div class="col-lg-12">
+            <label>Reporte de Ingresos Detallados Consignacion</label>
+        </div>
+        <div class="col-lg-12">
+            <br/>
+            <a class="btn btn-success" data-toggle="tooltip" data-placement="bottom"
+               title="Descargar en excel" download="Ingresos Detallados"
+               href="/usuarios/ingresos/detail-efectivos-excel/totales/{{values[1]}}/{{values[0]}}/{{id}}/CONSIGNACION">
+                <i class="fa fa-file-excel-o"></i> Descarga
+            </a>
+        </div>
+        <div class="col-lg-12">
+            <table class="table table-striped">
+                <thead><tr>
+                    <th>Código de Cobro #</th>
+                    <th>Valor</th>
+                    <th>Propiedad</th>
+                    <th>Fecha</th>
+                </tr></thead>
+                <tbody><tr ng-repeat="pago in pagos">
+                    <td><a href="#/pago/profile/{{pago.codigo_cobro}}"> {{ pago.codigo_cobro }}</a> </td>
+                    <td>{{ pago.ingresos }} </td>
+                    <td>{{ pago.propiedad_id }} </td>
+                    <td>{{ pago.fecha }} </td>
+                </tr>
+                <tr>
+                    <td><label>Total</label></td>
+                    <td>{{ingresos}}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
