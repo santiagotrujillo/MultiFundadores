@@ -144,6 +144,24 @@ class UsuarioController extends Controller
     }
 
     /**
+     * @param $year
+     * @param $month
+     * @param $concept
+     * @return mixed
+     */
+    public function obtenerIngresosTotalesDetail($year, $month , $concept)
+    {
+        $query = "select pagos.id, pagos.valor_pagado as ingresos, tipo_pagos.concepto, pagos.created_at
+                  from pagos, tipo_pagos
+                  where year(pagos.created_at) = $year
+                  and month(pagos.created_at) = $month
+                  and tipo_pagos.id = pagos.tipo_pago_id
+                  and valor_pagado >0
+                  and tipo_pagos.concepto like '$concept'";
+        return DB::select($query,[]);
+    }
+
+    /**
      * @param $fecha_inicial
      * @param $fecha_final
      * @return mixed

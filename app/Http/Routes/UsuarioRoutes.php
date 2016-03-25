@@ -37,10 +37,21 @@ Route::get('/usuarios/salir', [
 ]);
 
 /**
+ * @module reporte de ingresos totales por consignacion y efectivo
+ * @activity 1
  * Ruta para obtener el reporte de ingresos totales
  */
 Route::get('/usuarios/ingresos/totales/{fecha_inicial}/{fecha_final}', [
     'uses'=>'UsuarioController@obtenerIngresosTotales'
+]);
+
+/**
+ * @module reporte de ingresos totales por consignacion y efectivo
+ * @activity 1.1
+ * Ruta para obtener el reporte de ingresos totales detallado por consignacion y efectivo segun año y mes y concepto
+ */
+Route::get('/usuarios/ingresos/detail-totales/{year}/{month}/{concept}', [
+    'uses'=>'UsuarioController@obtenerIngresosTotalesDetail'
 ]);
 
 /**
