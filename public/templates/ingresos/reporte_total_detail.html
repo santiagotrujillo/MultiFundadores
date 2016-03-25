@@ -15,12 +15,12 @@
         <div class="col-lg-12">
             <table class="table table-striped">
                 <thead><tr>
-                    <th>Factura #</th>
+                    <th>Código de Cobro #</th>
                     <th>Valor</th>
                     <th>Fecha</th>
                 </tr></thead>
                 <tbody><tr ng-repeat="pago in pagos">
-                    <td>{{ pago.id }} </td>
+                    <td><a href="#/pago/profile/{{pago.id}}"> {{ pago.id }}</a> </td>
                     <td>{{ pago.ingresos }} </td>
                     <td>{{ pago.created_at }} </td>
                 </tr>
