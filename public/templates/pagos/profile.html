@@ -8,7 +8,7 @@
                 <tr ng-repeat="abono in $data">
                     <td align="center" data-title="'N&uacute;mero de Factura'" sortable="'id'"><a href="#confirmacion/abono/{{abono.id}}">{{abono.id}}</a></td>
                     <td align="center" data-title="'Valor'" sortable="'valor'">{{abono.valor}}</td>
-                    <td align="center" data-title="'Pago id'" sortable="'pago_id'">{{abono.pago_id}}</td>
+                    <td align="center" data-title="'Cuenta de cobro'" sortable="'pago_id'">{{abono.pago_id}}</td>
                     <td align="center" data-title="'Forma Pago'" sortable="'forma_pago'">{{abono.forma_pago}}</td>
                     <td align="center" data-title="'Fecha'" sortable="'created_at'">{{abono.created_at}}</td>
                 </tr>
