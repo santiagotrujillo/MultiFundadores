@@ -80,6 +80,15 @@ Route::get('/usuarios/ingresos/detail-efectivos/totales/{year}/{month}/{concept}
 ]);
 
 /**
+ * @module Ruta para obtener el reporte de ingresos efectivos totales
+ * @activity 2.1.1
+ */
+Route::get('/usuarios/ingresos/detail-efectivos-excel/totales/{year}/{month}/{concept}/{forma_pago}', [
+    'uses'=>'UsuarioController@obtenerIngresosTotalesDetailByMethodPaymentExcel'
+]);
+
+
+/**
  * Ruta para obtener el reporte de ingresos consignaciones totales
  */
 Route::get('/usuarios/ingresos/consignaciones/totales/{fecha_inicial}/{fecha_final}', [

@@ -189,6 +189,26 @@ class UsuarioController extends Controller
      * @param $year
      * @param $month
      * @param $concept
+     * @param $forma_pago
+     * @return mixed
+     */
+    public function obtenerIngresosTotalesDetailByMethodPaymentExcel($year, $month , $concept, $forma_pago)
+    {
+        $valores = json_decode(json_encode($this->obtenerIngresosTotalesDetailByMethodPayment($year, $month , $concept, $forma_pago)), true);
+
+        return Excel::create("Ingresos en $forma_pago por concepto del $year del mes $month", function($excel) use($valores, $year, $month, $forma_pago)
+        {
+            $excel->sheet('Hoja 1', function($sheet) use($valores, $year, $month, $forma_pago) {
+                $sheet->fromArray([['PERIODO'=> "$year - $month", 'FORMA DE PAGO' => $forma_pago ]]);
+                $sheet->fromArray($valores);
+            });
+        })->export('xlsx');
+    }
+
+    /**
+     * @param $year
+     * @param $month
+     * @param $concept
      * @return mixed
      */
     public function obtenerIngresosTotalesDetailExcel($year, $month , $concept)
