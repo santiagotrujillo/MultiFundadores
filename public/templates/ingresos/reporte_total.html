@@ -29,13 +29,13 @@
                     <th>Total</th>
                 </tr></thead>
                 <tbody><tr ng-repeat="ingreso in matrizIngresos">
-                    <td>{{ ingreso.periodo }}</td>
-                    <td>{{ ingreso.admin }}</td>
-                    <td>{{ ingreso.seguro }}</td>
-                    <td>{{ ingreso.salon }}</td>
-                    <td>{{ ingreso.incumplimiento }}</td>
-                    <td>{{ ingreso.parqueadero }}</td>
-                    <td>{{ ingreso.otros }}</td>
+                    <td>{{ ingreso.periodo }} </td>
+                    <td>{{ ingreso.admin }} <a ng-show = "validate(ingreso.admin)" href="#">(+)</a></td>
+                    <td>{{ ingreso.seguro }} <a ng-show = "validate(ingreso.seguro)" href="#">(+)</a></td>
+                    <td>{{ ingreso.salon }} <a ng-show = "validate(ingreso.salon)" href="#">(+)</a></td>
+                    <td>{{ ingreso.incumplimiento }} <a ng-show = "validate(ingreso.incumplimiento)" href="#">(+)</a></td>
+                    <td>{{ ingreso.parqueadero }} <a ng-show = "validate(ingreso.parqueadero)" href="#">(+)</a></td>
+                    <td>{{ ingreso.otros }} <a ng-show = "validate(ingreso.otros)" href="#">(+)</a> </td>
                     <td>{{ ingreso.total }}</td>
                 </tr>
                 <tr>

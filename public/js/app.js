@@ -658,6 +658,13 @@ $scope.obtenerReporte = function()
             window.print();
         }
 
+        $scope.validate = function (value)
+        {
+            if(value>0)
+                return true;
+            return false;
+        }
+
         $scope.ValidateMatriz = function(prefix)
         {
             var posicion= -1;

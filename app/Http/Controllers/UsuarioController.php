@@ -139,7 +139,8 @@ class UsuarioController extends Controller
                   from pagos, tipo_pagos
                   where date(pagos.created_at) between '$fecha_inicial' and '$fecha_final'
                   and tipo_pagos.id = pagos.tipo_pago_id
-                  group by pagos.tipo_pago_id, month(pagos.created_at), year(pagos.created_at)";
+                  group by pagos.tipo_pago_id, month(pagos.created_at), year(pagos.created_at)
+                  order by month desc, year desc";
         return DB::select($query,[]);
     }
 
