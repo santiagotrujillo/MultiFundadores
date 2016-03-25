@@ -30,12 +30,12 @@
                 </tr></thead>
                 <tbody><tr ng-repeat="ingreso in matrizIngresos">
                     <td>{{ ingreso.periodo }}</td>
-                    <td>{{ ingreso.admin }}</td>
-                    <td>{{ ingreso.seguro }}</td>
-                    <td>{{ ingreso.salon }}</td>
-                    <td>{{ ingreso.incumplimiento }}</td>
-                    <td>{{ ingreso.parqueadero }}</td>
-                    <td>{{ ingreso.otros }}</td>
+                    <td>{{ ingreso.admin }}<a ng-show = "validate(ingreso.admin)" href="#/ingresos-efectivo-detail/{{ingreso.periodo}}/1" >(+)</a></td>
+                    <td>{{ ingreso.seguro }} <a ng-show = "validate(ingreso.seguro)" href="#/ingresos-efectivo-detail/{{ingreso.periodo}}/2" >(+)</a></td>
+                    <td>{{ ingreso.salon }} <a ng-show = "validate(ingreso.salon)" href="#/ingresos-efectivo-detail/{{ingreso.periodo}}/3" >(+)</a></td>
+                    <td>{{ ingreso.incumplimiento }} <a ng-show = "validate(ingreso.incumplimiento)" href="#/ingresos-efectivo-detail/{{ingreso.periodo}}/4" >(+)</a></td>
+                    <td>{{ ingreso.parqueadero }} <a ng-show = "validate(ingreso.parqueadero)" href="#/ingresos-efectivo-detail/{{ingreso.periodo}}/5" >(+)</a></td>
+                    <td>{{ ingreso.otros }} <a ng-show = "validate(ingreso.otros)" href="#/ingresos-efectivo-detail/{{ingreso.periodo}}/6" >(+)</a></td>
                     <td>{{ ingreso.total }}</td>
                 </tr>
                 <tr>

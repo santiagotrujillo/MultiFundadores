@@ -25,42 +25,9 @@
       <file leaf-file-name="reporte_total_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/templates/ingresos/reporte_total_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0">
-              <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="39" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioRoutes.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.609319">
-              <caret line="77" column="12" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="93" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.981818">
-              <caret line="181" column="60" selection-start-line="181" selection-start-column="60" selection-end-line="181" selection-end-column="60" />
-              <folding>
-                <element signature="e#40#59#0#PHP" expanded="true" />
-                <marker date="1458881063519" expanded="true" signature="3709:4260" placeholder="select sum(p..." />
-                <marker date="1458881063519" expanded="true" signature="4508:4923" placeholder="select pagos..pagos..." />
-                <marker date="1458881063519" expanded="true" signature="4508:4924" placeholder="select pagos..pagos..." />
-                <marker date="1458881063519" expanded="true" signature="4508:4925" placeholder="select pagos..pagos..." />
-                <marker date="1458881063519" expanded="true" signature="4955:4972" placeholder="select(${$qu..." />
-                <marker date="1458881063519" expanded="true" signature="5235:5268" placeholder="select pagos..pagos..." />
-                <marker date="1458881063519" expanded="true" signature="5235:5830" placeholder="select pagos..pagos..." />
-                <marker date="1458881063519" expanded="true" signature="6569:6657" placeholder="/** * @param..." />
-                <marker date="1458881063519" expanded="true" signature="6766:7386" placeholder="select sum(a..." />
-                <marker date="1458881063519" expanded="true" signature="7641:8265" placeholder="select sum(a..." />
-                <marker date="1458881063519" expanded="true" signature="8375:8639" placeholder="SELECT pagos..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -68,20 +35,21 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="581" column="44" selection-start-line="581" selection-start-column="44" selection-end-line="581" selection-end-column="44" />
+            <state vertical-scroll-proportion="-17.965517">
+              <caret line="623" column="13" selection-start-line="623" selection-start-column="13" selection-end-line="623" selection-end-column="13" />
               <folding>
-                <element signature="e#17070#18144#0" expanded="false" />
+                <element signature="e#17195#18269#0" expanded="false" />
+                <element signature="e#18309#19732#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/templates/abonos/profile.html">
+      <file leaf-file-name="efectivo_detail.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/templates/ingresos/efectivo_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.1538463">
-              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.3655914">
+              <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -108,7 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/templates/pagos/index.html" />
         <option value="$PROJECT_DIR$/resources/views/junta/home.blade.php" />
         <option value="$PROJECT_DIR$/public/js/junta.js" />
         <option value="$PROJECT_DIR$/public/templates/junta/recaudos/index.html" />
@@ -124,7 +91,6 @@
         <option value="$PROJECT_DIR$/public/templates/propietarios/list.html" />
         <option value="$PROJECT_DIR$/public/templates/propietarios/content.html" />
         <option value="$PROJECT_DIR$/public/templates/junta/propietarios/list.html" />
-        <option value="$PROJECT_DIR$/public/templates/ingresos/efectivo.html" />
         <option value="$PROJECT_DIR$/public/templates/ingresos/consignaciones.html" />
         <option value="$PROJECT_DIR$/public/templates/egresos/profile.html" />
         <option value="$PROJECT_DIR$/app/Usuario.php" />
@@ -153,12 +119,14 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/EgresoController.php" />
         <option value="$PROJECT_DIR$/public/templates/ingresos/reporte_total.html" />
         <option value="$PROJECT_DIR$/public/templates/abonos/profile.html" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/templates/pagos/profile.html" />
         <option value="$PROJECT_DIR$/public/templates/ingresos/reporte_total_detail.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php" />
         <option value="$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php" />
+        <option value="$PROJECT_DIR$/public/templates/ingresos/efectivo.html" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/public/templates/ingresos/efectivo_detail.html" />
       </list>
     </option>
   </component>
@@ -374,60 +342,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiFundadores" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -498,11 +412,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.036220472" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -570,13 +484,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/templates/egresos/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.307971">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Usuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -745,13 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/efectivo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.030797102">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/propietarios/pago_abonos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -868,29 +768,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/reporte_total.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/reporte_egresos/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29928315">
           <caret line="25" column="14" selection-start-line="18" selection-start-column="8" selection-end-line="25" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="581" column="44" selection-start-line="581" selection-start-column="44" selection-end-line="581" selection-end-column="44" />
-          <folding>
-            <element signature="e#17070#18144#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,14 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.1538463">
           <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/reporte_total_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0">
-          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -944,17 +818,17 @@
           <caret line="181" column="60" selection-start-line="181" selection-start-column="60" selection-end-line="181" selection-end-column="60" />
           <folding>
             <element signature="e#40#59#0#PHP" expanded="true" />
-            <marker date="1458881063519" expanded="true" signature="3709:4260" placeholder="select sum(p..." />
-            <marker date="1458881063519" expanded="true" signature="4508:4923" placeholder="select pagos..pagos..." />
-            <marker date="1458881063519" expanded="true" signature="4508:4924" placeholder="select pagos..pagos..." />
-            <marker date="1458881063519" expanded="true" signature="4508:4925" placeholder="select pagos..pagos..." />
-            <marker date="1458881063519" expanded="true" signature="4955:4972" placeholder="select(${$qu..." />
-            <marker date="1458881063519" expanded="true" signature="5235:5268" placeholder="select pagos..pagos..." />
-            <marker date="1458881063519" expanded="true" signature="5235:5830" placeholder="select pagos..pagos..." />
-            <marker date="1458881063519" expanded="true" signature="6569:6657" placeholder="/** * @param..." />
-            <marker date="1458881063519" expanded="true" signature="6766:7386" placeholder="select sum(a..." />
-            <marker date="1458881063519" expanded="true" signature="7641:8265" placeholder="select sum(a..." />
-            <marker date="1458881063519" expanded="true" signature="8375:8639" placeholder="SELECT pagos..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="select sum(p..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="select(${$qu..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="/** * @param..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="select sum(a..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="select sum(a..." />
+            <marker date="1458881063519" expanded="true" signature="-1:-1" placeholder="SELECT pagos..." />
           </folding>
         </state>
       </provider>
@@ -963,6 +837,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.609319">
           <caret line="77" column="12" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/efectivo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4265233">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/reporte_total.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4265233">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="143" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/reporte_total_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="39" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.965517">
+          <caret line="623" column="13" selection-start-line="623" selection-start-column="13" selection-end-line="623" selection-end-column="13" />
+          <folding>
+            <element signature="e#17195#18269#0" expanded="false" />
+            <element signature="e#18309#19732#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/ingresos/efectivo_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3655914">
+          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
           <folding />
         </state>
       </provider>

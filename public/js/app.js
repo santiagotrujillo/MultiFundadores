@@ -63,6 +63,9 @@ app.config(["$routeProvider", function($router)
     .when("/reporte_egresos/:date1/:date2/:concept", {
         templateUrl: "/templates/reporte_egresos/detail.html"
     })
+    .when("/ingresos-efectivo-detail/:periodo/:id", {
+        templateUrl: "/templates/ingresos/efectivo_detail.html"
+    })
     .when("/reporte-total-detail/:periodo/:id", {
         templateUrl: "/templates/ingresos/reporte_total_detail.html"
     })
@@ -588,6 +591,43 @@ app.controller("ReporteTotalDetail",['$scope', '$http', '$filter', 'ngTableParam
     $scope.listar();
 }]);
 
+app.controller("IngresosEfectivoDetailController",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
+{
+    $scope.periodo = $params.periodo;
+
+    $scope.values = $scope.periodo.split('-');
+    $scope.id = $params.id;
+    $scope.ingresos = 0;
+
+    $scope.pagos = [], $scope.total=0;
+    $scope.listar = function(page)
+    {
+        $http.get('/usuarios/ingresos/detail-efectivos/totales/'+$scope.values[1]+'/'+$scope.values[0]+'/'+$scope.id+'/EFECTIVO')
+            .success(function(data, status, headers, config)
+            {
+                $scope.pagos = data;
+                $scope.ingresos = 0;
+
+                for(i=0 ; i< $scope.pagos.length; i++){
+                    $scope.ingresos += $scope.pagos[i].ingresos;
+                }
+                $scope.total=$scope.pagos.length;
+                $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { codigo_cobro: 'asc'}}, {
+                    total: $scope.pagos.length,
+                    getData: function($defer, params)
+                    {
+                        TableService.getTable($defer,params,$scope.filter, $scope.pagos);
+                    }
+                });
+                $scope.tableParams.reload();
+                $scope.$watch("filter.$", function () {
+                    $scope.tableParams.reload();
+                });
+            });
+    };
+    $scope.listar();
+}]);
+
 app.controller("PazySalvoDocument",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
 {
     $scope.propiedad = $params.id;
@@ -725,6 +765,12 @@ app.controller("IngresosEfectivoController", [
         $scope.ingresos = [], $scope.fecha_inicial= null, $scope.fecha_final = null, $scope.matrizIngresos= [];
 
         $scope.total = { admin :0, seguro :0, salon:0, incumplimiento: 0, parqueadero:0, otros:0, total:0};
+
+        $scope.validate = function (value) {
+            if(value>0)
+                return true;
+            return false;
+        }
 
         $scope.obtenerReporte = function()
         {
