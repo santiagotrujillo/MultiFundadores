@@ -75,8 +75,8 @@ Route::get('/usuarios/ingresos/efectivos/totales/{fecha_inicial}/{fecha_final}',
  * @module Ruta para obtener el reporte de ingresos efectivos totales
  * @activity 2.1
  */
-Route::get('/usuarios/ingresos/detail-efectivos/totales/{yeat}/{month}/{concept}', [
-    'uses'=>'UsuarioController@obtenerIngresosEfectivoTotalesDetail'
+Route::get('/usuarios/ingresos/detail-efectivos/totales/{year}/{month}/{concept}/{forma_pago}', [
+    'uses'=>'UsuarioController@obtenerIngresosTotalesDetailByMethodPayment'
 ]);
 
 /**

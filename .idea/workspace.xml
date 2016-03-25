@@ -35,44 +35,31 @@
       <file leaf-file-name="UsuarioRoutes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1923077">
-              <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
+            <state vertical-scroll-proportion="-14.384615">
+              <caret line="79" column="3" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsuarioController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UsuarioController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-67.69091">
-              <caret line="219" column="37" selection-start-line="219" selection-start-column="37" selection-end-line="219" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.64650285">
+              <caret line="185" column="5" selection-start-line="185" selection-start-column="5" selection-end-line="185" selection-end-column="5" />
               <folding>
                 <element signature="e#40#59#0#PHP" expanded="true" />
-                <marker date="1458878560341" expanded="true" signature="3709:4260" placeholder="select sum(p..." />
-                <marker date="1458878560341" expanded="true" signature="4508:4923" placeholder="select pagos..pagos..." />
-                <marker date="1458878560341" expanded="true" signature="4508:4924" placeholder="select pagos..pagos..." />
-                <marker date="1458878560341" expanded="true" signature="4508:4925" placeholder="select pagos..pagos..." />
-                <marker date="1458878560341" expanded="true" signature="4955:4972" placeholder="select(${$qu..." />
-                <marker date="1458878560341" expanded="true" signature="5053:5492" placeholder="select pagos..pagos..." />
-                <marker date="1458878560341" expanded="true" signature="6238:6326" placeholder="/** * @param..." />
-                <marker date="1458878560341" expanded="true" signature="6435:7055" placeholder="select sum(a..." />
-                <marker date="1458878560341" expanded="true" signature="7310:7934" placeholder="select sum(a..." />
-                <marker date="1458878560341" expanded="true" signature="8044:8308" placeholder="SELECT pagos..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropietarioController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5483871">
-              <caret line="268" column="51" selection-start-line="268" selection-start-column="51" selection-end-line="268" selection-end-column="51" />
-              <folding>
-                <marker date="1458879760416" expanded="true" signature="13401:13555" placeholder="select * fro..pagos..." />
-                <marker date="1458879760416" expanded="true" signature="15266:15503" placeholder="select pagos..propiedades..." />
-                <marker date="1458879760416" expanded="true" signature="15807:15959" placeholder="select * fro..pagos..." />
+                <marker date="1458881063519" expanded="true" signature="3709:4260" placeholder="select sum(p..." />
+                <marker date="1458881063519" expanded="true" signature="4508:4923" placeholder="select pagos..pagos..." />
+                <marker date="1458881063519" expanded="true" signature="4508:4924" placeholder="select pagos..pagos..." />
+                <marker date="1458881063519" expanded="true" signature="4508:4925" placeholder="select pagos..pagos..." />
+                <marker date="1458881063519" expanded="true" signature="4955:4972" placeholder="select(${$qu..." />
+                <marker date="1458881063519" expanded="true" signature="5235:5268" placeholder="select pagos..pagos..." />
+                <marker date="1458881063519" expanded="true" signature="5235:5830" placeholder="select pagos..pagos..." />
+                <marker date="1458881063519" expanded="true" signature="6569:6657" placeholder="/** * @param..." />
+                <marker date="1458881063519" expanded="true" signature="6766:7386" placeholder="select sum(a..." />
+                <marker date="1458881063519" expanded="true" signature="7641:8265" placeholder="select sum(a..." />
+                <marker date="1458881063519" expanded="true" signature="8375:8639" placeholder="SELECT pagos..." />
               </folding>
             </state>
           </provider>
@@ -168,10 +155,10 @@
         <option value="$PROJECT_DIR$/public/templates/abonos/profile.html" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/templates/pagos/profile.html" />
-        <option value="$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php" />
         <option value="$PROJECT_DIR$/public/templates/ingresos/reporte_total_detail.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php" />
       </list>
     </option>
   </component>
@@ -931,14 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1923077">
-          <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropiedadController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1218638">
@@ -947,34 +926,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-67.69091">
-          <caret line="219" column="37" selection-start-line="219" selection-start-column="37" selection-end-line="219" selection-end-column="37" />
-          <folding>
-            <element signature="e#40#59#0#PHP" expanded="true" />
-            <marker date="1458878560341" expanded="true" signature="3709:4260" placeholder="select sum(p..." />
-            <marker date="1458878560341" expanded="true" signature="4508:4923" placeholder="select pagos..pagos..." />
-            <marker date="1458878560341" expanded="true" signature="4508:4924" placeholder="select pagos..pagos..." />
-            <marker date="1458878560341" expanded="true" signature="4508:4925" placeholder="select pagos..pagos..." />
-            <marker date="1458878560341" expanded="true" signature="4955:4972" placeholder="select(${$qu..." />
-            <marker date="1458878560341" expanded="true" signature="5053:5492" placeholder="select pagos..pagos..." />
-            <marker date="1458878560341" expanded="true" signature="6238:6326" placeholder="/** * @param..." />
-            <marker date="1458878560341" expanded="true" signature="6435:7055" placeholder="select sum(a..." />
-            <marker date="1458878560341" expanded="true" signature="7310:7934" placeholder="select sum(a..." />
-            <marker date="1458878560341" expanded="true" signature="8044:8308" placeholder="SELECT pagos..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropietarioController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5483871">
           <caret line="268" column="51" selection-start-line="268" selection-start-column="51" selection-end-line="268" selection-end-column="51" />
           <folding>
-            <marker date="1458879760416" expanded="true" signature="13401:13555" placeholder="select * fro..pagos..." />
-            <marker date="1458879760416" expanded="true" signature="15266:15503" placeholder="select pagos..propiedades..." />
-            <marker date="1458879760416" expanded="true" signature="15807:15959" placeholder="select * fro..pagos..." />
+            <marker date="1458879760416" expanded="true" signature="-1:-1" placeholder="select * fro..pagos..." />
+            <marker date="1458879760416" expanded="true" signature="-1:-1" placeholder="select pagos..propiedades..." />
+            <marker date="1458879760416" expanded="true" signature="-1:-1" placeholder="select * fro..pagos..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Routes/UsuarioRoutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="79" column="3" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuarioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64650285">
+          <caret line="185" column="5" selection-start-line="185" selection-start-column="5" selection-end-line="185" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#59#0#PHP" expanded="true" />
+            <marker date="1458881063519" expanded="true" signature="3709:4260" placeholder="select sum(p..." />
+            <marker date="1458881063519" expanded="true" signature="4508:4923" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="4508:4924" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="4508:4925" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="4955:4972" placeholder="select(${$qu..." />
+            <marker date="1458881063519" expanded="true" signature="5235:5268" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="5235:5830" placeholder="select pagos..pagos..." />
+            <marker date="1458881063519" expanded="true" signature="6569:6657" placeholder="/** * @param..." />
+            <marker date="1458881063519" expanded="true" signature="6766:7386" placeholder="select sum(a..." />
+            <marker date="1458881063519" expanded="true" signature="7641:8265" placeholder="select sum(a..." />
+            <marker date="1458881063519" expanded="true" signature="8375:8639" placeholder="SELECT pagos..." />
           </folding>
         </state>
       </provider>

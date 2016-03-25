@@ -163,16 +163,25 @@ class UsuarioController extends Controller
         return DB::select($query,[]);
     }
 
-    public function l($year, $month , $concept)
+    /**
+     * @param $year
+     * @param $month
+     * @param $concept
+     * @param $forma_pago
+     * @return mixed
+     */
+    public function obtenerIngresosTotalesDetailByMethodPayment($year, $month , $concept, $forma_pago)
     {
-        $query = "select pagos.id as codigo_cobro, pagos.valor_pagado as ingresos, tipo_pagos.concepto, pagos.created_at as fecha , pagos.propiedad_id
-                  from pagos, tipo_pagos
-                  where year(pagos.created_at) = $year
-                  and month(pagos.created_at) = $month
-                  and tipo_pagos.id = pagos.tipo_pago_id
-                  and valor_pagado >0
-                  and
-                  and tipo_pagos.id = $concept";
+        $query = "select pagos.id as codigo_cobro, sum(abonos.valor) as ingresos, tipo_pagos.concepto, pagos.created_at as fecha , pagos.propiedad_id
+                    from pagos, tipo_pagos, abonos
+                    where year(pagos.created_at) = $year
+                    and month(pagos.created_at) = $month
+                    and tipo_pagos.id = pagos.tipo_pago_id
+                    and valor_pagado > 0
+                    and abonos.pago_id =  pagos.id
+                    and abonos.forma_pago like '$forma_pago'
+                    and tipo_pagos.id = $concept
+                    group by pagos.id;";
         return DB::select($query,[]);
     }
 
