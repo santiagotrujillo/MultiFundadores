@@ -158,7 +158,7 @@ class UsuarioController extends Controller
                   and month(pagos.created_at) = $month
                   and tipo_pagos.id = pagos.tipo_pago_id
                   and valor_pagado >0
-                  and tipo_pagos.concepto like '$concept'";
+                  and tipo_pagos.id = $concept";
         return DB::select($query,[]);
     }
 
