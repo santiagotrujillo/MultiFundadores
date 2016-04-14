@@ -20,3 +20,6 @@ Route::get('egresos/between/{date1}/{date2}', 'EgresoController@getDeudasBetween
  * Descarga de archivo en excel de los egresos agrupados por concepto segun fechas
  */
 Route::get('egresos/between/{date1}/{date2}/excel', 'EgresoController@getDeudasBetweenDatesExcel');
+
+
+Route::get('egresos/month/year/{month}/{year}', 'EgresoController@getEgresosMonthYear');
