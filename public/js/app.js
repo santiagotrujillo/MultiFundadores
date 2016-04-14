@@ -60,6 +60,9 @@ app.config(["$routeProvider", function($router)
     .when("/reporte_egresos", {
         templateUrl: "/templates/reporte_egresos/index.html"
     })
+    .when("/consulta_egresos", {
+        templateUrl: "/templates/consulta_egresos/index.html"
+    })
     .when("/reporte_egresos/:date1/:date2/:concept", {
         templateUrl: "/templates/reporte_egresos/detail.html"
     })
@@ -527,6 +530,94 @@ app.controller("EgresosTotalesController", [
                     });
                 });
         };
+
+
+    }]);
+
+
+app.controller("ConsultaEgresosController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.acumulado = 0;
+        $scope.year = '2015', $scope.month= '11';
+        $scope.matrizEgresos = [];
+        $scope.total=0;
+
+        // init http request
+        $scope.search = function(page)
+        {
+            $scope.dataEgresos = [], $scope.total = 0;
+            $http.get('/egresos/month/year/'+$scope.month+'/'+$scope.year)
+            .success(function(data, status, headers, config)
+            {
+                $scope.dataEgresos = data;
+                $scope.dataEgresos.forEach(function(ingreso)
+                {
+                    $scope.ingreso = { 
+                                        total : ingreso.valor,
+                                        descripcion : ingreso.descripcion,  
+                                        administracion : 0,
+                                        mantenimiento : 0,
+                                        seguro: 0,
+                                        papeleria : 0,
+                                        agua : 0,
+                                        energia : 0,
+                                        citofonia : 0,
+                                        aseo :0 ,
+                                        vigilancia : 0,
+                                        bienestar_social: 0,
+                                        gastos_bancarios : 0,
+                                        dian : 0,
+                                        otros : 0
+                                     };
+                //validate admin
+                if(ingreso.tipo_deuda_id == 1) {
+                    $scope.ingreso.administracion = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 2) {
+                    $scope.ingreso.mantenimiento = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 3) {
+                    $scope.ingreso.seguro = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 4) {
+                    $scope.ingreso.papeleria = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 5) {
+                    $scope.ingreso.agua = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 6) {
+                    $scope.ingreso.energia = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 7) {
+                    $scope.ingreso.citofonia = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 8) {
+                    $scope.ingreso.aseo = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 9) {
+                    $scope.ingreso.vigilancia = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 10) {
+                    $scope.ingreso.bienestar_social = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 11) {
+                    $scope.ingreso.gastos_bancarios = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 12) {
+                    $scope.ingreso.dian = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_deuda_id == 13) {
+                    $scope.ingreso.otros = $scope.ingreso.total;
+                }
+                $scope.matrizEgresos.push($scope.ingreso);
+                
+                });
+                console.log($scope.matrizEgresos);
+            });
+        };
+
+        $scope.search();
 
 
     }]);
