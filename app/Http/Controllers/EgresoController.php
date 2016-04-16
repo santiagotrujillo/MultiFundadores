@@ -163,7 +163,7 @@ class EgresoController extends Controller
     public function getEgresosMonthYear($month, $year)
     {
       $query = "select ds.*, td.concepto from deudas ds join tipo_deudas td on td.id = ds.tipo_deuda_id 
-      where year(ds.created_at) = $year and month(ds.created_at) = $month";
+      where year(ds.created_at) = $year and month(ds.created_at) = $month order by id asc";
       return $this->executeQuery($query);
     }
 }

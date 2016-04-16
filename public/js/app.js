@@ -534,12 +534,11 @@ app.controller("EgresosTotalesController", [
 
     }]);
 
-
 app.controller("ConsultaEgresosController", [
     '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
     {
         $scope.acumulado = 0;
-        $scope.year = '2015', $scope.month= '11';
+        $scope.year = '', $scope.month= '';
         $scope.matrizEgresos = [];
         $scope.total=0;
 
@@ -550,10 +549,11 @@ app.controller("ConsultaEgresosController", [
             $http.get('/egresos/month/year/'+$scope.month+'/'+$scope.year)
             .success(function(data, status, headers, config)
             {
+                $scope.matrizEgresos = [];
                 $scope.dataEgresos = data;
                 $scope.dataEgresos.forEach(function(ingreso)
                 {
-                    $scope.ingreso = { 
+                    $scope.ingreso = {  id: ingreso.id,
                                         total : ingreso.valor,
                                         descripcion : ingreso.descripcion,  
                                         administracion : 0,
@@ -613,12 +613,9 @@ app.controller("ConsultaEgresosController", [
                 $scope.matrizEgresos.push($scope.ingreso);
                 
                 });
-                console.log($scope.matrizEgresos);
+                //console.log($scope.matrizEgresos);
             });
         };
-
-        $scope.search();
-
 
     }]);
 

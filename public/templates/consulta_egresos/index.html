@@ -1,3 +1,62 @@
 <div ng-controller = "ConsultaEgresosController">
-HEY!!
+
+    <div class="row appcontainer">
+        <br/>
+        <div class="col-lg-12">
+            <label>Consulta de Egresos Detallados del mes</label>
+        </div>
+        <div class="col-md-6">
+            <label>Digite El mes*</label>
+            <input type="text" name="descripcion" class="form-control" ng-model="month" placeholder="Escriba un numero entre 1 y 12">
+        </div>
+        <div class="col-md-6">
+            <label>Digite El a&nacute;o*</label>
+            <input type="text" name="descripcion" class="form-control" ng-model="year" placeholder="Escriba el a&nacute;o">
+        </div>
+        <div class="col-lg-12">
+            <br/>
+            <button class="btn btn-primary" ng-click="search()">Buscar</button>
+        <div class="col-lg-12" id="bajar">
+            <table class="table table-striped">
+                <thead><tr>
+                    <th>Factura</th>
+                    <th>Total</th>
+                    <th>Descripcion</th>
+                    <th>Admisnitracion</th>
+                    <th>Mantenimiento</th>
+                    <th>Seguro</th>
+                    <th>Papeleria</th>
+                    <th>Agua</th>
+                    <th>Energia</th>
+                    <th>Citofonia</th>
+                    <th>Aseo</th>
+                    <th>Vigilancia</th>
+                    <th>B.Social</th>
+                    <th>G. Bancarios</th>
+                    <th>Dian</th>
+                    <th>Otros</th>
+                </tr></thead>
+                <tbody><tr ng-repeat="ingreso in matrizEgresos">
+                    <td>{{ ingreso.id }}</td>
+                    <td>{{ ingreso.total }}</td>
+                    <td>{{ ingreso.descripcion }}</td>
+                    <td>{{ ingreso.administracion }}</td>
+                    <td>{{ ingreso.mantenimiento }}</td>
+                    <td>{{ ingreso.seguro }}</td>
+                    <td>{{ ingreso.papeleria }}</td>
+                    <td>{{ ingreso.agua }}</td>
+                    <td>{{ ingreso.energia }}</td>
+                    <td>{{ ingreso.citofonia }}</td>
+                    <td>{{ ingreso.aseo }}</td>
+                    <td>{{ ingreso.vigilancia }}</td>
+                    <td>{{ ingreso.bienestar_social }}</td>
+                    <td>{{ ingreso.gastos_bancarios }}</td>
+                    <td>{{ ingreso.dian }}</td>
+                    <td>{{ ingreso.otros }}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
 </div>
