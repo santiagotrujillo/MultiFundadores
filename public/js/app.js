@@ -542,6 +542,14 @@ app.controller("ConsultaEgresosController", [
         $scope.matrizEgresos = [];
         $scope.total=0;
 
+        $scope.excel= function()
+        {
+            var blob = new Blob([document.getElementById('bajar').innerHTML], {
+                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+            });
+            saveAs(blob, "Egresos_month_year.xls");
+        };
+
         // init http request
         $scope.search = function(page)
         {
