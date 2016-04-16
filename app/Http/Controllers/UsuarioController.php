@@ -295,4 +295,31 @@ class UsuarioController extends Controller
     {
         return Response::json((new Deuda)->find($id));
     }
+
+    /**
+     * @param $month
+     * @return $year
+     */
+    public function getIngresosMonthYear($month, $year)
+    {
+        $query =   "select tp.concepto, p.descripcion, abonos_agrupados.num_abonos, abonos_agrupados.valor, p.id, p.tipo_pago_id
+                    from pagos p,
+                        (select sum(valor) as valor, pago_id, COUNT(*) num_abonos from abonos
+                         where year(created_at) = $year and month(created_at) =$month
+                         group by pago_id) as abonos_agrupados,
+                         tipo_pagos as tp
+                     where p.id = abonos_agrupados.pago_id
+                     and p.tipo_pago_id = tp.id
+                     order by id asc;";
+         return $this->executeQuery($query);
+    }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    private function executeQuery($query)
+    {
+        return DB::select($query);
+    }
 }

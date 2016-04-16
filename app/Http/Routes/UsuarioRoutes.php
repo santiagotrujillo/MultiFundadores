@@ -123,3 +123,10 @@ Route::post('/usuarios/egreso', [
 Route::get('/usuarios/egreso/{id}', [
     'uses'=>'UsuarioController@verEgreso'
 ]);
+
+
+/**
+ * Ruta para consultar el reporte en formato json de los ingresos
+ * generados en un mes y un año especifico
+ */
+Route::get('/ingresos/month/year/{month}/{year}','UsuarioController@getIngresosMonthYear');
