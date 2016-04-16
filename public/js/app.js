@@ -659,6 +659,7 @@ app.controller("ConsultaIngresosController", [
                 $scope.dataEgresos.forEach(function(ingreso)
                 {
                     $scope.ingreso = {  id: ingreso.id,
+                                        propiedad_id : ingreso.propiedad_id,
                                         total : ingreso.valor,
                                         descripcion : ingreso.descripcion,  
                                         administracion : 0,

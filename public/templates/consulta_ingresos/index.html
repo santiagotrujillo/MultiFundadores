@@ -36,6 +36,7 @@
             <table class="table table-striped" id="bajar">
                 <thead><tr>
                     <th>Factura</th>
+                    <th>Propiedad</th>
                     <th>Total</th>
                     <th>Descripcion</th>
                     <th>Administracion</th>
@@ -47,6 +48,7 @@
                 </tr></thead>
                 <tbody><tr ng-repeat="ingreso in matrizEgresos">
                     <td>{{ ingreso.id }}</td>
+                    <td>{{ ingreso.propiedad_id }}</td>
                     <td>{{ ingreso.total }}</td>
                     <td>{{ ingreso.descripcion }}</td>
                     <td>{{ ingreso.administracion }}</td>

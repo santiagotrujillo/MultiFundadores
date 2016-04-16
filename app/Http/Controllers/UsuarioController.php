@@ -302,7 +302,8 @@ class UsuarioController extends Controller
      */
     public function getIngresosMonthYear($month, $year)
     {
-        $query =   "select tp.concepto, p.descripcion, abonos_agrupados.num_abonos, abonos_agrupados.valor, p.id, p.tipo_pago_id
+        $query =   "select tp.concepto, p.descripcion, abonos_agrupados.num_abonos, 
+                    abonos_agrupados.valor, p.id, p.tipo_pago_id, p.propiedad_id
                     from pagos p,
                         (select sum(valor) as valor, pago_id, COUNT(*) num_abonos from abonos
                          where year(created_at) = $year and month(created_at) =$month
