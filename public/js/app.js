@@ -63,6 +63,9 @@ app.config(["$routeProvider", function($router)
     .when("/consulta_egresos", {
         templateUrl: "/templates/consulta_egresos/index.html"
     })
+    .when("/consulta_ingresos", {
+        templateUrl: "/templates/consulta_ingresos/index.html"
+    })
     .when("/reporte_egresos/:date1/:date2/:concept", {
         templateUrl: "/templates/reporte_egresos/detail.html"
     })
@@ -622,6 +625,71 @@ app.controller("ConsultaEgresosController", [
                 
                 });
                 //console.log($scope.matrizEgresos);
+            });
+        };
+
+    }]);
+
+
+app.controller("ConsultaIngresosController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.acumulado = 0;
+        $scope.year = '', $scope.month= '';
+        $scope.matrizEgresos = [];
+        $scope.total=0;
+
+        $scope.excel= function()
+        {
+            var blob = new Blob([document.getElementById('bajar').innerHTML], {
+                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+            });
+            saveAs(blob, "Ingresos_month_year.xls");
+        };
+
+        // init http request
+        $scope.search = function(page)
+        {
+            $scope.dataEgresos = [], $scope.total = 0;
+            $http.get('/ingresos/month/year/'+$scope.month+'/'+$scope.year)
+            .success(function(data, status, headers, config)
+            {
+                $scope.matrizEgresos = [];
+                $scope.dataEgresos = data;
+                $scope.dataEgresos.forEach(function(ingreso)
+                {
+                    $scope.ingreso = {  id: ingreso.id,
+                                        total : ingreso.valor,
+                                        descripcion : ingreso.descripcion,  
+                                        administracion : 0,
+                                        seguro : 0,
+                                        salon: 0,
+                                        multa : 0,
+                                        parqueadero : 0,
+                                        otros : 0
+                                     };
+                //validate admin
+                if(ingreso.tipo_pago_id == 1) {
+                    $scope.ingreso.administracion = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_pago_id == 2) {
+                    $scope.ingreso.seguro = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_pago_id == 3) {
+                    $scope.ingreso.salon = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_pago_id == 4) {
+                    $scope.ingreso.multa = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_pago_id == 5) {
+                    $scope.ingreso.parqueadero = $scope.ingreso.total;
+                }
+                else if(ingreso.tipo_pago_id == 6) {
+                    $scope.ingreso.otros = $scope.ingreso.total;
+                }
+                $scope.matrizEgresos.push($scope.ingreso);
+                
+                });
             });
         };
 
