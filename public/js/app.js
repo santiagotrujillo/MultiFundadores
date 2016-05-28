@@ -102,6 +102,9 @@ app.config(["$routeProvider", function($router)
     .when("/pago/profile/:id", {
         templateUrl: "/templates/pagos/profile.html"
     })
+    .when("/morosos/detail/:id", {
+        templateUrl: "/templates/morosos/detail.html"
+    })
     .when("/confirmacion/abono/:id", {
         templateUrl: "/templates/abonos/profile.html"
     })
@@ -789,6 +792,33 @@ app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'Ta
                     getData: function($defer, params)
                     {
                         TableService.getTable($defer,params,$scope.filter, $scope.abonos);
+                    }
+                });
+                $scope.tableParams.reload();
+                $scope.$watch("filter.$", function () {
+                    $scope.tableParams.reload();
+                });
+            });
+    };
+    $scope.listar();
+}]);
+
+app.controller("MoraProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
+{
+    $scope.deudas = [], $scope.total=0;
+    $scope.listar = function(page)
+    {
+        $http.get('/propietarios/morosos/propiedad/'+$params.id)
+            .success(function(data, status, headers, config)
+            {
+                console.log('daa', data)
+                $scope.deudas =data;
+                $scope.total=$scope.deudas.length;
+                $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                    total: $scope.deudas.length,
+                    getData: function($defer, params)
+                    {
+                        TableService.getTable($defer,params,$scope.filter, $scope.deudas);
                     }
                 });
                 $scope.tableParams.reload();
