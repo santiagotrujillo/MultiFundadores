@@ -31,6 +31,11 @@ Route::get('/propietarios/borrar/{id}','PropietarioController@borrar');
 Route::get('/propietarios/cobro/admin/pendientes','PropietarioController@cobroAdminPendientes');
 
 /**
+ * Ruta paraa cargar los propietarios morosos
+ */
+Route::get('/propietarios/morosos','PropietarioController@morosos');
+
+/**
  * Ruta para realizar la cuenta de cobro a los propietarios en el mes actual por concepto de admin - mensualmente
  */
 Route::post('/propietarios/cobro/admin','PropietarioController@cobroAdmin');
@@ -41,27 +46,27 @@ Route::post('/propietarios/cobro/admin','PropietarioController@cobroAdmin');
 Route::post('/propietarios/cobro/multa','PropietarioController@cobroMulta');
 
 /**
- * Ruta para realizar la cuenta de cobro a los propietarios en el año actual por concepto de admin - anualmente
+ * Ruta para realizar la cuenta de cobro a los propietarios en el aï¿½o actual por concepto de admin - anualmente
  */
 Route::post('/propietarios/cobro/seguro','PropietarioController@cobroSeguro');
 
 /**
- * Ruta para realizar la cuenta de cobro a los propietarios en el año actual por concepto de admin - anualmente
+ * Ruta para realizar la cuenta de cobro a los propietarios en el aï¿½o actual por concepto de admin - anualmente
  */
 Route::post('/propietarios/cobro/salon','PropietarioController@cobroSalon');
 
 /**
- * Ruta para realizar la cuenta de cobro a los propietarios en el año actual por concepto de parqueadero
+ * Ruta para realizar la cuenta de cobro a los propietarios en el aï¿½o actual por concepto de parqueadero
  */
 Route::post('/propietarios/cobro/parqueadero','PropietarioController@cobroParqueadero');
 
 /**
- * Ruta para realizar la cuenta de cobro a los propietarios en el año actual por concepto de otros
+ * Ruta para realizar la cuenta de cobro a los propietarios en el aï¿½o actual por concepto de otros
  */
 Route::post('/propietarios/cobro/otros','PropietarioController@cobroOtros');
 
 /**
- * Ruta para realizar la cuenta de cobro a los propietarios en el año actual por concepto de cuenta de cobro
+ * Ruta para realizar la cuenta de cobro a los propietarios en el aï¿½o actual por concepto de cuenta de cobro
  */
 Route::post('/propietarios/cobro/cuentacobro','PropietarioController@cuentaCobro');
 

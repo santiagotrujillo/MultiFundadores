@@ -160,7 +160,25 @@ class PropietarioController extends Controller
     public function cobroAdminPendientes()
     {
         return (new Pago)->with(['tipo_pago'])
-            ->whereRaw('valor_pagado < valor')->orWhere('valor_pagado',null)->orderby('fecha_inicial', 'asc')->get();
+            ->whereRaw('valor_pagado < valor')
+            ->orWhere('valor_pagado',null)
+            ->orderby('fecha_inicial', 'asc')
+            ->get();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function morosos()
+    {
+        return \DB::select("select dp.deuda, dp.propiedad_id, pr.nombre, pr.apellido from
+                            (select pagos.propiedad_id , (sum(pagos.valor) - sum(pagos.valor_pagado)) as deuda
+                            from pagos
+                            where valor_pagado < valor or valor_pagado is null 
+                            group by propiedad_id)as dp,
+                            propiedades ps, propietarios pr
+                            where ps.propietario_id = pr.id and ps.id = dp.propiedad_id;"
+        );
     }
 
     /**
@@ -277,7 +295,7 @@ class PropietarioController extends Controller
         }
             return Response::json(['status => true'],200);
         }
-        return Response::json(['message'=>'El mes actual ya tiene facturas generadas de administración'],406);
+        return Response::json(['message'=>'El mes actual ya tiene facturas generadas de administraciï¿½n'],406);
     }
 
     public function cobroMulta()
@@ -320,7 +338,7 @@ class PropietarioController extends Controller
         {
             $cobro = [
                 'valor' => $this->cobroSeguro,
-                'descripcion' => 'Pago a realizar del seguro en el año : '. $year_actual,
+                'descripcion' => 'Pago a realizar del seguro en el aï¿½o : '. $year_actual,
                 'fecha_inicial' =>  "$year_actual-01-01",
                 'fecha_final' =>  "$year_actual-12-31",
                 'tipo_pago_id' => 2
