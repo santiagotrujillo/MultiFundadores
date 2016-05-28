@@ -46,7 +46,8 @@
                     <th>Parqueadero</th>
                     <th>Otros</th>
                 </tr></thead>
-                <tbody><tr ng-repeat="ingreso in matrizEgresos">
+                <tbody>
+                <tr ng-repeat="ingreso in matrizEgresos">
                     <td>{{ ingreso.id }}</td>
                     <td>{{ ingreso.propiedad_id }}</td>
                     <td>{{ ingreso.total }}</td>
@@ -57,6 +58,19 @@
                     <td>{{ ingreso.multa }}</td>
                     <td>{{ ingreso.parqueadero }}</td>
                     <td>{{ ingreso.otros }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Total</td>
+                    <td>{{total_ingresos.total}}</td>
+                    <td></td>
+                    <td>{{total_ingresos.administracion}}</td>
+                    <td>{{total_ingresos.seguro}}</td>
+                    <td>{{total_ingresos.salon}}</td>
+                    <td>{{total_ingresos.multa}}</td>
+                    <td>{{total_ingresos.parqueadero}}</td>
+                    <td>{{total_ingresos.otros}}</td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>

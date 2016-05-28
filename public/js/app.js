@@ -680,6 +680,16 @@ app.controller("ConsultaIngresosController", [
         // init http request
         $scope.search = function(page)
         {
+            $scope.total_ingresos = {
+                total : 0 ,
+                administracion : 0,
+                seguro : 0,
+                salon : 0,
+                multa : 0,
+                parqueadero : 0,
+                otros : 0
+            };
+
             $scope.dataEgresos = [], $scope.total = 0;
             $http.get('/ingresos/month/year/'+$scope.month+'/'+$scope.year)
             .success(function(data, status, headers, config)
@@ -700,22 +710,29 @@ app.controller("ConsultaIngresosController", [
                                         otros : 0
                                      };
                 //validate admin
+                $scope.total_ingresos.total += $scope.ingreso.total;
                 if(ingreso.tipo_pago_id == 1) {
+                    $scope.total_ingresos.administracion += $scope.ingreso.total;
                     $scope.ingreso.administracion = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 2) {
+                    $scope.total_ingresos.seguro += $scope.ingreso.total;
                     $scope.ingreso.seguro = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 3) {
+                    $scope.total_ingresos.salon += $scope.ingreso.total;
                     $scope.ingreso.salon = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 4) {
+                    $scope.total_ingresos.multa += $scope.ingreso.total;
                     $scope.ingreso.multa = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 5) {
+                    $scope.total_ingresos.parqueadero += $scope.ingreso.total;
                     $scope.ingreso.parqueadero = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 6) {
+                    $scope.total_ingresos.otros += $scope.ingreso.total;
                     $scope.ingreso.otros = $scope.ingreso.total;
                 }
                 $scope.matrizEgresos.push($scope.ingreso);
