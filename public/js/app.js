@@ -288,6 +288,34 @@ app.controller("RecaudoController", [
         };
     }]);
 
+app.controller("MorososController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.morosos = [], $scope.total=0;
+
+        $scope.listar = function(page)
+        {
+            $http.get('/propietarios/morosos')
+                .success(function(data, status, headers, config)
+                {
+                    $scope.morosos = data;
+                    $scope.total=$scope.morosos.length;
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                        total: $scope.morosos.length,
+                        getData: function($defer, params)
+                        {
+                            TableService.getTable($defer,params,$scope.filter, $scope.morosos);
+                        }
+                    });
+                    $scope.tableParams.reload();
+                    $scope.$watch("filter.$", function () {
+                        $scope.tableParams.reload();
+                    });
+                });
+        };
+        $scope.listar();
+    }]);
+
 app.controller("OperacionesController", ['$scope', '$http', function($scope, $http)
 {
 
