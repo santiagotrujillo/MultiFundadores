@@ -294,7 +294,7 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
         $http.post('/propietarios/cobro/admin')
         .success(function(data, status, headers, config)
         {
-            alert('Se cargaron los cobros de administración correctamente')
+            alert('Se cargaron los cobros de administraciï¿½n correctamente')
         })
         .error(function(error, status, headers, config)
         {
@@ -437,7 +437,7 @@ app.controller("EgresosController", ['$scope', '$http', function($scope, $http)
         $http.post('/propietarios/cobro/admin')
             .success(function(data, status, headers, config)
             {
-                alert('Se cargaron los cobros de adminsitración correctamente')
+                alert('Se cargaron los cobros de adminsitraciï¿½n correctamente')
             })
             .error(function(error, status, headers, config)
             {
@@ -556,6 +556,22 @@ app.controller("ConsultaEgresosController", [
         // init http request
         $scope.search = function(page)
         {
+            $scope.total_ingresos = {
+                total : 0 ,
+                administracion : 0,
+                mantenimiento : 0,
+                seguro : 0,
+                papeleria : 0,
+                agua : 0,
+                energia : 0,
+                citofonia : 0,
+                aseo : 0,
+                vigilancia : 0,
+                bienestar_social : 0,
+                gastos_bancarios : 0,
+                dian : 0,
+                otros : 0,
+            };
             $scope.dataEgresos = [], $scope.total = 0;
             $http.get('/egresos/month/year/'+$scope.month+'/'+$scope.year)
             .success(function(data, status, headers, config)
@@ -582,43 +598,57 @@ app.controller("ConsultaEgresosController", [
                                         otros : 0
                                      };
                 //validate admin
+                $scope.total_ingresos.total += $scope.ingreso.total;
                 if(ingreso.tipo_deuda_id == 1) {
+                    $scope.total_ingresos.administracion += $scope.ingreso.total;
                     $scope.ingreso.administracion = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 2) {
+                    $scope.total_ingresos.mantenimiento += $scope.ingreso.total;
                     $scope.ingreso.mantenimiento = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 3) {
+                    $scope.total_ingresos.seguro += $scope.ingreso.total;
                     $scope.ingreso.seguro = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 4) {
+                    $scope.total_ingresos.papeleria += $scope.ingreso.total;
                     $scope.ingreso.papeleria = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 5) {
+                    $scope.total_ingresos.agua += $scope.ingreso.total;
                     $scope.ingreso.agua = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 6) {
+                    $scope.total_ingresos.energia += $scope.ingreso.total;
                     $scope.ingreso.energia = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 7) {
+                    $scope.total_ingresos.citofonia += $scope.ingreso.total;
                     $scope.ingreso.citofonia = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 8) {
+                    $scope.total_ingresos.aseo += $scope.ingreso.total;
                     $scope.ingreso.aseo = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 9) {
+                    $scope.total_ingresos.vigilancia += $scope.ingreso.total;
                     $scope.ingreso.vigilancia = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 10) {
+                    $scope.total_ingresos.bienestar_social += $scope.ingreso.total;
                     $scope.ingreso.bienestar_social = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 11) {
+                    $scope.total_ingresos.gastos_bancarios += $scope.ingreso.total;
                     $scope.ingreso.gastos_bancarios = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 12) {
+                    $scope.total_ingresos.dian += $scope.ingreso.total;
                     $scope.ingreso.dian = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 13) {
+                    $scope.total_ingresos.otros += $scope.ingreso.total;
                     $scope.ingreso.otros = $scope.ingreso.total;
                 }
                 $scope.matrizEgresos.push($scope.ingreso);
@@ -1377,7 +1407,7 @@ function abrirModalCargoAbono()
 function verConfirmacion()
 {
     $('#cargoAbono').modal('hide');
-    alert("Se realizó el pago satisfactoriamente")
+    alert("Se realizï¿½ el pago satisfactoriamente")
     window.location.reload();
 }
 

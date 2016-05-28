@@ -38,7 +38,7 @@
                     <th>Factura</th>
                     <th>Total</th>
                     <th>Descripcion</th>
-                    <th>Admisnitracion</th>
+                    <th>Administracion</th>
                     <th>Mantenimiento</th>
                     <th>Seguro</th>
                     <th>Papeleria</th>
@@ -52,7 +52,8 @@
                     <th>Dian</th>
                     <th>Otros</th>
                 </tr></thead>
-                <tbody><tr ng-repeat="ingreso in matrizEgresos">
+                <tbody>
+                <tr ng-repeat="ingreso in matrizEgresos">
                     <td>{{ ingreso.id }}</td>
                     <td>{{ ingreso.total }}</td>
                     <td>{{ ingreso.descripcion }}</td>
@@ -69,6 +70,25 @@
                     <td>{{ ingreso.gastos_bancarios }}</td>
                     <td>{{ ingreso.dian }}</td>
                     <td>{{ ingreso.otros }}</td>
+                </tr>
+                <tr>
+                    <td><label>Total</label></td>
+                    <td>{{total_ingresos.total}}</td>
+                    <td></td>
+                    <td>{{total_ingresos.administracion}}</td>
+                    <td>{{total_ingresos.mantenimiento}}</td>
+                    <td>{{total_ingresos.seguro}}</td>
+                    <td>{{total_ingresos.papeleria}}</td>
+                    <td>{{total_ingresos.agua}}</td>
+                    <td>{{total_ingresos.energia}}</td>
+                    <td>{{total_ingresos.citofonia}}</td>
+                    <td>{{total_ingresos.aseo}}</td>
+                    <td>{{total_ingresos.vigilancia}}</td>
+                    <td>{{total_ingresos.bienestar_social}}</td>
+                    <td>{{total_ingresos.gastos_bancarios}}</td>
+                    <td>{{total_ingresos.dian}}</td>
+                    <td>{{total_ingresos.otros}}</td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>
