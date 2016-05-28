@@ -66,6 +66,9 @@ app.config(["$routeProvider", function($router)
     .when("/consulta_ingresos", {
         templateUrl: "/templates/consulta_ingresos/index.html"
     })
+    .when("/consulta_morosos", {
+        templateUrl: "/templates/morosos/index.html"
+    })
     .when("/reporte_egresos/:date1/:date2/:concept", {
         templateUrl: "/templates/reporte_egresos/detail.html"
     })
