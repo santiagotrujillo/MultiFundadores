@@ -31,9 +31,14 @@ Route::get('/propietarios/borrar/{id}','PropietarioController@borrar');
 Route::get('/propietarios/cobro/admin/pendientes','PropietarioController@cobroAdminPendientes');
 
 /**
- * Ruta paraa cargar los propietarios morosos
+ * Ruta para cargar los propietarios morosos
  */
 Route::get('/propietarios/morosos','PropietarioController@morosos');
+
+/**
+ * Ruta para cargar las deudas de mora de una propiedad por medio de su id.
+ */
+Route::get('/propietarios/morosos/propiedad/{propiedad_id}','PropietarioController@morosoPropiedad');
 
 /**
  * Ruta para realizar la cuenta de cobro a los propietarios en el mes actual por concepto de admin - mensualmente

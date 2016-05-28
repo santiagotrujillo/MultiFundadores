@@ -182,6 +182,20 @@ class PropietarioController extends Controller
     }
 
     /**
+     * @param $propiedad_id
+     * @return array
+     */
+    public function morosoPropiedad($propiedad_id)
+    {
+        return \DB::select("select pagos.id, propiedad_id , valor, valor_pagado, (valor-valor_pagado) deuda, 
+                            tipo_pagos.concepto, pagos.descripcion, concat(year(pagos.fecha_final), '-',month(pagos.fecha_inicial)) periodo
+                            from pagos, tipo_pagos
+                            where pagos.tipo_pago_id = tipo_pagos.id and 
+                            propiedad_id = $propiedad_id and (valor_pagado < valor or valor_pagado is null)
+                            ");
+    }
+
+    /**
      * @param Requests\PropietarioPagoRequest $request
      * @return mixed
      */
