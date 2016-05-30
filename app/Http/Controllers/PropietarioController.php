@@ -16,10 +16,11 @@ use App\Http\Requests\PropietarioLoginRequest;
 use App\Http\Requests\PropietarioDeshacerAbonoRequest;
 use App\Http\Requests\CobroParqueaderoRequest;
 use App\Http\Requests\CobroOtrosRequest;
+use App\Http\Requests\ChargeByOtherConceptsToAllPropertiesRequest;
 
 class PropietarioController extends Controller
 {
-    protected $data =[];
+    protected $data = [];
 
     protected $model;
 
@@ -62,9 +63,8 @@ class PropietarioController extends Controller
      */
     public function login(PropietarioLoginRequest $request)
     {
-        $propietario = $this->model->where('id',$this->data['id'])->first();
-        if( Hash::check($this->data['clave'], $propietario->clave) )
-        {
+        $propietario = $this->model->where('id', $this->data['id'])->first();
+        if (Hash::check($this->data['clave'], $propietario->clave)) {
             Auth::owner()->login($propietario);
             return redirect('/propietarios/home');
         }
@@ -74,7 +74,7 @@ class PropietarioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($id)
@@ -87,8 +87,7 @@ class PropietarioController extends Controller
      */
     public function viewLogin()
     {
-        if(Auth::owner()->get()!= null)
-        {
+        if (Auth::owner()->get() != null) {
             return redirect('/propietarios/home');
         }
         return view('users.propietariologin');
@@ -99,8 +98,7 @@ class PropietarioController extends Controller
      */
     public function viewHome()
     {
-        if(Auth::owner()->get()!= null)
-        {
+        if (Auth::owner()->get() != null) {
             return view('users.homePropietario');
         }
         return redirect('/propietarios/login');
@@ -161,7 +159,7 @@ class PropietarioController extends Controller
     {
         return (new Pago)->with(['tipo_pago'])
             ->whereRaw('valor_pagado < valor')
-            ->orWhere('valor_pagado',null)
+            ->orWhere('valor_pagado', null)
             ->orderby('fecha_inicial', 'asc')
             ->get();
     }
@@ -204,17 +202,15 @@ class PropietarioController extends Controller
         $data = \Input::all();
         $pago = (new Pago)->find($data["id"]);
 
-        if( $data['valor_abono'] <= ($pago->valor -$pago->valor_pagado) ) {
-                $pago->valor_pagado = $pago->valor_pagado + $data['valor_abono'];
-                $pago->update();
-                $abono = Abono::create(['valor' => $data['valor_abono'], 'pago_id' => $pago->id, 'forma_pago' => $data['forma_pago']]);
-                return Response::json(['status' => 'true', 'abono' => $abono, 'factura' => $pago ], 200);
-        }
-        else if( $pago->valor_pagado == $pago->valor ) {
-            return Response::json(['status' => false, 'message' => 'Usted ya pago la totalidad de la deuda.'],400);
-        }
-        else {
-            return Response::json(['status' => false, 'message' => 'Lo sentimos el pago sobrepasa el valor de la deuda'],400);
+        if ($data['valor_abono'] <= ($pago->valor - $pago->valor_pagado)) {
+            $pago->valor_pagado = $pago->valor_pagado + $data['valor_abono'];
+            $pago->update();
+            $abono = Abono::create(['valor' => $data['valor_abono'], 'pago_id' => $pago->id, 'forma_pago' => $data['forma_pago']]);
+            return Response::json(['status' => 'true', 'abono' => $abono, 'factura' => $pago], 200);
+        } else if ($pago->valor_pagado == $pago->valor) {
+            return Response::json(['status' => false, 'message' => 'Usted ya pago la totalidad de la deuda.'], 400);
+        } else {
+            return Response::json(['status' => false, 'message' => 'Lo sentimos el pago sobrepasa el valor de la deuda'], 400);
         }
     }
 
@@ -229,7 +225,7 @@ class PropietarioController extends Controller
         $tipo_pago = (new Tipo_pago)->find($pago->tipo_pago_id);
         $propiedad = (new Propiedad)->find($pago->propiedad_id);
         $propietario = (new Propietario)->find($propiedad->propietario_id);
-        return Response::json(['abono' => $abono, 'factura' => $pago, 'propiedad' => $propiedad,'tipo' => $tipo_pago, 'propietario' => $propietario]);
+        return Response::json(['abono' => $abono, 'factura' => $pago, 'propiedad' => $propiedad, 'tipo' => $tipo_pago, 'propietario' => $propietario]);
     }
 
     /**
@@ -239,12 +235,11 @@ class PropietarioController extends Controller
     public function cobroSalon(CobroSalonRequest $request)
     {
         $data = \Input::all();
-        $cobros_anteriores = (new Pago)->where('fecha_inicial',$data["fecha"])->where('tipo_pago_id',3)->get();
-        if(count($cobros_anteriores) > 0)
-        {
-            return Response::json(['message' => 'Ya se encuentra reservado para esta fecha'],400);
+        $cobros_anteriores = (new Pago)->where('fecha_inicial', $data["fecha"])->where('tipo_pago_id', 3)->get();
+        if (count($cobros_anteriores) > 0) {
+            return Response::json(['message' => 'Ya se encuentra reservado para esta fecha'], 400);
         }
-        $cobro = ['tipo_pago_id' => 3, 'valor' => $data["valor"], 'descripcion' => $data['descripcion'] ,
+        $cobro = ['tipo_pago_id' => 3, 'valor' => $data["valor"], 'descripcion' => $data['descripcion'],
             'fecha_inicial' => $data["fecha"], 'fecha_final' => $data["fecha"], 'propiedad_id' => 1234567890, 'valor_pagado' => 0];
         $pago = (new Pago);
         $pago->fill($cobro);
@@ -254,19 +249,21 @@ class PropietarioController extends Controller
 
 
     /** Actual month last day **/
-    private function last_month_day() {
+    private function last_month_day()
+    {
         $month = date('m');
         $year = date('Y');
-        $day = date("d", mktime(0,0,0, $month+1, 0, $year));
+        $day = date("d", mktime(0, 0, 0, $month + 1, 0, $year));
 
-        return date('Y-m-d', mktime(0,0,0, $month, $day, $year));
+        return date('Y-m-d', mktime(0, 0, 0, $month, $day, $year));
     }
 
     /** Actual month first day **/
-    private function first_month_day() {
+    private function first_month_day()
+    {
         $month = date('m');
         $year = date('Y');
-        return date('Y-m-d', mktime(0,0,0, $month, 1, $year));
+        return date('Y-m-d', mktime(0, 0, 0, $month, 1, $year));
     }
 
     /**
@@ -280,38 +277,66 @@ class PropietarioController extends Controller
         $year_actual = \DB::select('select year(NOW()) as year');
         $year_actual = $year_actual[0]->year;
 
-        if(!$this->validateDate()){
+        if (!$this->validateDate()) {
 
-        $propiedades = (new Propiedad)->all();
-        foreach($propiedades as $propiedad)
-        {
-            $cobro = [
-                'valor' => $this->valorAdmin,
-                'descripcion' => 'Pago a realizar del mes de : '. $mes_actual .' de '. $year_actual,
-                'fecha_inicial' =>  $this->first_month_day(),
-                'fecha_final' =>  $this->last_month_day(),
-                'tipo_pago_id' =>  1
-            ];
-            // se cobra una parte de admin a estas propiedades
-            if($propiedad->id == 3201 || $propiedad->id == 5301 || $propiedad->id == 6302)
-            {
-                $cobro['valor'] = $this->valorJunta;
+            $propiedades = (new Propiedad)->all();
+            foreach ($propiedades as $propiedad) {
+                $cobro = [
+                    'valor' => $this->valorAdmin,
+                    'descripcion' => 'Pago a realizar del mes de : ' . $mes_actual . ' de ' . $year_actual,
+                    'fecha_inicial' => $this->first_month_day(),
+                    'fecha_final' => $this->last_month_day(),
+                    'tipo_pago_id' => 1
+                ];
+                // se cobra una parte de admin a estas propiedades
+                if ($propiedad->id == 3201 || $propiedad->id == 5301 || $propiedad->id == 6302) {
+                    $cobro['valor'] = $this->valorJunta;
+                }
+                if ($propiedad->id != 1201 && (
+                        $propiedad->id != 1234567890 &&
+                        $propiedad->id != 1234567891)
+                ) {
+                    $pago = (new Pago);
+                    $pago->fill($cobro);
+                    $pago->propiedad_id = $propiedad->id;
+                    $pago->save();
+                }
             }
-            if(     $propiedad->id != 1201 && (
-                    $propiedad->id != 1234567890 &&
-                    $propiedad->id != 1234567891 ))
-            {
-                $pago = (new Pago);
-                $pago->fill($cobro);
-                $pago->propiedad_id = $propiedad->id;
-                $pago->save();
-            }
+            return Response::json(['status => true'], 200);
         }
-            return Response::json(['status => true'],200);
-        }
-        return Response::json(['message'=>'El mes actual ya tiene facturas generadas de administraci�n'],406);
+        return Response::json(['message' => 'El mes actual ya tiene facturas generadas de administraci�n'], 406);
     }
 
+    /**
+     * @param ChargeByOtherConceptsToAllPropertiesRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function generateChargeByOtherConceptsToAllProperties(ChargeByOtherConceptsToAllPropertiesRequest $request)
+    {
+        $properties = (new Propiedad)->all();
+        foreach($properties as $property)
+        {
+            $charge = [
+                'valor' => $this->data['value'],
+                'descripcion' => $this->data['description'],
+                'fecha_inicial' =>  $this->first_month_day(),
+                'fecha_final' =>  $this->last_month_day(),
+                'tipo_pago_id' =>  6
+            ];
+            if($property->id != 1201 && ($property->id != 1234567890 && $property->id != 1234567891 ))
+            {
+                $payment = (new Pago);
+                $payment->fill($charge);
+                $payment->propiedad_id = $property->id;
+                $payment->save();
+            }
+        }
+        return Response::json(['status' => true],200);
+    }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function cobroMulta()
     {
         $fecha = date('Y-m-j');

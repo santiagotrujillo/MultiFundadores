@@ -71,6 +71,11 @@ Route::post('/propietarios/cobro/parqueadero','PropietarioController@cobroParque
 Route::post('/propietarios/cobro/otros','PropietarioController@cobroOtros');
 
 /**
+ * Ruta para generar la cuenta de cobro a todas las propiedades por otro concepto
+ */
+Route::post('/propietarios/cobro/otros/allproperties','PropietarioController@generateChargeByOtherConceptsToAllProperties');
+
+/**
  * Ruta para realizar la cuenta de cobro a los propietarios en el a�o actual por concepto de cuenta de cobro
  */
 Route::post('/propietarios/cobro/cuentacobro','PropietarioController@cuentaCobro');

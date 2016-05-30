@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class CobroOtrosRequest extends Request
+class ChargeByOtherConceptsToAllPropertiesRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,9 @@ class CobroOtrosRequest extends Request
     public function rules()
     {
         return [
-        'valor'         => 'required|numeric',
-        'descripcion'   => 'required',
-        'fecha_inicial' => 'required|date',
-        'fecha_final'   => 'required|date',
-        'propiedad_id'   => 'required|numeric|exists:propiedades,id',
+            'value'         => 'required|numeric',
+            'description'   => 'required'
         ];
     }
+
 }
