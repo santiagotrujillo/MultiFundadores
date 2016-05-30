@@ -3,46 +3,65 @@
     <div> <br/> <br/> <br/></div>
     <div class="row">
         <div class="col-md-12">
-                <h2>Acciones del menu Principal</h2>
+                <h2>Acciones del men&uacute; Principal</h2>
                 <div class="panel-group">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">Generacion de Cobros</div>
+                        <div class="panel-heading">Generacion de Cobros Colectivos</div>
                         <div class="panel-body">
                             <div class="col-md-4">
-                                <button class="btn btn-success" data-toggle="modal" data-target="#cobrosAdmin" style="button:30px;">Generar cobros de Administración</button>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#cobrosAdmin"
+                                        title="Cobro de Administraci&oacute;n a todas las propiedades, en el mes actual"
+                                        style="button:30px;">Generar cobros de Administraci&oacute;n
+                                </button>
                             </div>
                             <div class="col-md-4">
-                                <button class="btn btn-success" data-toggle="modal" data-target="#cobrosSeguro" style="button:30px;">Generar cobros de Seguro</button><br/>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#cobrosSeguro"
+                                        title="Cobro de seguro a todas las propiedades, en el a&ntilde;o."
+                                        style="button:30px;">Generar cobros de Seguro
+                                </button><br/>
                                 <br>
                             </div>
-
                             <div class="col-md-4">
-                                <button class="btn btn-success" data-toggle="modal" data-target="#cobrosSalon" style="button:30px;">Generar cobros de Salón</button><br/>
+                                <button class="btn btn-danger" style="button:30px;" data-toggle="modal"
+                                        title="Cobro de Multa de incumplimiento a las propiedades que tienen retrazo en el pago de administraci&oacute;n."
+                                        data-target="#cobrosMulta" >Generar cobros de Multa incumplimiento
+                                </button><br/>
                                 <br>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Generacion de Cobros Individuales</div>
+                        <div class="panel-body">
                             <div class="col-md-4">
-                                <button class="btn btn-primary"style="button:30px;" data-toggle="modal" data-target="#cobrosMulta" >Generar cobros de Multa incumplimiento</button><br/>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#cobrosSalon"
+                                        title="Este cobro es generado por el uso del salón" style="button:30px;">Generar cobro de Salón
+                                </button><br/>
                                 <br>
                             </div>
-
                             <div class="col-md-4">
-                                <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosParqueadero" style="button:30px;">Generar cobros de Parqueadero</button><br/>
+                                <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosParqueadero"
+                                        title="Este cobro se realiza por concepto de Parqueadero" style="button:30px;">Generar cobro de Parqueadero
+                                </button><br/>
                                 <br>
                             </div>
-
                             <div class="col-md-4">
-                                <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosOtros" style="button:30px;">Generar cobros de Otros</button><br/>
+                                <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosOtros"
+                                        title="Este cobro se realiza a un solo apartamento" style="button:30px;">Generar cobro de Otros
+                                </button><br/>
                                 <br/>
                             </div>
-
                             <div class="col-md-4">
-                                <button class="btn btn-danger" data-toggle="modal"  data-target="#cobrosCuentaCobrar" style="button:30px;">Generar cuenta por cobrar</button><br/>
+                                <button class="btn btn-danger" data-toggle="modal"  data-target="#cobrosCuentaCobrar"
+                                        style="button:30px;">Generar cuenta por cobrar
+                                </button><br/>
                                 <br/>
                             </div>
-
                             <div class="col-md-4">
-                                <button class="btn btn-success" data-toggle="modal"  data-target="#pazysalvo" style="button:30px;">Generar Paz y Salvo</button><br/>
+                                <button class="btn btn-success" data-toggle="modal"  data-target="#pazysalvo"
+                                        title="Generaci&oacute;n de Paz y Salvo para un apartamento" style="button:30px;">Generar Paz y Salvo
+                                </button><br/>
                                 <br/>
                             </div>
                         </div>
@@ -50,8 +69,7 @@
                 </div>
         </div>
     </div>
-
-
+    
     <!-- init modal soft cobro admin -->
     <div class="modal fade" id="cobrosAdmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
