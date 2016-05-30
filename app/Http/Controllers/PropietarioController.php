@@ -27,7 +27,7 @@ class PropietarioController extends Controller
      * valor del pago de administracion
      * @var int
      */
-    protected $valorAdmin = 90000;
+    protected $valorAdmin = 96000;
 
     /**
      * valor de la multa
@@ -39,7 +39,7 @@ class PropietarioController extends Controller
      * valor del pago de mensualidad de la junta
      * @var int
      */
-    protected $valorJunta = 67500;
+    protected $valorJunta = 72500;
 
     /**
      * valor del pago del cobro del seguro
