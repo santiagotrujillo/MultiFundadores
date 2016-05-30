@@ -317,11 +317,11 @@ class PropietarioController extends Controller
         foreach($properties as $property)
         {
             $charge = [
-                'valor' => $this->data['value'],
-                'descripcion' => $this->data['description'],
-                'fecha_inicial' =>  $this->first_month_day(),
-                'fecha_final' =>  $this->last_month_day(),
-                'tipo_pago_id' =>  6
+                'valor'         => $this->data['value'],
+                'descripcion'   => $this->data['description'],
+                'fecha_inicial' => $this->data['date1'],
+                'fecha_final'   => $this->data['date2'],
+                'tipo_pago_id'  => 6
             ];
             if($property->id != 1201 && ($property->id != 1234567890 && $property->id != 1234567891 ))
             {

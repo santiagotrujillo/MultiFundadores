@@ -336,6 +336,32 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
         });
     };
 
+    $scope.charge = {
+        date1 : getcurrentDate(),
+        date2 : getcurrentDate()
+    };
+
+    $scope.generateChargesByOtherConcepts = function ()
+    {
+        closeModal('chargesByOtherConcepts');
+        $http({
+            method: 'POST',
+            url: '/propietarios/cobro/otros/allproperties',
+            data: $scope.charge
+        })
+        .success(function(data, status, headers, config)
+        {
+            alert('Se cargaron los cobros por otros conceptos correctamente')
+        })
+        .error(function(error, status, headers, config)
+        {
+            // imcomplete params
+            if(error) {
+                return alert('Se debe ingresar todos los valores');
+            }
+        });
+    };
+
     $scope.realizarCobroMulta = function ()
     {
         closeModal('cobrosMulta');
@@ -1497,4 +1523,9 @@ function abrirModal(name)
 function cerrarModal(name)
 {
     $('#'+name).modal('hide');
+}
+
+function getcurrentDate() {
+    var today = moment().format('YYYY-MM-DD');
+    return today;
 }

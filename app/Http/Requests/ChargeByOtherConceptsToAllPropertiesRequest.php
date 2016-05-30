@@ -23,7 +23,9 @@ class ChargeByOtherConceptsToAllPropertiesRequest extends Request
     {
         return [
             'value'         => 'required|numeric',
-            'description'   => 'required'
+            'description'   => 'required',
+            'date1'         => 'required|date',
+            'date2'         => 'required|date'
         ];
     }
 
