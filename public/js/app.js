@@ -90,6 +90,9 @@ app.config(["$routeProvider", function($router)
     .when("/ingresos/bloque", {
         templateUrl: "/templates/ingresos/bloque.html"
     })
+    .when("/ingresos/bloque/otros/ingresos", {
+        templateUrl: "/templates/ingresos/bloque_otros_ingresos.html"
+    })
     .when("/ingresos/consignaciones", {
         templateUrl: "/templates/ingresos/consignaciones.html"
     })
