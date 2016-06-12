@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tipo_deuda;
 use App\Deuda;
+use App\Tipo_pago;
 use App\Usuario;
 use Illuminate\Http\Request;
 use \Response, \Input, \Hash, \Auth, \DB;
@@ -16,8 +17,14 @@ use App\Http\Controllers\Controller;
 
 class UsuarioController extends Controller
 {
+    /**
+     * @var array
+     */
     protected $data =[];
 
+    /**
+     * UsuarioController constructor.
+     */
     public function __construct()
     {
         $this->data = Input::all();
@@ -258,11 +265,27 @@ class UsuarioController extends Controller
         return DB::select($query,[]);
     }
 
+    /**
+     * @return array
+     */
     public function ingresosBlogues()
     {
         $query = "SELECT pagos.*, month(pagos.created_at) as month, year(pagos.created_at) as year,
                   substr(CAST(propiedad_id AS CHAR),1,1) as bloque
                   from pagos where tipo_pago_id in (1,2)
+                  and year(pagos.created_at) = year(now())";
+        return DB::select($query,[]);
+    }
+
+    /**
+     * @return array
+     */
+    public function otrosIngresosBlogues()
+    {
+        $tipo_pago = Tipo_pago::OTROS;
+        $query = "SELECT pagos.*, month(pagos.created_at) as month, year(pagos.created_at) as year,
+                  substr(CAST(propiedad_id AS CHAR),1,1) as bloque
+                  from pagos where tipo_pago_id = $tipo_pago
                   and year(pagos.created_at) = year(now())";
         return DB::select($query,[]);
     }
