@@ -117,6 +117,15 @@ Route::get('/usuarios/ingresos_multas/bloques', [
     'uses'=>'UsuarioController@ingresosPorMultasDeIncumplimientoPorBlogues'
 ]);
 
+
+/**
+ * Ruta para obtener el reporte de ingresos por multa de incumplimiento por bloque
+ */
+Route::get('/usuarios/seguros/bloques', [
+    'uses'=>'UsuarioController@ingresosDeSegurosPorBlogues'
+]);
+
+
 /**
  * Ruta para obtener la lista de las dueudas
  */

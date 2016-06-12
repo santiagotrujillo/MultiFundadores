@@ -304,6 +304,19 @@ class UsuarioController extends Controller
     }
 
     /**
+     * @return array
+     */
+    public function ingresosDeSegurosPorBlogues()
+    {
+        $tipo_pago = Tipo_pago::SEGURO;
+        $query = "SELECT pagos.*, month(pagos.created_at) as month, year(pagos.created_at) as year,
+                  substr(CAST(propiedad_id AS CHAR),1,1) as bloque
+                  from pagos where tipo_pago_id = $tipo_pago
+                  and year(pagos.created_at) = year(now())";
+        return DB::select($query,[]);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function tipoDeudas()
