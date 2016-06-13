@@ -46,6 +46,8 @@ class Tipo_pago extends Model
     protected $fillable = ['id' ,'concepto','pago_valor','fecha_inicial','fecha_final','descripcion'];
 
     /**
+     * The database table used by the model.
+     *
      * @var string
      */
     protected $table = 'tipo_pagos';

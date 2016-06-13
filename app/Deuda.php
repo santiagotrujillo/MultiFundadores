@@ -4,13 +4,26 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Deuda
+ * @package App
+ */
 class Deuda extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = ['id' ,'descripcion','conjunto_id','tipo_deuda_id','valor'];
 
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
     protected $table = 'deudas';
 
-    // relaciones
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
