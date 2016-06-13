@@ -2,45 +2,79 @@
 
     <div> <br/> <br/> <br/></div>
     <div class="row">
-        <div class="col-md-4">
-            <button class="btn btn-success" data-toggle="modal" data-target="#cobrosAdmin" style="button:30px;">Generar cobros de Administración</button>
-        </div>
-        <div class="col-md-4">
-            <button class="btn btn-success" data-toggle="modal" data-target="#cobrosSeguro" style="button:30px;">Generar cobros de Seguro</button><br/>
-            <br>
-        </div>
+        <div class="col-md-12">
+                <h2>Acciones del men&uacute; Principal</h2>
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Generacion de Cobros Colectivos</div>
+                        <div class="panel-body">
+                            <div class="col-md-4">
+                                <button class="btn btn-success" data-toggle="modal" data-target="#cobrosAdmin"
+                                        title="Cobro de Administraci&oacute;n a todas las propiedades, en el mes actual"
+                                        style="button:30px;">Generar cobros de Administraci&oacute;n
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-success" data-toggle="modal" data-target="#cobrosSeguro"
+                                        title="Cobro de seguro a todas las propiedades, en el a&ntilde;o."
+                                        style="button:30px;">Generar cobros de Seguro
+                                </button><br/>
+                                <br>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-danger" style="button:30px;" data-toggle="modal"
+                                        title="Cobro de Multa de incumplimiento a las propiedades que tienen retrazo en el pago de administraci&oacute;n."
+                                        data-target="#cobrosMulta" >Generar cobros de Multa incumplimiento
+                                </button><br/>
+                                <br>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-success" data-toggle="modal" data-target="#chargesByOtherConcepts"
+                                        title="Cobro de otros conceptos a todas las propiedades, en el mes actual"
+                                        style="button:30px;">Generar cobros de otros conceptos
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="col-md-4">
-            <button class="btn btn-success" data-toggle="modal" data-target="#cobrosSalon" style="button:30px;">Generar cobros de Salón</button><br/>
-            <br>
-        </div>
-
-        <div class="col-md-4">
-            <button class="btn btn-primary"style="button:30px;" data-toggle="modal" data-target="#cobrosMulta" >Generar cobros de Multa incumplimiento</button><br/>
-            <br>
-        </div>
-
-        <div class="col-md-4">
-            <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosParqueadero" style="button:30px;">Generar cobros de Parqueadero</button><br/>
-            <br>
-        </div>
-
-        <div class="col-md-4">
-            <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosOtros" style="button:30px;">Generar cobros de Otros</button><br/>
-            <br/>
-        </div>
-
-        <div class="col-md-4">
-            <button class="btn btn-danger" data-toggle="modal"  data-target="#cobrosCuentaCobrar" style="button:30px;">Generar cuenta por cobrar</button><br/>
-            <br/>
-        </div>
-
-        <div class="col-md-4">
-            <button class="btn btn-success" data-toggle="modal"  data-target="#pazysalvo" style="button:30px;">Generar Paz y Salvo</button><br/>
-            <br/>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Generacion de Cobros Individuales</div>
+                        <div class="panel-body">
+                            <div class="col-md-4">
+                                <button class="btn btn-success" data-toggle="modal" data-target="#cobrosSalon"
+                                        title="Este cobro es generado por el uso del salón" style="button:30px;">Generar cobro de Salón
+                                </button><br/>
+                                <br>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosParqueadero"
+                                        title="Este cobro se realiza por concepto de Parqueadero" style="button:30px;">Generar cobro de Parqueadero
+                                </button><br/>
+                                <br>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-primary" data-toggle="modal"  data-target="#cobrosOtros"
+                                        title="Este cobro se realiza a un solo apartamento" style="button:30px;">Generar cobro de Otros
+                                </button><br/>
+                                <br/>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-danger" data-toggle="modal"  data-target="#cobrosCuentaCobrar"
+                                        style="button:30px;">Generar cuenta por cobrar
+                                </button><br/>
+                                <br/>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-success" data-toggle="modal"  data-target="#pazysalvo"
+                                        title="Generaci&oacute;n de Paz y Salvo para un apartamento" style="button:30px;">Generar Paz y Salvo
+                                </button><br/>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-
 
     <!-- init modal soft cobro admin -->
     <div class="modal fade" id="cobrosAdmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -66,6 +100,46 @@
         </div>
     </div>
     <!-- end modal soft cobro admin -->
+
+    <!-- init modal soft charges by other concepts -->
+    <div class="modal fade" id="chargesByOtherConcepts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">Generación cuenta de cobro por otros Conceptos</h4>
+                    <aside>Cobro por otros conceptos a todas las propiedades</aside>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Descripción*</label>
+                            <input type="text" name="descripcion" required class="form-control" ng-model="charge.description" placeholder="Digite la descripcion">
+                        </div>
+                        <div class="col-md-12">
+                            <label>Valor*</label>
+                            <input type="text"  name="valor" required class="form-control" ng-model="charge.value" placeholder="Digite el valor">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Fecha Inicial*</label>
+                            <input type="date"  name="fecha_inicial" required class="form-control" ng-model="charge.date1">
+                            <br/><br/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Fecha Final*</label>
+                            <input type="date"  name="fecha_final" required class="form-control" ng-model="charge.date2">
+                            <br/><br/>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="generateChargesByOtherConcepts()">Confirmar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Rechazar</button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal soft harges by other concepts -->
 
     <!-- init modal soft cobro multa -->
     <div class="modal fade" id="cobrosMulta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -137,7 +211,7 @@
                         </div>
                         <div class="col-md-6">
                             <label>Valor*</label>
-                            <input type="text"  name="valor" required class="form-control" ng-model="pago.valor" placeholder="Digite el valor">
+                            <input type="text"  name="valor" required class="form-control" ng-model="pago.valor"  placeholder="Digite el valor">
                         <br/><br/>
                         </div>
                         <div class="col-md-6">

@@ -3,3 +3,5 @@
 Homestead.yaml
 .env
 /nbproject/private/
+.idea/
+documents/db_inmo.mwb.bak

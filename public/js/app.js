@@ -66,6 +66,9 @@ app.config(["$routeProvider", function($router)
     .when("/consulta_ingresos", {
         templateUrl: "/templates/consulta_ingresos/index.html"
     })
+    .when("/consulta_morosos", {
+        templateUrl: "/templates/morosos/index.html"
+    })
     .when("/reporte_egresos/:date1/:date2/:concept", {
         templateUrl: "/templates/reporte_egresos/detail.html"
     })
@@ -87,6 +90,15 @@ app.config(["$routeProvider", function($router)
     .when("/ingresos/bloque", {
         templateUrl: "/templates/ingresos/bloque.html"
     })
+    .when("/ingresos/bloque/otros/ingresos", {
+        templateUrl: "/templates/ingresos/bloque_otros_ingresos.html"
+    })
+    .when("/ingresos/bloque/multas", {
+        templateUrl: "/templates/ingresos/bloque_ingresos_multa.html"
+    })
+    .when("/ingresos/bloque/seguros", {
+        templateUrl: "/templates/ingresos/bloque_ingresos_seguros.html"
+    })
     .when("/ingresos/consignaciones", {
         templateUrl: "/templates/ingresos/consignaciones.html"
     })
@@ -98,6 +110,9 @@ app.config(["$routeProvider", function($router)
     })
     .when("/pago/profile/:id", {
         templateUrl: "/templates/pagos/profile.html"
+    })
+    .when("/morosos/detail/:id", {
+        templateUrl: "/templates/morosos/detail.html"
     })
     .when("/confirmacion/abono/:id", {
         templateUrl: "/templates/abonos/profile.html"
@@ -285,6 +300,34 @@ app.controller("RecaudoController", [
         };
     }]);
 
+app.controller("MorososController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.morosos = [], $scope.total=0;
+
+        $scope.listar = function(page)
+        {
+            $http.get('/propietarios/morosos')
+                .success(function(data, status, headers, config)
+                {
+                    $scope.morosos = data;
+                    $scope.total=$scope.morosos.length;
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                        total: $scope.morosos.length,
+                        getData: function($defer, params)
+                        {
+                            TableService.getTable($defer,params,$scope.filter, $scope.morosos);
+                        }
+                    });
+                    $scope.tableParams.reload();
+                    $scope.$watch("filter.$", function () {
+                        $scope.tableParams.reload();
+                    });
+                });
+        };
+        $scope.listar();
+    }]);
+
 app.controller("OperacionesController", ['$scope', '$http', function($scope, $http)
 {
 
@@ -294,11 +337,37 @@ app.controller("OperacionesController", ['$scope', '$http', function($scope, $ht
         $http.post('/propietarios/cobro/admin')
         .success(function(data, status, headers, config)
         {
-            alert('Se cargaron los cobros de administración correctamente')
+            alert('Se cargaron los cobros de administraciï¿½n correctamente')
         })
         .error(function(error, status, headers, config)
         {
             alert(error["message"])
+        });
+    };
+
+    $scope.charge = {
+        date1 : getcurrentDate(),
+        date2 : getcurrentDate()
+    };
+
+    $scope.generateChargesByOtherConcepts = function ()
+    {
+        closeModal('chargesByOtherConcepts');
+        $http({
+            method: 'POST',
+            url: '/propietarios/cobro/otros/allproperties',
+            data: $scope.charge
+        })
+        .success(function(data, status, headers, config)
+        {
+            alert('Se cargaron los cobros por otros conceptos correctamente')
+        })
+        .error(function(error, status, headers, config)
+        {
+            // imcomplete params
+            if(error) {
+                return alert('Se debe ingresar todos los valores');
+            }
         });
     };
 
@@ -437,7 +506,7 @@ app.controller("EgresosController", ['$scope', '$http', function($scope, $http)
         $http.post('/propietarios/cobro/admin')
             .success(function(data, status, headers, config)
             {
-                alert('Se cargaron los cobros de adminsitración correctamente')
+                alert('Se cargaron los cobros de adminsitraciï¿½n correctamente')
             })
             .error(function(error, status, headers, config)
             {
@@ -556,6 +625,22 @@ app.controller("ConsultaEgresosController", [
         // init http request
         $scope.search = function(page)
         {
+            $scope.total_ingresos = {
+                total : 0 ,
+                administracion : 0,
+                mantenimiento : 0,
+                seguro : 0,
+                papeleria : 0,
+                agua : 0,
+                energia : 0,
+                citofonia : 0,
+                aseo : 0,
+                vigilancia : 0,
+                bienestar_social : 0,
+                gastos_bancarios : 0,
+                dian : 0,
+                otros : 0,
+            };
             $scope.dataEgresos = [], $scope.total = 0;
             $http.get('/egresos/month/year/'+$scope.month+'/'+$scope.year)
             .success(function(data, status, headers, config)
@@ -582,43 +667,57 @@ app.controller("ConsultaEgresosController", [
                                         otros : 0
                                      };
                 //validate admin
+                $scope.total_ingresos.total += $scope.ingreso.total;
                 if(ingreso.tipo_deuda_id == 1) {
+                    $scope.total_ingresos.administracion += $scope.ingreso.total;
                     $scope.ingreso.administracion = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 2) {
+                    $scope.total_ingresos.mantenimiento += $scope.ingreso.total;
                     $scope.ingreso.mantenimiento = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 3) {
+                    $scope.total_ingresos.seguro += $scope.ingreso.total;
                     $scope.ingreso.seguro = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 4) {
+                    $scope.total_ingresos.papeleria += $scope.ingreso.total;
                     $scope.ingreso.papeleria = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 5) {
+                    $scope.total_ingresos.agua += $scope.ingreso.total;
                     $scope.ingreso.agua = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 6) {
+                    $scope.total_ingresos.energia += $scope.ingreso.total;
                     $scope.ingreso.energia = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 7) {
+                    $scope.total_ingresos.citofonia += $scope.ingreso.total;
                     $scope.ingreso.citofonia = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 8) {
+                    $scope.total_ingresos.aseo += $scope.ingreso.total;
                     $scope.ingreso.aseo = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 9) {
+                    $scope.total_ingresos.vigilancia += $scope.ingreso.total;
                     $scope.ingreso.vigilancia = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 10) {
+                    $scope.total_ingresos.bienestar_social += $scope.ingreso.total;
                     $scope.ingreso.bienestar_social = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 11) {
+                    $scope.total_ingresos.gastos_bancarios += $scope.ingreso.total;
                     $scope.ingreso.gastos_bancarios = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 12) {
+                    $scope.total_ingresos.dian += $scope.ingreso.total;
                     $scope.ingreso.dian = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_deuda_id == 13) {
+                    $scope.total_ingresos.otros += $scope.ingreso.total;
                     $scope.ingreso.otros = $scope.ingreso.total;
                 }
                 $scope.matrizEgresos.push($scope.ingreso);
@@ -650,6 +749,16 @@ app.controller("ConsultaIngresosController", [
         // init http request
         $scope.search = function(page)
         {
+            $scope.total_ingresos = {
+                total : 0 ,
+                administracion : 0,
+                seguro : 0,
+                salon : 0,
+                multa : 0,
+                parqueadero : 0,
+                otros : 0
+            };
+
             $scope.dataEgresos = [], $scope.total = 0;
             $http.get('/ingresos/month/year/'+$scope.month+'/'+$scope.year)
             .success(function(data, status, headers, config)
@@ -670,22 +779,29 @@ app.controller("ConsultaIngresosController", [
                                         otros : 0
                                      };
                 //validate admin
+                $scope.total_ingresos.total += $scope.ingreso.total;
                 if(ingreso.tipo_pago_id == 1) {
+                    $scope.total_ingresos.administracion += $scope.ingreso.total;
                     $scope.ingreso.administracion = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 2) {
+                    $scope.total_ingresos.seguro += $scope.ingreso.total;
                     $scope.ingreso.seguro = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 3) {
+                    $scope.total_ingresos.salon += $scope.ingreso.total;
                     $scope.ingreso.salon = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 4) {
+                    $scope.total_ingresos.multa += $scope.ingreso.total;
                     $scope.ingreso.multa = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 5) {
+                    $scope.total_ingresos.parqueadero += $scope.ingreso.total;
                     $scope.ingreso.parqueadero = $scope.ingreso.total;
                 }
                 else if(ingreso.tipo_pago_id == 6) {
+                    $scope.total_ingresos.otros += $scope.ingreso.total;
                     $scope.ingreso.otros = $scope.ingreso.total;
                 }
                 $scope.matrizEgresos.push($scope.ingreso);
@@ -711,6 +827,33 @@ app.controller("PagoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'Ta
                     getData: function($defer, params)
                     {
                         TableService.getTable($defer,params,$scope.filter, $scope.abonos);
+                    }
+                });
+                $scope.tableParams.reload();
+                $scope.$watch("filter.$", function () {
+                    $scope.tableParams.reload();
+                });
+            });
+    };
+    $scope.listar();
+}]);
+
+app.controller("MoraProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
+{
+    $scope.deudas = [], $scope.total=0;
+    $scope.listar = function(page)
+    {
+        $http.get('/propietarios/morosos/propiedad/'+$params.id)
+            .success(function(data, status, headers, config)
+            {
+                console.log('daa', data)
+                $scope.deudas =data;
+                $scope.total=$scope.deudas.length;
+                $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                    total: $scope.deudas.length,
+                    getData: function($defer, params)
+                    {
+                        TableService.getTable($defer,params,$scope.filter, $scope.deudas);
                     }
                 });
                 $scope.tableParams.reload();
@@ -837,6 +980,7 @@ app.controller("PazySalvoDocument",['$scope', '$http', '$filter', 'ngTableParams
 {
     $scope.propiedad = $params.id;
     $scope.date = moment().format('MMMM Do YYYY, h:mm:ss a');
+    $scope.date_format =  moment().format('MMMM Do YYYY');
 
     console.log('entro')
     $scope.imprimir = function()
@@ -1309,6 +1453,466 @@ app.controller("IngresosBloqueController", [
 
     }]);
 
+app.controller("OtrosIngresosBloqueController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.ingresos = [],$scope.matrizIngresos= [];
+
+
+        $scope.excel= function()
+        {
+            var blob = new Blob([document.getElementById('bajar').innerHTML], {
+                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+            });
+            saveAs(blob, "Descarga Otros Ingresos por Bloques.xls");
+        };
+
+        $scope.obtenerReporte = function()
+        {
+            $http.get('/usuarios/otros_ingresos/bloques')
+                .success(function(data, status, headers, config)
+                {
+                    $scope.ingresos = data;
+                    $scope.matrizIngresos =[];
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        if($scope.ValidateMatriz(ingreso.propiedad_id) == -1)
+                        {
+                            $scope.matrizIngresos.push({
+                                bloque: ingreso.bloque,
+                                propiedad_id : ingreso.propiedad_id,
+                                enero : {total :0, id :0},
+                                febrero: {total :0, id :0},
+                                marzo: {total :0, id :0},
+                                abril:{total :0, id :0},
+                                mayo : {total :0, id :0},
+                                junio: {total :0, id :0},
+                                julio: {total :0, id :0},
+                                agosto:{total :0, id :0},
+                                septiembre:{total :0, id :0},
+                                octubre:{total :0, id :0},
+                                noviembre :{total :0, id :0},
+                                diciembre:{total :0, id :0}})
+                        }
+                    });
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        index = $scope.ValidateMatriz(ingreso.propiedad_id);
+                        if(ingreso.month == 1)
+                        {
+                            $scope.matrizIngresos[index].enero.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].enero.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 2)
+                        {
+                            $scope.matrizIngresos[index].febrero.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].febrero.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 3)
+                        {
+                            $scope.matrizIngresos[index].marzo.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].marzo.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 4)
+                        {
+                            $scope.matrizIngresos[index].abril.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].abril.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 5)
+                        {
+                            $scope.matrizIngresos[index].mayo.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].mayo.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 6)
+                        {
+                            $scope.matrizIngresos[index].junio.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].junio.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 7)
+                        {
+                            $scope.matrizIngresos[index].julio.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].julio.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 8)
+                        {
+                            $scope.matrizIngresos[index].agosto.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].agosto.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 9)
+                        {
+                            $scope.matrizIngresos[index].septiembre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].septiembre.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 10)
+                        {
+                            $scope.matrizIngresos[index].octubre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].octubre.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 11)
+                        {
+                            $scope.matrizIngresos[index].noviembre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].noviembre.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 12)
+                        {
+                            $scope.matrizIngresos[index].diciembre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].diciembre.id = ingreso.id;
+                        }
+                    });
+                });
+        };
+
+        $scope.verAbonos = function(id)
+        {
+            $http.get('/propietarios/abonos/pago/'+id)
+                .success(function(data, status, headers, config)
+                {
+                    $scope.abonos = $scope.abonos.concat(data);
+                    $scope.total=$scope.abonos.length;
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                        total: $scope.abonos.length,
+                        getData: function($defer, params)
+                        {
+                            TableService.getTable($defer,params,$scope.filter, $scope.abonos);
+                        }
+                    });
+                    $scope.tableParams.reload();
+                    $scope.$watch("filter.$", function () {
+                        $scope.tableParams.reload();
+                    });
+                });
+        };
+
+        $scope.imprimir = function()
+        {
+            window.print();
+        }
+
+        $scope.ValidateMatriz = function(propiedad_id)
+        {
+            var posicion= -1;
+            $scope.matrizIngresos.forEach(function(ingreso, index)
+            {
+                if(ingreso.propiedad_id == propiedad_id)
+                {
+                    posicion= index;
+                }
+            });
+            return posicion;
+        };
+
+
+    }]);
+
+app.controller("IngresosMultaBloqueController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.ingresos = [],$scope.matrizIngresos= [];
+
+
+        $scope.excel= function()
+        {
+            var blob = new Blob([document.getElementById('bajar').innerHTML], {
+                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+            });
+            saveAs(blob, "Descarga Ingresos de Multa de incumplimiento por Bloques.xls");
+        };
+
+        $scope.obtenerReporte = function()
+        {
+            $http.get('/usuarios/ingresos_multas/bloques')
+                .success(function(data, status, headers, config)
+                {
+                    $scope.ingresos = data;
+                    $scope.matrizIngresos =[];
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        if($scope.ValidateMatriz(ingreso.propiedad_id) == -1)
+                        {
+                            $scope.matrizIngresos.push({
+                                bloque: ingreso.bloque,
+                                propiedad_id : ingreso.propiedad_id,
+                                enero : {total :0, id :0},
+                                febrero: {total :0, id :0},
+                                marzo: {total :0, id :0},
+                                abril:{total :0, id :0},
+                                mayo : {total :0, id :0},
+                                junio: {total :0, id :0},
+                                julio: {total :0, id :0},
+                                agosto:{total :0, id :0},
+                                septiembre:{total :0, id :0},
+                                octubre:{total :0, id :0},
+                                noviembre :{total :0, id :0},
+                                diciembre:{total :0, id :0}})
+                        }
+                    });
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        index = $scope.ValidateMatriz(ingreso.propiedad_id);
+                        if(ingreso.month == 1)
+                        {
+                            $scope.matrizIngresos[index].enero.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].enero.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 2)
+                        {
+                            $scope.matrizIngresos[index].febrero.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].febrero.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 3)
+                        {
+                            $scope.matrizIngresos[index].marzo.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].marzo.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 4)
+                        {
+                            $scope.matrizIngresos[index].abril.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].abril.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 5)
+                        {
+                            $scope.matrizIngresos[index].mayo.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].mayo.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 6)
+                        {
+                            $scope.matrizIngresos[index].junio.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].junio.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 7)
+                        {
+                            $scope.matrizIngresos[index].julio.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].julio.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 8)
+                        {
+                            $scope.matrizIngresos[index].agosto.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].agosto.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 9)
+                        {
+                            $scope.matrizIngresos[index].septiembre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].septiembre.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 10)
+                        {
+                            $scope.matrizIngresos[index].octubre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].octubre.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 11)
+                        {
+                            $scope.matrizIngresos[index].noviembre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].noviembre.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 12)
+                        {
+                            $scope.matrizIngresos[index].diciembre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].diciembre.id = ingreso.id;
+                        }
+                    });
+                });
+        };
+
+        $scope.verAbonos = function(id)
+        {
+            $http.get('/propietarios/abonos/pago/'+id)
+                .success(function(data, status, headers, config)
+                {
+                    $scope.abonos = $scope.abonos.concat(data);
+                    $scope.total=$scope.abonos.length;
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                        total: $scope.abonos.length,
+                        getData: function($defer, params)
+                        {
+                            TableService.getTable($defer,params,$scope.filter, $scope.abonos);
+                        }
+                    });
+                    $scope.tableParams.reload();
+                    $scope.$watch("filter.$", function () {
+                        $scope.tableParams.reload();
+                    });
+                });
+        };
+
+        $scope.imprimir = function()
+        {
+            window.print();
+        }
+
+        $scope.ValidateMatriz = function(propiedad_id)
+        {
+            var posicion= -1;
+            $scope.matrizIngresos.forEach(function(ingreso, index)
+            {
+                if(ingreso.propiedad_id == propiedad_id)
+                {
+                    posicion= index;
+                }
+            });
+            return posicion;
+        };
+
+
+    }]);
+
+
+app.controller("IngresosSegurosBloqueController", [
+    '$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout', function($scope, $http, $filter, ngTableParams, TableService, $timeout)
+    {
+        $scope.ingresos = [],$scope.matrizIngresos= [];
+
+
+        $scope.excel= function()
+        {
+            var blob = new Blob([document.getElementById('bajar').innerHTML], {
+                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+            });
+            saveAs(blob, "Descarga Ingresos de Seguros por Bloques.xls");
+        };
+
+        $scope.obtenerReporte = function()
+        {
+            $http.get('/usuarios/seguros/bloques')
+                .success(function(data, status, headers, config)
+                {
+                    $scope.ingresos = data;
+                    $scope.matrizIngresos =[];
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        if($scope.ValidateMatriz(ingreso.propiedad_id) == -1)
+                        {
+                            $scope.matrizIngresos.push({
+                                bloque: ingreso.bloque,
+                                propiedad_id : ingreso.propiedad_id,
+                                enero : {total :0, id :0},
+                                febrero: {total :0, id :0},
+                                marzo: {total :0, id :0},
+                                abril:{total :0, id :0},
+                                mayo : {total :0, id :0},
+                                junio: {total :0, id :0},
+                                julio: {total :0, id :0},
+                                agosto:{total :0, id :0},
+                                septiembre:{total :0, id :0},
+                                octubre:{total :0, id :0},
+                                noviembre :{total :0, id :0},
+                                diciembre:{total :0, id :0}})
+                        }
+                    });
+
+                    $scope.ingresos.forEach(function(ingreso)
+                    {
+                        index = $scope.ValidateMatriz(ingreso.propiedad_id);
+                        if(ingreso.month == 1)
+                        {
+                            $scope.matrizIngresos[index].enero.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].enero.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 2)
+                        {
+                            $scope.matrizIngresos[index].febrero.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].febrero.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 3)
+                        {
+                            $scope.matrizIngresos[index].marzo.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].marzo.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 4)
+                        {
+                            $scope.matrizIngresos[index].abril.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].abril.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 5)
+                        {
+                            $scope.matrizIngresos[index].mayo.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].mayo.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 6)
+                        {
+                            $scope.matrizIngresos[index].junio.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].junio.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 7)
+                        {
+                            $scope.matrizIngresos[index].julio.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].julio.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 8)
+                        {
+                            $scope.matrizIngresos[index].agosto.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].agosto.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 9)
+                        {
+                            $scope.matrizIngresos[index].septiembre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].septiembre.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 10)
+                        {
+                            $scope.matrizIngresos[index].octubre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].octubre.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 11)
+                        {
+                            $scope.matrizIngresos[index].noviembre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].noviembre.id = ingreso.id;
+                        }
+                        else if(ingreso.month == 12)
+                        {
+                            $scope.matrizIngresos[index].diciembre.total = ingreso.valor_pagado;
+                            $scope.matrizIngresos[index].diciembre.id = ingreso.id;
+                        }
+                    });
+                });
+        };
+
+        $scope.verAbonos = function(id)
+        {
+            $http.get('/propietarios/abonos/pago/'+id)
+                .success(function(data, status, headers, config)
+                {
+                    $scope.abonos = $scope.abonos.concat(data);
+                    $scope.total=$scope.abonos.length;
+                    $scope.tableParams = new ngTableParams({page:1, count:10, sorting: { id: 'asc'}}, {
+                        total: $scope.abonos.length,
+                        getData: function($defer, params)
+                        {
+                            TableService.getTable($defer,params,$scope.filter, $scope.abonos);
+                        }
+                    });
+                    $scope.tableParams.reload();
+                    $scope.$watch("filter.$", function () {
+                        $scope.tableParams.reload();
+                    });
+                });
+        };
+
+        $scope.imprimir = function()
+        {
+            window.print();
+        }
+
+        $scope.ValidateMatriz = function(propiedad_id)
+        {
+            var posicion= -1;
+            $scope.matrizIngresos.forEach(function(ingreso, index)
+            {
+                if(ingreso.propiedad_id == propiedad_id)
+                {
+                    posicion= index;
+                }
+            });
+            return posicion;
+        };
+
+
+    }]);
+
 app.controller("AbonoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)
 {
     $scope.abono = {};
@@ -1377,7 +1981,7 @@ function abrirModalCargoAbono()
 function verConfirmacion()
 {
     $('#cargoAbono').modal('hide');
-    alert("Se realizó el pago satisfactoriamente")
+    alert("Se realizï¿½ el pago satisfactoriamente")
     window.location.reload();
 }
 
@@ -1389,4 +1993,9 @@ function abrirModal(name)
 function cerrarModal(name)
 {
     $('#'+name).modal('hide');
+}
+
+function getcurrentDate() {
+    var today = moment().format('YYYY-MM-DD');
+    return today;
 }

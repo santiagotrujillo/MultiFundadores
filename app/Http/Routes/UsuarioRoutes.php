@@ -48,7 +48,7 @@ Route::get('/usuarios/ingresos/totales/{fecha_inicial}/{fecha_final}', [
 /**
  * @module reporte de ingresos totales por consignacion y efectivo
  * @activity 1.1
- * Ruta para obtener el reporte de ingresos totales detallado por consignacion y efectivo segun año y mes y concepto
+ * Ruta para obtener el reporte de ingresos totales detallado por consignacion y efectivo segun aï¿½o y mes y concepto
  */
 Route::get('/usuarios/ingresos/detail-totales/{year}/{month}/{concept}', [
     'uses'=>'UsuarioController@obtenerIngresosTotalesDetail'
@@ -57,7 +57,7 @@ Route::get('/usuarios/ingresos/detail-totales/{year}/{month}/{concept}', [
 /**
  * @module reporte de ingresos totales por consignacion y efectivo en excel
  * @activity 1.1.1
- * Ruta para obtener el reporte de ingresos totales detallado por consignacion y efectivo segun año y mes y concepto
+ * Ruta para obtener el reporte de ingresos totales detallado por consignacion y efectivo segun aï¿½o y mes y concepto
  */
 Route::get('/usuarios/ingresos/detail-totales-excel/{year}/{month}/{concept}', [
     'uses'=>'UsuarioController@obtenerIngresosTotalesDetailExcel'
@@ -102,6 +102,30 @@ Route::get('/usuarios/ingresos/bloques', [
     'uses'=>'UsuarioController@ingresosBlogues'
 ]);
 
+
+/**
+ * Ruta para obtener el reporte de otros ingresos por bloque
+ */
+Route::get('/usuarios/otros_ingresos/bloques', [
+    'uses'=>'UsuarioController@otrosIngresosBlogues'
+]);
+
+/**
+ * Ruta para obtener el reporte de ingresos por multa de incumplimiento por bloque
+ */
+Route::get('/usuarios/ingresos_multas/bloques', [
+    'uses'=>'UsuarioController@ingresosPorMultasDeIncumplimientoPorBlogues'
+]);
+
+
+/**
+ * Ruta para obtener el reporte de ingresos por multa de incumplimiento por bloque
+ */
+Route::get('/usuarios/seguros/bloques', [
+    'uses'=>'UsuarioController@ingresosDeSegurosPorBlogues'
+]);
+
+
 /**
  * Ruta para obtener la lista de las dueudas
  */
@@ -127,6 +151,6 @@ Route::get('/usuarios/egreso/{id}', [
 
 /**
  * Ruta para consultar el reporte en formato json de los ingresos
- * generados en un mes y un año especifico
+ * generados en un mes y un aï¿½o especifico
  */
 Route::get('/ingresos/month/year/{month}/{year}','UsuarioController@getIngresosMonthYear');

@@ -1,0 +1,56 @@
+<script src="http://rawgithub.com/eligrey/FileSaver.js/master/FileSaver.js" type="text/javascript"></script>
+
+<div ng-controller ="IngresosMultaBloqueController">
+
+    <div class="row appcontainer">
+        <br/>
+        <div class="col-lg-12">
+            <label>Reporte de Ingresos de Multa de incumplimiento por Bloque</label>
+        </div>
+        <div class="col-lg-12">
+            <br/>
+            <button class="btn btn-primary" ng-click="obtenerReporte()">Buscar</button>
+            <button class="btn btn-success" ng-click="imprimir()">Imprimir</button>
+            <button class="btn btn-success" ng-click="excel()">Exportar Excel</button>
+        </div>
+        <div class="col-lg-12" id="bajar">
+            <table class="table table-striped">
+                <thead><tr>
+                    <th>Bloque</th>
+                    <th>Apartamento</th>
+                    <th>Enero</th>
+                    <th>Febrero</th>
+                    <th>Marzo</th>
+                    <th>Abril</th>
+                    <th>Mayo</th>
+                    <th>Junio</th>
+                    <th>Julio</th>
+                    <th>Agosto</th>
+                    <th>Septiembre</th>
+                    <th>Octubre</th>
+                    <th>Noviembre</th>
+                    <th>Diciembre</th>
+                </tr></thead>
+                <tbody><tr ng-repeat="ingreso in matrizIngresos">
+                    <td>{{ ingreso.bloque }}</td>
+                    <td>{{ ingreso.propiedad_id }}</td>
+
+                    <td><a href="#/pago/profile/{{ingreso.enero.id}}">{{ ingreso.enero.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.febrero.id}}">{{ ingreso.febrero.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.marzo.id}}">{{ ingreso.marzo.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.abril.id}}">{{ ingreso.abril.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.mayo.id}}">{{ ingreso.mayo.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.junio.id}}">{{ ingreso.junio.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.julio.id}}">{{ ingreso.julio.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.agosto.id}}">{{ ingreso.agosto.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.septiembre.id}}">{{ ingreso.septiembre.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.octubre.id}}">{{ ingreso.octubre.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.noviembre.id}}">{{ ingreso.noviembre.total }}</a></td>
+                    <td><a href="#/pago/profile/{{ingreso.diciembre.id}}">{{ ingreso.diciembre.total }}</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

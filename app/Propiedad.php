@@ -4,13 +4,25 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Propiedad
+ * @package App
+ */
 class Propiedad extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = ['id' ,'numero_pisos','tipo_propiedad_id','conjunto_id','propietario_id'];
 
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
     protected $table = 'propiedades';
-
-    // relaciones
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

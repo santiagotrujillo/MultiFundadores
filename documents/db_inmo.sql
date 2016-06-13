@@ -14,8 +14,12 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema db_inmo
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `db_inmo` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+CREATE SCHEMA IF NOT EXISTS `db_inmo` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
 USE `db_inmo` ;
+
+-- Only for update schema
+-- ALTER SCHEMA `db_inmo`  DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_unicode_ci;
+-- ----------------------------------------------------------------------------------
 
 -- -----------------------------------------------------
 -- Table `db_inmo`.`roles`

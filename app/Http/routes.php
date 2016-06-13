@@ -23,3 +23,12 @@ Route::get('/salon/comunal', function () {
     $reservas_salon = (new \App\Pago)->whereRaw('month(fecha_inicial) = month(current_date)')->where('tipo_pago_id',3)->get();
     return view('salon.index')->with(['reservas'=>$reservas_salon]);
 });
+
+/**
+ *
+ * @description Test Route
+ */
+Route::get('generate_password_test', function()
+{
+    return \Response::json(\Hash::make('1053819381'));
+});
