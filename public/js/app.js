@@ -980,6 +980,7 @@ app.controller("PazySalvoDocument",['$scope', '$http', '$filter', 'ngTableParams
 {
     $scope.propiedad = $params.id;
     $scope.date = moment().format('MMMM Do YYYY, h:mm:ss a');
+    $scope.date_format =  moment().format('MMMM Do YYYY');
 
     console.log('entro')
     $scope.imprimir = function()
