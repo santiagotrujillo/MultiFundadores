@@ -289,7 +289,7 @@ class PropietarioController extends Controller
                     'tipo_pago_id' => 1
                 ];
                 // se cobra una parte de admin a estas propiedades
-                if ($propiedad->id == 3201 || $propiedad->id == 5301 || $propiedad->id == 6302) {
+                if ($propiedad->id == 3201 || $propiedad->id == 5301 || $propiedad->id == 7402) {
                     $cobro['valor'] = $this->valorJunta;
                 }
                 if ($propiedad->id != 1201 && (
