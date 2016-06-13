@@ -267,12 +267,35 @@ class PropietarioController extends Controller
     }
 
     /**
+     * @param $month
+     * @return mixed
+     */
+    public function getMonthName($month)
+    {
+        $months = [
+            1 => 'Enero',
+            2 => 'Febrero',
+            3 => 'Marzo',
+            4 => 'Abril',
+            5 =>'Mayo',
+            6 => 'Junio',
+            7=> 'Julio',
+            8 => 'Agosto' ,
+            9 => 'Septiembre',
+            10 => 'Octubre',
+            11 =>'Noviembre',
+            12 => 'Diciembre'
+        ];
+        return $months[$month];
+    }
+
+    /**
      * @return mixed
      */
     public function cobroAdmin()
     {
         $mes_actual = \DB::select('select month(NOW()) as mes');
-        $mes_actual = $mes_actual[0]->mes;
+        $mes_actual = $this->getMonthName($mes_actual[0]->mes);
 
         $year_actual = \DB::select('select year(NOW()) as year');
         $year_actual = $year_actual[0]->year;
