@@ -225,6 +225,8 @@ class PropietarioController extends Controller
         $tipo_pago = (new Tipo_pago)->find($pago->tipo_pago_id);
         $propiedad = (new Propiedad)->find($pago->propiedad_id);
         $propietario = (new Propietario)->find($propiedad->propietario_id);
+        $propietario->nombre = strtoupper($propietario->nombre);
+        $propietario->apellido = strtoupper($propietario->apellido);
         return Response::json(['abono' => $abono, 'factura' => $pago, 'propiedad' => $propiedad, 'tipo' => $tipo_pago, 'propietario' => $propietario]);
     }
 
@@ -306,7 +308,7 @@ class PropietarioController extends Controller
             foreach ($propiedades as $propiedad) {
                 $cobro = [
                     'valor' => $this->valorAdmin,
-                    'descripcion' => 'Pago a realizar del mes de : ' . $mes_actual . ' de ' . $year_actual,
+                    'descripcion' => 'Pago de ' . $mes_actual . ' de ' . $year_actual,
                     'fecha_inicial' => $this->first_month_day(),
                     'fecha_final' => $this->last_month_day(),
                     'tipo_pago_id' => 1
