@@ -317,6 +317,29 @@ class UsuarioController extends Controller
     }
 
     /**
+     * @param $year
+     * @return array
+     */
+    public function pygYear($year)
+    {
+        $query = " (select sum(a.valor) valor, month(a.created_at) as month, p.tipo_pago_id as tip, tp.concepto, 'ingreso' as pyg
+                    from abonos as a 
+                    left join pagos as p on p.id = a.pago_id
+                    left join tipo_pagos tp on p.tipo_pago_id = tp.id
+                    where year(a.created_at) = $year
+                    group by month , tip
+                    order by month, tip asc)
+                    union
+                    (select sum(d.valor) valor, month(d.created_at) as month, tp.id as tip, tp.concepto, 'egreso' as pyg
+                    from deudas as d
+                    left join tipo_deudas as tp on d.tipo_deuda_id = tp.id
+                    where year(d.created_at) = $year
+                    group by month, tip
+                    order by month, tip asc);";
+        return DB::select($query,[]);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function tipoDeudas()
