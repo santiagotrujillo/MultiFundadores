@@ -28,4 +28,13 @@ class PropiedadController extends Controller
     {
         return (new Propiedad)->with(['pagos','pagos.tipo_pago'])->find($id);
     }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function withOwner($id)
+    {
+        return $this->model->with('propietario')->find($id);
+    }
 }

@@ -225,6 +225,8 @@ class PropietarioController extends Controller
         $tipo_pago = (new Tipo_pago)->find($pago->tipo_pago_id);
         $propiedad = (new Propiedad)->find($pago->propiedad_id);
         $propietario = (new Propietario)->find($propiedad->propietario_id);
+        $propietario->nombre = strtoupper($propietario->nombre);
+        $propietario->apellido = strtoupper($propietario->apellido);
         return Response::json(['abono' => $abono, 'factura' => $pago, 'propiedad' => $propiedad, 'tipo' => $tipo_pago, 'propietario' => $propietario]);
     }
 
@@ -267,12 +269,35 @@ class PropietarioController extends Controller
     }
 
     /**
+     * @param $month
+     * @return mixed
+     */
+    public function getMonthName($month)
+    {
+        $months = [
+            1 => 'Enero',
+            2 => 'Febrero',
+            3 => 'Marzo',
+            4 => 'Abril',
+            5 =>'Mayo',
+            6 => 'Junio',
+            7=> 'Julio',
+            8 => 'Agosto' ,
+            9 => 'Septiembre',
+            10 => 'Octubre',
+            11 =>'Noviembre',
+            12 => 'Diciembre'
+        ];
+        return $months[$month];
+    }
+
+    /**
      * @return mixed
      */
     public function cobroAdmin()
     {
         $mes_actual = \DB::select('select month(NOW()) as mes');
-        $mes_actual = $mes_actual[0]->mes;
+        $mes_actual = $this->getMonthName($mes_actual[0]->mes);
 
         $year_actual = \DB::select('select year(NOW()) as year');
         $year_actual = $year_actual[0]->year;
@@ -283,13 +308,13 @@ class PropietarioController extends Controller
             foreach ($propiedades as $propiedad) {
                 $cobro = [
                     'valor' => $this->valorAdmin,
-                    'descripcion' => 'Pago a realizar del mes de : ' . $mes_actual . ' de ' . $year_actual,
+                    'descripcion' => 'Pago de ' . $mes_actual . ' de ' . $year_actual,
                     'fecha_inicial' => $this->first_month_day(),
                     'fecha_final' => $this->last_month_day(),
                     'tipo_pago_id' => 1
                 ];
                 // se cobra una parte de admin a estas propiedades
-                if ($propiedad->id == 3201 || $propiedad->id == 5301 || $propiedad->id == 6302) {
+                if ($propiedad->id == 3201 || $propiedad->id == 5301 || $propiedad->id == 7402) {
                     $cobro['valor'] = $this->valorJunta;
                 }
                 if ($propiedad->id != 1201 && (

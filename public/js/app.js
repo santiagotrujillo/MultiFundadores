@@ -981,16 +981,22 @@ app.controller("PazySalvoDocument",['$scope', '$http', '$filter', 'ngTableParams
     $scope.propiedad = $params.id;
     $scope.date = moment().format('MMMM Do YYYY, h:mm:ss a');
     $scope.date_format =  moment().format('MMMM Do YYYY');
-
-    console.log('entro')
+    $scope.owner = {};
     $scope.imprimir = function()
     {
-        if($scope.propiedad)
-        {
-
+        if($scope.propiedad) {
             window.print();
         }
-    }
+    };
+    $scope.getPropietario = function()
+    {
+        $http.get('/propiedad/with_owner/'+$params.id)
+        .success(function(data, status, headers, config)
+        {
+            $scope.owner = data;
+        });
+    };
+    $scope.getPropietario();
 }]);
 
 app.controller("EgresoProfile",['$scope', '$http', '$filter', 'ngTableParams', 'TableService', '$timeout','$routeParams', function($scope, $http, $filter, ngTableParams, TableService, $timeout, $params)

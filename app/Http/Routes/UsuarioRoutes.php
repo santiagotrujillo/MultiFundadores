@@ -151,6 +151,12 @@ Route::get('/usuarios/egreso/{id}', [
 
 /**
  * Ruta para consultar el reporte en formato json de los ingresos
- * generados en un mes y un a�o especifico
+ * generados en un mes y un año especifico
  */
 Route::get('/ingresos/month/year/{month}/{year}','UsuarioController@getIngresosMonthYear');
+
+/**
+ * 
+ * Ruta para obtener pyg base de un año
+ */
+Route::get('/pyg/{year}','UsuarioController@pygYear');
